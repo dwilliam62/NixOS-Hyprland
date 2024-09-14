@@ -257,69 +257,89 @@ networking.extraHosts =
     wlogout
     yad
     yt-dlp
-    wf-recorder
-    hyprutils
-    hyprshot
-    hyprlang
-    aquamarine
-    alacritty
-    gearlever
 
-    # My programs
-    htop
-    neofetch
-    bottom
-    glances
-    mission-center
-    stacer
-    dig
-    tmux
-    ncdu
-    bat
-    fzf
-    zellij
-    gcc
-    zig
-    clang
-    mc
-    appimage-run
-    ncftp
-    putty
-    atop
-    socat
-    lolcat
-    cmatrix
-    vlc
-    nomacs
-    jellyfin-media-player
-    nomachine-client
-    brightnessctl
-    light
-    nh
-    unrar
-    vesktop
-    zoxide
-    dua
-    figlet
-    google-chrome
-    cpuid
-    cpu-x
-    cpufetch
-    ripgrep
-    ugrep
-    okular
-    lazygit
-    foot
-    yazi
-    neovim 
-    neovide 
-    virt-viewer
-    virt-manager
-    quickemu
-    #quickgui
-    vscode-with-extensions
+ # My programs
 
-
+alacritty                                                                             
+appimage-run                                                                          
+aquamarine                                                                            
+atop                                                                                  
+bat                                                                                   
+bottom                                                                                
+brightnessctl                                                                         
+clang                                                                                 
+clang-tools 
+cmatrix                                                                               
+cpufetch                                                                              
+cpuid                                                                                 
+cpu-x
+dig                                                                                   
+discord
+dua                                                                                   
+figlet                                                                                
+foot                                                                                  
+fzf                                                                                   
+gcc        
+gearlever                                                                             
+git
+glances                                                                               
+google-chrome                                                                         
+gotop
+gsmartcontrol
+gtop
+htop                                                                                  
+hyfetch 
+hyprlang                                                                              
+hyprshot                                                                              
+hyprutils                                                                             
+iotop
+ipfetch
+jellyfin-media-player                                                                 
+lazygit                                                                               
+libvirt
+light                                                                                 
+lm_sensors
+lolcat                                                                                
+mc
+meld
+meson 
+mission-center                                                                        
+ncdu                                                                                  
+ncftp                                                                                 
+neofetch                                                                              
+neovide                                                                               
+neovim                                                                                
+nh                                                                                    
+nomachine-client                                                                      
+nomacs                                                                                
+nvtopPackages.full 
+nwg-drawer
+nwg-launchers
+okular                                                                                
+ouch
+powertop
+putty                                                                                 
+quickemu                                                                              
+#quickgui                                                                             
+ripgrep
+smartmontools
+socat                                                                                 
+stacer                                                                                
+tmux                                                                                  
+ugrep                                                                                 
+unrar                                                                                 
+v4l-utils
+vesktop                                                                               
+virt-manager                                                                          
+virt-viewer                                                                           
+vlc                                                                                   
+vscode-with-extensions
+wf-recorder                                                                           
+yad
+yazi                                                                                  
+zellij                                                                                
+zig                                                                                   
+zoxide                                                                                
 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
