@@ -334,7 +334,7 @@ vesktop
 virt-manager                                                                          
 virt-viewer                                                                           
 vlc                                                                                   
-vscode-with-extensions
+vscode-fhs
 wf-recorder                                                                           
 yad
 yazi                                                                                  
