@@ -277,6 +277,7 @@ dig
 discord
 dua                                                                                   
 figlet                                                                                
+flameshot
 foot                                                                                  
 fzf                                                                                   
 gcc        

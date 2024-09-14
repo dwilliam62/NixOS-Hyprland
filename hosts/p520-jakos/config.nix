@@ -273,6 +273,7 @@
     discord
     dua                                                                                   
     figlet                                                                                
+    flameshot
     foot                                                                                  
     fzf                                                                                   
     gcc        
@@ -288,7 +289,6 @@
     hyprlang                                                                              
     hyprshot                                                                              
     hyprutils                                                                             
-    mc
     iotop
     ipfetch
     jellyfin-media-player                                                                 
@@ -297,6 +297,7 @@
     light                                                                                 
     lm_sensors
     lolcat                                                                                
+    mc
     meld
     meson 
     mission-center                                                                        
