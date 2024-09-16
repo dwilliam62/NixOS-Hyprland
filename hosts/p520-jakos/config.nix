@@ -282,6 +282,7 @@
     glances                                                                               
     google-chrome                                                                         
     gotop
+    gping
     gsmartcontrol
     gtop
     htop                                                                                  
