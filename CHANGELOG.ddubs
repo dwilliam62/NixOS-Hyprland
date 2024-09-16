@@ -1,6 +1,7 @@
 9-16-24
  - Udpated flake
  - Added gping to all host configs
+ - Enabled NVIDIA on xps15 w/560 drv works
 9-13-24
  - Updated flake
  - Added xps15 host
