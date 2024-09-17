@@ -289,6 +289,7 @@ meson
 mission-center                                                                        
 ncdu                                                                                  
 ncftp                                                                                 
+nodejs_22
 neofetch                                                                              
 neovide                                                                               
 neovim                                                                                
