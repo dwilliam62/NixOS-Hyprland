@@ -1,6 +1,7 @@
 9-17-24
  - Added nodejs_22 (npm) to resolve NVIM errors
  - Updated flake 
+ - Added my packages list to default host config
 9-16-24
  - Udpated flake
  - Added gping to all host configs
