@@ -1,3 +1,6 @@
+9-18-24
+ - Sync P520-jakos
+ - Updted flake
 9-17-24
  - Added nodejs_22 (npm) to resolve NVIM errors
  - Updated flake 
