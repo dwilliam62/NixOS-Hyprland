@@ -279,6 +279,7 @@
     gcc        
     gearlever                                                                             
     git
+    github-desktop
     glances                                                                               
     google-chrome                                                                         
     gotop
