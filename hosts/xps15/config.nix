@@ -318,6 +318,7 @@ nomacs
 nvtopPackages.full 
 nwg-drawer
 nwg-launchers
+obs-studio
 okular                                                                                
 ouch
 powertop
