@@ -12,7 +12,7 @@
 	inputs@{ self,nixpkgs, ... }:
     	let
       system = "x86_64-linux";
-      host = "xps15";
+      host = "bubo";
       username = "dwilliams";
 
     pkgs = import nixpkgs {
