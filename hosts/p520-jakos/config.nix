@@ -294,6 +294,8 @@
     iotop
     ipfetch
     jellyfin-media-player                                                                 
+    jitsi
+    #jitsi-meet
     lazygit                                                                               
     libvirt
     light                                                                                 
