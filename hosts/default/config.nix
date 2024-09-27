@@ -259,6 +259,7 @@
 
     #My packages
 
+(inputs.wezterm.packages.${pkgs.system}.default)
 alacritty                                                                             
 appimage-run                                                                          
 aquamarine                                                                            

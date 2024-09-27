@@ -1,3 +1,7 @@
+9-27-24
+ - Updated p520 
+ - Added daily build input for wezterm now support wayland
+ - Updated all hosts and pacakge list for the wezterm daily build 
 9-26-24
  - Updated flake 
  - Added jitsi

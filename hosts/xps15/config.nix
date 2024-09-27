@@ -260,6 +260,7 @@ networking.extraHosts =
 
  # My programs
 
+(inputs.wezterm.packages.${pkgs.system}.default)
 alacritty                                                                             
 appimage-run                                                                          
 aquamarine                                                                            
