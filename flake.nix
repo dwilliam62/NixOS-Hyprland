@@ -13,7 +13,7 @@
 	inputs@{ self,nixpkgs, wezterm,  ... }:
     	let
       system = "x86_64-linux";
-      host = "ml4w-nixos";
+      host = "p520-jakos";
       username = "dwilliams";
        defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 
