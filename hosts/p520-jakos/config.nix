@@ -275,7 +275,17 @@
     figlet                                                                                
     flameshot
     foot                                                                                  
-    fzf                                                                                   
+    # fish shell and plugins
+    fish
+    fishPlugins.done
+    fishPlugins.fzf
+    fishPlugins.forgit
+    fishPlugins.hydro
+    fishPlugins.bass
+    fzf
+    fishPlugins.grc
+    grc
+    #  End
     gcc        
     gearlever                                                                             
     git
@@ -337,6 +347,7 @@
     virt-viewer                                                                           
     vlc                                                                                   
     vscode-fhs
+    warp-terminal
     wf-recorder                                                                           
     yad
     yazi                                                                                  

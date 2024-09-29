@@ -255,7 +255,6 @@
     yt-dlp
 
     # My programs 
-
     (inputs.wezterm.packages.${pkgs.system}.default)
     alacritty                                                                             
     appimage-run                                                                          
@@ -274,8 +273,6 @@
     discord
     dua                                                                                   
     figlet                                                                                
-    flameshot
-    foot                                                                                  
     # fish shell and plugins
     fish
     fishPlugins.done
@@ -287,6 +284,8 @@
     fishPlugins.grc
     grc
     #  End
+    flameshot
+    foot                                                                                  
     gcc        
     gearlever                                                                             
     git
@@ -305,6 +304,8 @@
     iotop
     ipfetch
     jellyfin-media-player                                                                 
+    jitsi
+    #jitsi-meet
     lazygit                                                                               
     libvirt
     light                                                                                 
@@ -326,6 +327,7 @@
     nvtopPackages.full 
     nwg-drawer
     nwg-launchers
+    obs-studio
     okular                                                                                
     ouch
     powertop
@@ -345,7 +347,6 @@
     virt-viewer                                                                           
     vlc                                                                                   
     vscode-fhs
-    warp-terminal
     wf-recorder                                                                           
     yad
     yazi                                                                                  
