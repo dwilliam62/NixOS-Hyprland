@@ -274,6 +274,7 @@
     dua                                                                                   
     figlet                                                                                
     flameshot
+    freeoffice
     foot                                                                                  
     # fish shell and plugins
     fish
