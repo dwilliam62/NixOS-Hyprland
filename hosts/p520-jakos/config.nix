@@ -288,7 +288,7 @@
     grc
     #  End
     gcc        
-    gearlever                                                                             
+    #gearlever                                                                             
     git
     github-desktop
     glances                                                                               
