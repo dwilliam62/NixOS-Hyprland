@@ -302,6 +302,7 @@
     hyprlang                                                                              
     hyprshot                                                                              
     hyprutils                                                                             
+    imagemagick
     iotop
     ipfetch
     jellyfin-media-player                                                                 
