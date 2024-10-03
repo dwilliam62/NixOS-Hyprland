@@ -348,6 +348,7 @@
     virt-viewer                                                                           
     vlc                                                                                   
     vscode-fhs
+    w3m
     warp-terminal
     wf-recorder                                                                           
     yad

@@ -1,3 +1,6 @@
+10-3-24
+  - Updated flake 
+  - Added w3m
 10-2-24
   - Removed gearlever app (couldn't theme) 
   - Added flatpak app gearlever 
