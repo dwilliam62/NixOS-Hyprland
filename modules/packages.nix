@@ -1,8 +1,8 @@
- pkgs, ... }:
+{ pkgs }:
 
 
 # define packages here
- environment.systemPackages = (with pkgs; [
+ pkgs; [
 
 (inputs.wezterm.packages.${pkgs.system}.default)
 alacritty                                                                             
@@ -103,5 +103,6 @@ zellij
 zig                                                                                   
 zoxide                                                                                
       
-      ];
+      ])
    };
+}
