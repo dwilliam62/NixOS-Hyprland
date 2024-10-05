@@ -25,7 +25,7 @@
     };
 
   fileSystems."/mnt/nas" =
-    { device = "nas:/volume1/DiskStation54TB";
+    { device = "192.168.40.11:/volume1/DiskStation54TB";
       fsType = "nfs";
       options = [ "rw" "bg" "tcp" "soft" "_netdev" ];
     };
