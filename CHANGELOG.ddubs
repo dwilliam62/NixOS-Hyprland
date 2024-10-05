@@ -2,6 +2,7 @@
   - Updated flake 
   - Added prometheus host 
   - Added .zshrc and waybar files to assets/dotfiles 
+  - Added tmux.tar to dotfiles dir
 10-4-24
   - Updated flake
   - Updated xps15 
