@@ -333,9 +333,12 @@ obs-studio
 okular                                                                                
 ouch
 powertop
+pfetch
 putty                                                                                 
 quickemu                                                                              
 #quickgui                                                                             
+ranger
+remmina
 ripgrep
 smartmontools
 socat                                                                                 
