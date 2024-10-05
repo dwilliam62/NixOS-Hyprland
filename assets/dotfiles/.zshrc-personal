@@ -1,0 +1,129 @@
+#!/usr/bin/env bash
+
+# Set defaults
+#
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+alias v=$EDITOR
+alias vi=$EDITOR
+alias vim=$EDITOR
+alias c="clear"
+
+alias gcCleanup="nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot"
+alias rebuild="nh os switch --hostname xps15 /home/dwilliams/NixOS-Hyprland"
+alias update="nh os switch --hostname xps15 /home/dwilliams/NixOS-Hyprland --update"
+
+alias hs="history | grep "
+alias restart="systemctl reboot"
+alias poweroff="systemctl poweroff" 
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+
+}
+
+# Chris Titus sourced aliases
+#
+
+# Search running processes
+alias p="ps aux | grep "
+#alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
+alias topcpu="/bin/ps -o pcpu,pid,user | sort -k 1 -r | head -10"
+
+# Show open ports
+alias openports='netstat -nape --inet'
+
+# Alias's to show disk space and space used in a folder
+alias diskspace="du -S | sort -n -r |more"
+alias folders='du -h --max-depth=1'
+alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+
+# Goes up a specified number of directories  (i.e. up 4)
+up() {
+	local d=""
+	limit=$1
+	for ((i = 1; i <= limit; i++)); do
+		d=$d/..
+	done
+	d=$(echo $d | sed 's/^\///')
+	if [ -z "$d" ]; then
+		d=..
+	fi
+	cd $d
+}
+
+## Useful aliases
+
+# Replace ls with exa
+alias ls='exa -al --color=always --group-directories-first --icons'                 # preferred listing
+alias la='exa -a --color=always --group-directories-first --icons'                  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --icons'                  # long format
+alias lt='exa -aT --color=always --group-directories-first --icons'                 # tree listing
+alias l.='exa -ald --color=always --group-directories-first --icons .*'             # show only dotfiles
+alias d='exa -a --grid --header --color=always --group-directories-first --icons'   # long format
+alias dir='exa -a --grid --header --color=always --group-directories-first --icons' # long format
+
+# My personal ones
+#
+alias hostname="echo $(hostnamectl hostname)"
+alias shutdown='systemctl poweroff'
+
+# Common use
+alias wget='wget -c '
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias vdir='vdir --color=auto'
+alias grep='ugrep --color=auto'
+alias fgrep='ugrep -F --color=auto'
+alias egrep='ugrep -E --color=auto'
+alias hw='hwinfo --short'                          # Hardware Info
+alias ip='ip -color'
+
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+# -----------------------------------------------------
+# ALIASES
+# -----------------------------------------------------
+
+alias nf='neofetch'
+alias matrix='cmatrix'
+alias wifi='nmtui'
+
+# -----------------------------------------------------
+# GIT
+# -----------------------------------------------------
+
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gst="git stash"
+alias gsp="git stash; git pull"
+alias gcheck="git checkout"
+
+# -----------------------------------------------------
+# SCRIPTS
+# -----------------------------------------------------
+
+alias ascii='~/dotfiles/scripts/figlet.sh'
+
+# -----------------------------------------------------
+# EDIT NOTES
+# -----------------------------------------------------
+
+alias notes='$EDITOR ~/notes.txt'
+
+export PATH="$HOME/local/bin/:$PATH"
+
+eval "$(zoxide init zsh)"

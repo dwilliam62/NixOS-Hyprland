@@ -1,3 +1,7 @@
+10-4-24
+  - Updated flake
+  - Updated xps15 
+  - Added dotfiles dir to save configs in GIT
 10-3-24
   - Updated flake 
   - Added w3m

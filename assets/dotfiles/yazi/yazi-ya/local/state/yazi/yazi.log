@@ -1,0 +1,91 @@
+  2024-09-08T06:51:35.793546Z ERROR yazi_scheduler::prework::prework: Returned 2 when running fetcher `mime` with:
+/home/dwilliams/.base16-themes
+/home/dwilliams/.bash_history
+/home/dwilliams/.bashrc-personal
+/home/dwilliams/.emoji
+/home/dwilliams/.face
+/home/dwilliams/.face.icon
+/home/dwilliams/.gitconfig
+/home/dwilliams/.gtkrc-2.0
+/home/dwilliams/.nix-profile
+/home/dwilliams/.Xauthority
+/home/dwilliams/.Xresources
+/home/dwilliams/.xsession-errors
+/home/dwilliams/.zcompdump
+/home/dwilliams/.zcompdump-prometheus-5.9
+/home/dwilliams/.zcompdump-prometheus-5.9.zwc
+/home/dwilliams/.zprofile
+/home/dwilliams/.zsh_history
+/home/dwilliams/.zshenv
+/home/dwilliams/.zshrc
+/home/dwilliams/.zshrc-personal
+    at yazi-scheduler/src/prework/prework.rs:49
+
+  2024-09-08T08:05:53.957542Z ERROR yazi_scheduler::prework::prework: Returned 2 when running fetcher `mime` with:
+/home/dwilliams/.base16-themes
+/home/dwilliams/.bash_history
+/home/dwilliams/.bashrc-personal
+/home/dwilliams/.emoji
+/home/dwilliams/.face
+/home/dwilliams/.face.icon
+/home/dwilliams/.gitconfig
+/home/dwilliams/.gtkrc-2.0
+/home/dwilliams/.nix-profile
+/home/dwilliams/.Xauthority
+/home/dwilliams/.Xresources
+/home/dwilliams/.xsession-errors
+/home/dwilliams/.zcompdump
+/home/dwilliams/.zcompdump-prometheus-5.9
+/home/dwilliams/.zcompdump-prometheus-5.9.zwc
+/home/dwilliams/.zprofile
+/home/dwilliams/.zsh_history
+/home/dwilliams/.zshenv
+/home/dwilliams/.zshrc
+/home/dwilliams/.zshrc-personal
+/home/dwilliams/thorium
+    at yazi-scheduler/src/prework/prework.rs:49
+
+  2024-09-08T08:05:59.722602Z ERROR yazi_scheduler::prework::prework: Returned 2 when running fetcher `mime` with:
+/home/dwilliams/.nix-profile
+/home/dwilliams/thorium
+    at yazi-scheduler/src/prework/prework.rs:49
+
+  2024-09-08T08:06:52.228934Z ERROR yazi_scheduler::prework::prework: Returned 2 when running fetcher `mime` with:
+/home/dwilliams/.base16-themes
+/home/dwilliams/.bash_history
+/home/dwilliams/.bashrc-personal
+/home/dwilliams/.emoji
+/home/dwilliams/.face
+/home/dwilliams/.face.icon
+/home/dwilliams/.gitconfig
+/home/dwilliams/.gtkrc-2.0
+/home/dwilliams/.nix-profile
+/home/dwilliams/.Xauthority
+/home/dwilliams/.Xresources
+/home/dwilliams/.xsession-errors
+/home/dwilliams/.zcompdump
+/home/dwilliams/.zcompdump-prometheus-5.9
+/home/dwilliams/.zcompdump-prometheus-5.9.zwc
+/home/dwilliams/.zprofile
+/home/dwilliams/.zsh_history
+/home/dwilliams/.zshenv
+/home/dwilliams/.zshrc
+/home/dwilliams/.zshrc-personal
+/home/dwilliams/thorium
+    at yazi-scheduler/src/prework/prework.rs:49
+
+  2024-09-08T08:06:56.871374Z ERROR yazi_scheduler::prework::prework: Returned 2 when running fetcher `mime` with:
+/home/dwilliams/.nix-profile
+/home/dwilliams/thorium
+    at yazi-scheduler/src/prework/prework.rs:49
+
+  2024-09-08T08:07:05.662094Z ERROR yazi_scheduler::prework::prework: Returned 2 when running fetcher `mime` with:
+/home/dwilliams/.nix-profile
+/home/dwilliams/thorium
+    at yazi-scheduler/src/prework/prework.rs:49
+
+  2024-09-08T08:07:17.840751Z ERROR yazi_scheduler::prework::prework: Returned 2 when running fetcher `mime` with:
+/home/dwilliams/.nix-profile
+/home/dwilliams/thorium
+    at yazi-scheduler/src/prework/prework.rs:49
+
