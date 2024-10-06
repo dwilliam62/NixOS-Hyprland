@@ -327,7 +327,7 @@
     nomacs                                                                                
     nvtopPackages.full 
     nwg-drawer
-    nwg-dock
+    nwg-dock-hyprland
     nwg-launchers
     obs-studio
     okular                                                                                
