@@ -328,10 +328,12 @@
     nwg-launchers
     okular                                                                                
     ouch
+    pfetch
     powertop
     putty                                                                                 
     quickemu                                                                              
     #quickgui                                                                             
+    remmina
     ripgrep
     smartmontools
     socat                                                                                 
