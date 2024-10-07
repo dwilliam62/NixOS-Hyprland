@@ -1,6 +1,9 @@
 10-6-24
  - Updated flake got hyprland 0.44
  - Add nwg-dock to p520 host
+ - Configured nwg-dock style.css added to dotfiles dir
+ - Created shell script nwg-dock-hyprland.sh to preserve startup settings
+   -- Showld be run from exec-once in hyprland config
 10-5-24
   - Updated flake 
   - Added prometheus host 
