@@ -332,6 +332,7 @@
     obs-studio
     okular                                                                                
     ouch
+    ptyxis
     powertop
     putty                                                                                 
     quickemu                                                                              
