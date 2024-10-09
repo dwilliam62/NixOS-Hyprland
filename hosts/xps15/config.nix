@@ -329,11 +329,13 @@ nomacs
 nvtopPackages.full 
 nwg-drawer
 nwg-launchers
+nwg-dock-hyprland
 obs-studio
 okular                                                                                
 ouch
 powertop
 pfetch
+ptyxi
 putty                                                                                 
 quickemu                                                                              
 #quickgui                                                                             
