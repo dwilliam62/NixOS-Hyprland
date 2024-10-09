@@ -335,7 +335,7 @@ okular
 ouch
 powertop
 pfetch
-ptyxi
+ptyxis
 putty                                                                                 
 quickemu                                                                              
 #quickgui                                                                             
