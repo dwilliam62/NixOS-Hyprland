@@ -326,9 +326,11 @@
     nvtopPackages.full 
     nwg-drawer
     nwg-launchers
+    nwg-dock-hyprland
     okular                                                                                
     ouch
     pfetch
+    ptyxis
     powertop
     putty                                                                                 
     quickemu                                                                              

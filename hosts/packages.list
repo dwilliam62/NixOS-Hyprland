@@ -47,7 +47,7 @@ iotop
 ipfetch
 jellyfin-media-player                                                                 
 jitsi
-jitsi-meet
+#jitsi-meet
 lazygit                                                                               
 libvirt
 light                                                                                 
@@ -67,7 +67,7 @@ nomachine-client
 nomacs                                                                                
 nvtopPackages.full 
 nwg-drawer
-nwg-dock
+nwg-dock-hyprland
 nwg-launchers
 obs-studio
 okular                                                                                
@@ -89,7 +89,7 @@ vesktop
 virt-manager                                                                          
 virt-viewer                                                                           
 vlc                                                                                   
-vscode-with-extensions
+vscode-fhs
 w3m
 warp-terminal
 wf-recorder                                                                           
