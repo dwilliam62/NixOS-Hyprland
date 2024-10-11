@@ -21,7 +21,7 @@
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
-    # ../../modules/packages.nix  Broken 
+    #../../modules/packages.nix  Broken 
    
   ];
 
@@ -255,6 +255,8 @@
     wlogout
     yad
     yt-dlp
+
+     # My programs
     (inputs.wezterm.packages.${pkgs.system}.default)
     alacritty                                                                             
     appimage-run                                                                          
@@ -288,7 +290,6 @@
     grc
     #  End
     gcc        
-    #gearlever                                                                             
     git
     github-desktop
     glances                                                                               
@@ -306,8 +307,6 @@
     iotop
     ipfetch
     jellyfin-media-player                                                                 
-    jitsi
-    #jitsi-meet
     lazygit                                                                               
     libvirt
     light                                                                                 

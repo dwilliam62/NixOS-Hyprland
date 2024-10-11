@@ -1,5 +1,8 @@
 
 
+10-11-24
+  - Updated flake
+  - Removed gearlever (using flatpak)
 10-10-24
   - Updated flake
 10-9-24
