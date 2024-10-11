@@ -7,6 +7,7 @@
      This has a list of all the common packages I want to add to every host
      I need to add the import ../modules/packages.nix for the other hosts and remove the packages 
      being installed in each config.nix.  Want to get this added to repo first
+  - Removed old packages.nix file in modules dir
 10-10-24
   - Updated flake
 10-9-24
