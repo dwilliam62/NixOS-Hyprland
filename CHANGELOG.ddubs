@@ -9,6 +9,7 @@
      being installed in each config.nix.  Want to get this added to repo first
   - Removed old packages.nix file in modules dir
   - Updated all the hosts and default to use packages.nix 
+  - Added tar of new yazi WIP and backup of orig in assets/dotfiles 
 10-10-24
   - Updated flake
 10-9-24
