@@ -3,6 +3,10 @@
 10-11-24
   - Updated flake
   - Removed gearlever (using flatpak)
+  - Got packages.nix added to P520-jakos host
+     This has a list of all the common packages I want to add to every host
+     I need to add the import ../modules/packages.nix for the other hosts and remove the packages 
+     being installed in each config.nix.  Want to get this added to repo first
 10-10-24
   - Updated flake
 10-9-24

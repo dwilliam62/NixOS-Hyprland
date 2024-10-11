@@ -1,3 +1,9 @@
+ pkgs, ... }:
+
+
+# define packages here
+ environment.systemPackages = (with pkgs; [
+
 (inputs.wezterm.packages.${pkgs.system}.default)
 alacritty                                                                             
 appimage-run                                                                          
@@ -47,7 +53,7 @@ iotop
 ipfetch
 jellyfin-media-player                                                                 
 jitsi
-#jitsi-meet
+jitsi-meet
 lazygit                                                                               
 libvirt
 light                                                                                 
@@ -67,12 +73,10 @@ nomachine-client
 nomacs                                                                                
 nvtopPackages.full 
 nwg-drawer
-nwg-dock-hyprland
 nwg-launchers
 obs-studio
 okular                                                                                
 ouch
-ptyxis
 powertop
 putty                                                                                 
 quickemu                                                                              
@@ -89,7 +93,7 @@ vesktop
 virt-manager                                                                          
 virt-viewer                                                                           
 vlc                                                                                   
-vscode-fhs
+vscode-with-extensions
 w3m
 warp-terminal
 wf-recorder                                                                           
@@ -98,3 +102,6 @@ yazi
 zellij                                                                                
 zig                                                                                   
 zoxide                                                                                
+      
+      ];
+   };

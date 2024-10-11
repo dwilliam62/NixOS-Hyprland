@@ -1,4 +1,5 @@
- # My programs 
+
+     # My programs
     (inputs.wezterm.packages.${pkgs.system}.default)
     alacritty                                                                             
     appimage-run                                                                          
@@ -32,7 +33,6 @@
     grc
     #  End
     gcc        
-    #gearlever                                                                             
     git
     github-desktop
     glances                                                                               
@@ -50,8 +50,6 @@
     iotop
     ipfetch
     jellyfin-media-player                                                                 
-    jitsi
-    #jitsi-meet
     lazygit                                                                               
     libvirt
     light                                                                                 
@@ -72,10 +70,12 @@
     nomacs                                                                                
     nvtopPackages.full 
     nwg-drawer
+    nwg-dock-hyprland
     nwg-launchers
     obs-studio
     okular                                                                                
     ouch
+    ptyxis
     powertop
     putty                                                                                 
     quickemu                                                                              
@@ -100,4 +100,4 @@
     yazi                                                                                  
     zellij                                                                                
     zig                                                                                   
-    zoxide
+    zoxide                                                                               
