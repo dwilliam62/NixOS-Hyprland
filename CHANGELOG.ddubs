@@ -8,6 +8,7 @@
      I need to add the import ../modules/packages.nix for the other hosts and remove the packages 
      being installed in each config.nix.  Want to get this added to repo first
   - Removed old packages.nix file in modules dir
+  - Updated all the hosts and default to use packages.nix 
 10-10-24
   - Updated flake
 10-9-24

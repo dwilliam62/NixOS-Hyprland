@@ -21,6 +21,7 @@
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
+    ../../modules/packages.nix
    
   ];
 
@@ -254,108 +255,6 @@
     wlogout
     yad
     yt-dlp
-    (inputs.wezterm.packages.${pkgs.system}.default)
-    alacritty                                                                             
-    appimage-run                                                                          
-    aquamarine                                                                            
-    atop                                                                                  
-    bat                                                                                   
-    bottom                                                                                
-    brightnessctl                                                                         
-    clang                                                                                 
-    clang-tools 
-    cmatrix                                                                               
-    cpufetch                                                                              
-    cpuid                                                                                 
-    cpu-x
-    dig                                                                                   
-    discord
-    dua                                                                                   
-    figlet                                                                                
-    flameshot
-    freeoffice
-    foot                                                                                  
-    # fish shell and plugins
-    fish
-    fishPlugins.done
-    fishPlugins.fzf
-    fishPlugins.forgit
-    fishPlugins.hydro
-    fishPlugins.bass
-    fzf
-    fishPlugins.grc
-    grc
-    #  End
-    gcc        
-    #gearlever                                                                             
-    git
-    github-desktop
-    glances                                                                               
-    google-chrome                                                                         
-    gotop
-    gping
-    gsmartcontrol
-    gtop
-    htop                                                                                  
-    hyfetch 
-    hyprlang                                                                              
-    hyprshot                                                                              
-    hyprutils                                                                             
-    imagemagick
-    iotop
-    ipfetch
-    jellyfin-media-player                                                                 
-    jitsi
-    #jitsi-meet
-    lazygit                                                                               
-    libvirt
-    light                                                                                 
-    lm_sensors
-    lolcat                                                                                
-    mc
-    meld
-    meson 
-    mission-center                                                                        
-    ncdu                                                                                  
-    ncftp                                                                                 
-    nodejs_22
-    neofetch                                                                              
-    neovide                                                                               
-    neovim                                                                                
-    nh                                                                                    
-    nomachine-client                                                                      
-    nomacs                                                                                
-    nvtopPackages.full 
-    nwg-drawer
-    nwg-launchers
-    obs-studio
-    okular                                                                                
-    ouch
-    powertop
-    putty                                                                                 
-    quickemu                                                                              
-    #quickgui                                                                             
-    ripgrep
-    smartmontools
-    socat                                                                                 
-    stacer                                                                                
-    tmux                                                                                  
-    ugrep                                                                                 
-    unrar                                                                                 
-    v4l-utils
-    vesktop                                                                               
-    virt-manager                                                                          
-    virt-viewer                                                                           
-    vlc                                                                                   
-    vscode-fhs
-    w3m
-    warp-terminal
-    wf-recorder                                                                           
-    yad
-    yazi                                                                                  
-    zellij                                                                                
-    zig                                                                                   
-    zoxide                                                                               
 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
