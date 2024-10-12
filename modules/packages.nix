@@ -80,11 +80,13 @@
     obs-studio
     okular                                                                                
     ouch
+    pfetch
     ptyxis
     powertop
     putty                                                                                 
     quickemu                                                                              
     #quickgui                                                                             
+    remina
     ripgrep
     smartmontools
     socat                                                                                 
