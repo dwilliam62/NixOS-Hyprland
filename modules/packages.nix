@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+e pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -86,7 +86,7 @@
     putty                                                                                 
     quickemu                                                                              
     #quickgui                                                                             
-    remina
+    remmina
     ripgrep
     smartmontools
     socat                                                                                 
