@@ -3,6 +3,7 @@
 10-13-24
   - Updated flake
   - Prometheus packages sync'd with packages.nix
+  - Changed font to 12 and tabs to angled vs slanted
 10-11-24
   - Updated flake
   - Removed gearlever (using flatpak)
