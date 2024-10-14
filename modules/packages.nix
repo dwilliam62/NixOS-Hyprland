@@ -59,6 +59,7 @@
     libvirt
     light                                                                                 
     lm_sensors
+    lsd
     lolcat                                                                                
     mc
     meld
