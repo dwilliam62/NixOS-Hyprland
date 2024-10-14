@@ -91,6 +91,7 @@
     smartmontools
     socat                                                                                 
     stacer                                                                                
+    tldr
     tmux                                                                                  
     ugrep                                                                                 
     unrar                                                                                 
