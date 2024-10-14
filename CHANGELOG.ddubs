@@ -1,5 +1,8 @@
 
 
+10-13-24
+  - Updated flake
+  - Prometheus packages sync'd with packages.nix
 10-11-24
   - Updated flake
   - Removed gearlever (using flatpak)
