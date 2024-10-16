@@ -1,4 +1,4 @@
-# Main default config
+i Main default config
 
 { config, pkgs, host, username, options, lib, inputs, system, ...}: let
   
@@ -218,7 +218,7 @@
     ags        
     btop
     cava
-    cliphist
+    #cliphist
     eog
     gnome-system-monitor
     file-roller
