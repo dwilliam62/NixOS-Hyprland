@@ -1,5 +1,9 @@
 
 
+10-15-24
+  - Updated flake
+  - Massive package updates
+  - Commened out cliphist fails to build
 10-13-24
   - Updated flake
   - Prometheus packages sync'd with packages.nix

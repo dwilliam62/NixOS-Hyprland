@@ -223,7 +223,7 @@ networking.extraHosts =
     ags
     btop
     cava
-    cliphist
+    #cliphist   #Fails tobuild 10-15-24
     eog
     gnome-system-monitor
     file-roller
