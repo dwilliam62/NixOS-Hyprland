@@ -219,7 +219,6 @@ networking.extraHosts =
     xdg-utils
     fastfetch
     (mpv.override {scripts = [mpvScripts.mpris];}) # with tray
-    #ranger
     ags
     btop
     cava
