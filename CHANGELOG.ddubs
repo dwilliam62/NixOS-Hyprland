@@ -1,5 +1,15 @@
 
 
+10-18-24
+  - Moved system packages to modules/system.packages.nix
+    trying to clean up config.nix and only have to update
+    any new system packages once 
+10-17-24
+  - Updated flake
+  - Created override for cliphist (thx RGM)
+  - Moved user packages from config.nix to modules/packages.nix
+     This allows creating a basic set of packages for all hosts
+     But still add additional ones to each host config.nix 
 10-15-24
   - Updated flake
   - Massive package updates
