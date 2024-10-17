@@ -59,6 +59,8 @@
     google-chrome                                                                         
     gotop
     gping
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
     gsmartcontrol
     gtop
     htop                                                                                  

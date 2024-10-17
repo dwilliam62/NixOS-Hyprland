@@ -1,10 +1,11 @@
 
 
-10-18-24
+10-17-24
   - Moved system packages to modules/system.packages.nix
     trying to clean up config.nix and only have to update
     any new system packages once 
-10-17-24
+  - Added gpu-recorder and -gtk for video screen captures
+10-16-24
   - Updated flake
   - Created override for cliphist (thx RGM)
   - Moved user packages from config.nix to modules/packages.nix
