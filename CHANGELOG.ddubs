@@ -5,6 +5,7 @@
     trying to clean up config.nix and only have to update
     any new system packages once 
   - Added gpu-recorder and -gtk for video screen captures
+  - Add 2nd p520 tower explorer w/NVIDIA RTX3050 GPU
 10-16-24
   - Updated flake
   - Created override for cliphist (thx RGM)
