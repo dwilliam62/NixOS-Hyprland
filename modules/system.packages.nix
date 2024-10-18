@@ -31,7 +31,7 @@
     ags        
     btop
     cava
-    #cliphist
+    cliphist
     eog
     gnome-system-monitor
     file-roller
