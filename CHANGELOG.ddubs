@@ -1,6 +1,7 @@
 
 
 10-17-24
+  - Updated flake
   - Moved system packages to modules/system.packages.nix
     trying to clean up config.nix and only have to update
     any new system packages once 
