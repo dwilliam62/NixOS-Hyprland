@@ -1,5 +1,9 @@
 
 
+10-18-24
+  - Updated flake
+  - Cliphist installed 
+  - Added GPU recorder 
 10-17-24
   - Updated flake
   - Moved system packages to modules/system.packages.nix
