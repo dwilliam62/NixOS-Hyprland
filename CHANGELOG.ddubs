@@ -1,5 +1,9 @@
 
 
+10-19-24
+  - Updated flake
+  - Removed google-chrome from packages.nix
+  - Using Thorium browser AppImage
 10-18-24
   - Updated flake
   - Cliphist installed 

@@ -56,7 +56,7 @@
     git
     github-desktop
     glances                                                                               
-    google-chrome                                                                         
+    #google-chrome                                                                         
     gotop
     gping
     gpu-screen-recorder
