@@ -109,6 +109,7 @@
     smartmontools
     socat                                                                                 
     stacer                                                                                
+    tilix
     tldr
     tmux                                                                                  
     ugrep                                                                                 
