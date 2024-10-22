@@ -52,7 +52,9 @@
     playerctl
     polkit_gnome
     pyprland
-    qt5ct
+        #qt5ct
+    # Replaced by libsForQt5.qt5ct
+    libsForQt5.qt5ct
     qt6ct
     qt6.qtwayland
     qt6Packages.qtstyleplugin-kvantum #kvantum
@@ -69,9 +71,17 @@
     yt-dlp
 
 
-
-
-
   ];
+
+# FONTS
+  fonts.packages = with pkgs; [
+    noto-fonts
+    fira-code
+    noto-fonts-cjk-sans
+    jetbrains-mono
+    font-awesome
+	 terminus_font
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+ 	];
 }
 

@@ -1,5 +1,12 @@
 
 
+10-22-24
+  - Updated flake
+  - q5ct renamed  Updated system.packages 
+  - noto font changed name  
+    -- Commetned out fonts in hots/<hostname>/options.nix 
+    -- Moved to modules/system.pacakages.nix instead 
+    -- Next font update I won't have to edit each host file again
 10-21-24
   - Updated flake
   - Added luarocks, xclip to try NVCHAD
