@@ -1,5 +1,8 @@
 
 
+10-21-24
+  - Updated flake
+  - Added luarocks, xclip to try NVCHAD
 10-19-24
   - Updated flake
   - Removed google-chrome from packages.nix

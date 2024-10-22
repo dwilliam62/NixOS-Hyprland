@@ -78,6 +78,7 @@
     lm_sensors
     lsd
     lolcat                                                                                
+    luarocks
     mc
     meld
     meson 
@@ -123,6 +124,7 @@
     w3m
     warp-terminal
     wf-recorder                                                                           
+    xclip
     yad
     yazi                                                                                  
     zellij                                                                                
