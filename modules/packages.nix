@@ -22,6 +22,7 @@
 #      }))
 
     alacritty                                                                             
+    alejandra
     appimage-run                                                                          
     aquamarine                                                                            
     atop                                                                                  
@@ -87,6 +88,7 @@
     mission-center                                                                        
     ncdu                                                                                  
     ncftp                                                                                 
+    nixfmt-rfc-style
     nodejs_22
     neofetch                                                                              
     neovide                                                                               
@@ -106,7 +108,7 @@
     powertop
     putty                                                                                 
     quickemu                                                                              
-    #quickgui                                                                             
+        #quickgui                                                                             
     remmina
     ripgrep
     smartmontools
