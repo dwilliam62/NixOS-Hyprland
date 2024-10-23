@@ -79,6 +79,7 @@
     lsd
     lolcat                                                                                
     luarocks
+    luajitPackages.lua-lsp
     mc
     meld
     meson 
