@@ -7,6 +7,7 @@
   - Add nixfmt-rfc-style and alejandra 
   - Added nixd
   - Ran nixfmt on modules/ and flake.nix 
+  - Added nixpkgs-fmt for vscode 
 10-22-24
   - Updated flake
   - q5ct renamed  Updated system.packages 

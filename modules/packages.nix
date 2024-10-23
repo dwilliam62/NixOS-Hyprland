@@ -88,6 +88,7 @@
     mission-center
     ncdu
     ncftp
+    nixpkgs-fmt
     nixd
     nixfmt-rfc-style
     nodejs_22
