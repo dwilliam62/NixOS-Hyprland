@@ -87,6 +87,7 @@
     mission-center
     ncdu
     ncftp
+    nixd
     nixfmt-rfc-style
     nodejs_22
     neofetch

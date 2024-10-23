@@ -5,6 +5,8 @@
   - Updated flake
     Updated hyprland and aquamarine
   - Add nixfmt-rfc-style and alejandra 
+  - Added nixd
+  - Ran nixfmt on modules/ and flake.nix 
 10-22-24
   - Updated flake
   - q5ct renamed  Updated system.packages 
