@@ -80,6 +80,7 @@
     lolcat                                                                                
     luarocks
     luajitPackages.lua-lsp
+    lua-language-server
     mc
     meld
     meson 
