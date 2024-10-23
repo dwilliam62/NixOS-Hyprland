@@ -136,4 +136,7 @@
     zoxide
 
   ];
+
+    nix.nixPath = [ "nixpkgs = ${inputs.nixpkgs}" ];
+
 }
