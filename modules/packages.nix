@@ -1,8 +1,9 @@
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
-
     # My programs
     (inputs.wezterm.packages.${pkgs.system}.default)
 
@@ -56,7 +57,7 @@
     git
     github-desktop
     glances
-    #google-chrome                                                                         
+    #google-chrome
     gotop
     gping
     gpu-screen-recorder
@@ -108,7 +109,8 @@
     powertop
     putty
     quickemu
-    #quickgui                                                                             
+    #  QuickGUI won't build
+    #quickgui
     remmina
     ripgrep
     smartmontools
@@ -134,9 +136,7 @@
     zellij
     zig
     zoxide
-
   ];
-
-    nix.nixPath = [ "nixpkgs = ${inputs.nixpkgs}" ];
-
+  # Added per VIMjoyner vidoe on setting up nixd
+  nix.nixPath = ["nixpkgs = ${inputs.nixpkgs}"];
 }
