@@ -3,19 +3,19 @@
 {
   environment.systemPackages = with pkgs; [
 
-# System Packages
+    # System Packages
     baobab
     clang
     cpufrequtils
     duf
     eza
-    ffmpeg   
-    glib #for gsettings to work
+    ffmpeg
+    glib # for gsettings to work
     gsettings-qt
-    killall  
+    killall
     libappindicator
     libnotify
-    openssl #required by Rainbow borders
+    openssl # required by Rainbow borders
     pciutils
     vim
     wget
@@ -23,12 +23,11 @@
     xdg-utils
 
     fastfetch
-    (mpv.override {scripts = [mpvScripts.mpris];}) # with tray
+    (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
     ranger
 
-       
     # Hyprland Stuff
-    ags        
+    ags
     btop
     cava
     cliphist
@@ -36,14 +35,14 @@
     gnome-system-monitor
     file-roller
     grim
-    gtk-engine-murrine #for gtk themes
+    gtk-engine-murrine # for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
-    imagemagick 
+    imagemagick
     inxi
     jq
     kitty
-    libsForQt5.qtstyleplugin-kvantum #kvantum
+    libsForQt5.qtstyleplugin-kvantum # kvantum
     networkmanagerapplet
     nwg-look # requires unstable channel
     nvtopPackages.full
@@ -52,12 +51,12 @@
     playerctl
     polkit_gnome
     pyprland
-        #qt5ct
+    #qt5ct
     # Replaced by libsForQt5.qt5ct
     libsForQt5.qt5ct
     qt6ct
     qt6.qtwayland
-    qt6Packages.qtstyleplugin-kvantum #kvantum
+    qt6Packages.qtstyleplugin-kvantum # kvantum
     rofi-wayland
     slurp
     swappy
@@ -70,18 +69,16 @@
     yad
     yt-dlp
 
-
   ];
 
-# FONTS
+  # FONTS
   fonts.packages = with pkgs; [
     noto-fonts
     fira-code
     noto-fonts-cjk-sans
     jetbrains-mono
     font-awesome
-	 terminus_font
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
- 	];
+    terminus_font
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
 }
-

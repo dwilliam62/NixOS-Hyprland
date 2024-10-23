@@ -3,45 +3,44 @@
 {
   environment.systemPackages = with pkgs; [
 
-
-     # My programs
+    # My programs
     (inputs.wezterm.packages.${pkgs.system}.default)
 
     # Override for cliphis  Waiting for update to reach unstable bracnh
     #  10-16-24
     #  https://nixpk.gs/pr-tracker.html?pr=348887
 
-#    (cliphist.overrideAttrs (_old: {
-#     src = pkgs.fetchFromGitHub {
-#       owner = "sentriz";
-#       repo = "cliphist";
-#       rev = "c49dcd26168f704324d90d23b9381f39c30572bd";
-#       sha256 = "sha256-2mn55DeF8Yxq5jwQAjAcvZAwAg+pZ4BkEitP6S2N0HY=";
-#       };
-#        vendorHash = "sha256-M5n7/QWQ5POWE4hSCMa0+GOVhEDCOILYqkSYIGoy/l0=";
-#      }))
+    #    (cliphist.overrideAttrs (_old: {
+    #     src = pkgs.fetchFromGitHub {
+    #       owner = "sentriz";
+    #       repo = "cliphist";
+    #       rev = "c49dcd26168f704324d90d23b9381f39c30572bd";
+    #       sha256 = "sha256-2mn55DeF8Yxq5jwQAjAcvZAwAg+pZ4BkEitP6S2N0HY=";
+    #       };
+    #        vendorHash = "sha256-M5n7/QWQ5POWE4hSCMa0+GOVhEDCOILYqkSYIGoy/l0=";
+    #      }))
 
-    alacritty                                                                             
+    alacritty
     alejandra
-    appimage-run                                                                          
-    aquamarine                                                                            
-    atop                                                                                  
-    bat                                                                                   
-    bottom                                                                                
-    brightnessctl                                                                         
-    clang                                                                                 
-    clang-tools 
-    cmatrix                                                                               
-    cpufetch                                                                              
-    cpuid                                                                                 
+    appimage-run
+    aquamarine
+    atop
+    bat
+    bottom
+    brightnessctl
+    clang
+    clang-tools
+    cmatrix
+    cpufetch
+    cpuid
     cpu-x
-    dig                                                                                   
+    dig
     discord
-    dua                                                                                   
-    figlet                                                                                
+    dua
+    figlet
     flameshot
     freeoffice
-    foot                                                                                  
+    foot
     # fish shell and plugins
     fish
     fishPlugins.done
@@ -53,10 +52,10 @@
     fishPlugins.grc
     grc
     #  End
-    gcc        
+    gcc
     git
     github-desktop
-    glances                                                                               
+    glances
     #google-chrome                                                                         
     gotop
     gping
@@ -64,79 +63,76 @@
     gpu-screen-recorder-gtk
     gsmartcontrol
     gtop
-    htop                                                                                  
-    hyfetch 
-    hyprlang                                                                              
-    hyprshot                                                                              
-    hyprutils                                                                             
+    htop
+    hyfetch
+    hyprlang
+    hyprshot
+    hyprutils
     imagemagick
     iotop
     ipfetch
-    jellyfin-media-player                                                                 
-    lazygit                                                                               
+    jellyfin-media-player
+    lazygit
     libvirt
-    light                                                                                 
+    light
     lm_sensors
     lsd
-    lolcat                                                                                
+    lolcat
     luarocks
     luajitPackages.lua-lsp
     lua-language-server
     mc
     meld
-    meson 
-    mission-center                                                                        
-    ncdu                                                                                  
-    ncftp                                                                                 
+    meson
+    mission-center
+    ncdu
+    ncftp
     nixfmt-rfc-style
     nodejs_22
-    neofetch                                                                              
-    neovide                                                                               
-    neovim                                                                                
-    nh                                                                                    
-    nomachine-client                                                                      
-    nomacs                                                                                
-    nvtopPackages.full 
+    neofetch
+    neovide
+    neovim
+    nh
+    nomachine-client
+    nomacs
+    nvtopPackages.full
     nwg-drawer
     nwg-dock-hyprland
     nwg-launchers
     obs-studio
-    okular                                                                                
+    okular
     ouch
     pfetch
     ptyxis
     powertop
-    putty                                                                                 
-    quickemu                                                                              
-        #quickgui                                                                             
+    putty
+    quickemu
+    #quickgui                                                                             
     remmina
     ripgrep
     smartmontools
-    socat                                                                                 
-    stacer                                                                                
+    socat
+    stacer
     tilix
     tldr
-    tmux                                                                                  
-    ugrep                                                                                 
-    unrar                                                                                 
+    tmux
+    ugrep
+    unrar
     v4l-utils
-    vesktop                                                                               
-    virt-manager                                                                          
-    virt-viewer                                                                           
-    vlc                                                                                   
+    vesktop
+    virt-manager
+    virt-viewer
+    vlc
     vscode-fhs
     w3m
     warp-terminal
-    wf-recorder                                                                           
+    wf-recorder
     xclip
     yad
-    yazi                                                                                  
-    zellij                                                                                
-    zig                                                                                   
-    zoxide                                                                               
-
-
+    yazi
+    zellij
+    zig
+    zoxide
 
   ];
 }
-
