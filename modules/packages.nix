@@ -31,7 +31,6 @@
     brightnessctl
     clang
     clang-tools
-    cmake
     cmatrix
     cpufetch
     cpuid
@@ -83,7 +82,6 @@
     luarocks
     luajitPackages.lua-lsp
     lua-language-server
-    gnumake
     mc
     meld
     meson
@@ -104,6 +102,12 @@
     nwg-drawer
     nwg-dock-hyprland
     nwg-launchers
+    nwg-panel
+    nwg-bar
+    nwg-displays
+    nwg-wrapper
+    nwg-look
+    nwg-menu
     obs-studio
     okular
     ouch
