@@ -31,6 +31,7 @@
     brightnessctl
     clang
     clang-tools
+    cmake
     cmatrix
     cpufetch
     cpuid
@@ -82,6 +83,7 @@
     luarocks
     luajitPackages.lua-lsp
     lua-language-server
+    gnumake
     mc
     meld
     meson
