@@ -96,6 +96,7 @@
     neovide
     neovim
     nh
+    nix-ld
     nomachine-client
     nomacs
     nvtopPackages.full
