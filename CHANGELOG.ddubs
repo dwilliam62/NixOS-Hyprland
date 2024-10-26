@@ -4,6 +4,7 @@
    - Updated some default setting in default hostZ
    - Started to catagorize config.nix 
    - Add nix-ld to try to run dynamicly linked binaries
+   - Added rio terminal
 10-25-24
    - Updated flake
 10-23-24

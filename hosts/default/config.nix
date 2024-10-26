@@ -37,6 +37,8 @@ in {
   ];
 
   # BOOT related stuff
+  # Select which kernel by uncommenting it and comment out the default which is latest kernel
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest; #Latest  Kernel
     #kernelPackages = pkgs.linuxPackages; #LTS Kernel
@@ -51,6 +53,9 @@ in {
     ];
 
     # This is for OBS Virtual Cam Support
+    # Which is need to share screen in discord and other
+    # Electron based apps
+
     kernelModules = ["v4l2loopback"];
     extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
 
@@ -67,9 +72,9 @@ in {
     };
 
     # Needed For Some Steam Games
-    #kernel.sysctl = {
-    #  "vm.max_map_count" = 2147483642;
-    #};
+    kernel.sysctl = {
+      "vm.max_map_count" = 2147483642;
+    };
 
     ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub
     # Bootloader SystemD
@@ -98,9 +103,14 @@ in {
     ## -end of BOOTLOADERS----- ##
 
     # Make /tmp a tmpfs
+    #  Be cautions enableing this.
+    #  If you make it too small rebuilds and upgrades will fail
+    #  Suggest leaving this as FALSE unless you know what you
+    #  are doing.
+
     tmp = {
       useTmpfs = false;
-      tmpfsSize = "30%";
+      tmpfsSize = "40%";
     };
 
     # Appimage Support
@@ -112,6 +122,10 @@ in {
       mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
       magicOrExtension = ''\x7fELF....AI\x02'';
     };
+
+    # Tis is for the NIXOS splash screen on startup
+    # Leavign this off rprevents a number of packages
+    # from being installed and speeds up the boot process
 
     plymouth.enable = true;
   };
@@ -125,7 +139,7 @@ in {
   # Extra Module Options
   drivers.amdgpu.enable = true;
   drivers.intel.enable = true;
-  drivers.nvidia.enable = false;
+  drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
     enable = false;
     intelBusID = "";
@@ -152,6 +166,10 @@ in {
   hardware.graphics = {
     enable = true;
   };
+
+  # Checke hardrves for errors
+  #  Disable when running in a VM
+  # or on older hardrives.
 
   smartd = {
     enable = false;
@@ -216,6 +234,14 @@ in {
   #\__ \ (_) |  _| |_ \ V  V / (_| | | |  __/
   #|___/\___/|_|  \__| \_/\_/ \__,_|_|  \___|
 
+  # environmental.systemPackagespackages installs software for this host
+  # only.  moduels/packaages.nix should be used for common
+  # packages for all hosts.
+
+  users = {
+    mutableUsers = true;
+  };
+
   environment.systemPackages =
     (with pkgs; [
       # System Packages
@@ -228,6 +254,9 @@ in {
     ];
 
   # FONTS
+  # Added here will only be installed on this host
+  # # Use modelues/packages.nix for fonts you want on every host
+
   fonts.packages = with pkgs; [
     # Moved to systemPackages,nix
     #noto-fonts
@@ -280,10 +309,10 @@ in {
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; # hyprland-git
       portalPackage =
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
-      xwayland.enable = true;
+      xwayland.enable = true; #enables xwayland in hyprland
     };
 
-    xwayland.enable = true; # Why is this here twice?
+    xwayland.enable = true; # Enabled xwayland the package
 
     dconf.enable = true;
     seahorse.enable = true;
@@ -311,20 +340,23 @@ in {
     tumbler
   ];
 
+  steam = {
+    enable = false;
+    gamescopeSession.enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+  # For Electron apps to use wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   #\ \   / (_)_ __| |_ _   _  __ _| (_)______ _| |_(_) ___  _ __
   # \ \ / /| | '__| __| | | |/ _` | | |_  / _` | __| |/ _ \| '_ \
-  #\ V / | | |  | |_| |_| | (_| | | |/ / (_| | |_| | (_) | | | |
-  #\_/  |_|_|   \__|\__,_|\__,_|_|_/___\__,_|\__|_|\___/|_| |_|
+  #  \ V / | | |  | |_| |_| | (_| | | |/ / (_| | |_| | (_) | | | |
+  #   \_/  |_|_|   \__|\__,_|\__,_|_|_/___\__,_|\__|_|\___/|_| |_|
 
   vm.guest-services.enable = false;
   virt-manager.enable = false;
-
-  #steam = {
-  #  enable = true;
-  #  gamescopeSession.enable = true;
-  #  remotePlay.openFirewall = true;
-  #  dedicatedServer.openFirewall = true;
-  #};
 
   # Virtualization / Containers
   virtualisation.libvirtd.enable = false;
@@ -332,10 +364,6 @@ in {
     enable = false;
     dockerCompat = false;
     defaultNetwork.settings.dns_enabled = false;
-  };
-
-  users = {
-    mutableUsers = true;
   };
 
   # ___  ___ _ ____   _(_) ___ ___  ___
@@ -437,6 +465,10 @@ in {
       auth include login
     '';
   };
+  #_ __ (_)_  __
+  #| '_ \| \ \/ /
+  #| | | | |>  <
+  #|_| |_|_/_/\_\
 
   # Cachix, Optimization settings and garbage collection automation
   nix = {
@@ -455,9 +487,6 @@ in {
       options = "--delete-older-than 7d";
     };
   };
-
-  # For Electron apps to use wayland
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

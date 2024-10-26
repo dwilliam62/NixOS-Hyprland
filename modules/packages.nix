@@ -120,6 +120,7 @@
     #  QuickGUI won't build
     #quickgui
     remmina
+    rio #terminal emulator
     ripgrep
     smartmontools
     socat
