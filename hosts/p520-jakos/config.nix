@@ -1,8 +1,15 @@
 # Main default config
-
-{ config, pkgs, host, username, options, lib, inputs, system, ... }:
-let
-
+{
+  config,
+  pkgs,
+  host,
+  username,
+  options,
+  lib,
+  inputs,
+  system,
+  ...
+}: let
   inherit (import ./variables.nix) keyboardLayout;
   python-packages = pkgs.python3.withPackages (
     ps:
@@ -11,9 +18,7 @@ let
         pyquery # needed for hyprland-dots Weather script
       ]
   );
-
-in
-{
+in {
   imports = [
     ./hardware.nix
     ./users.nix
@@ -25,7 +30,6 @@ in
     ../../modules/local-hardware-clock.nix
     ../../modules/system.packages.nix
     ../../modules/packages.nix
-
   ];
 
   # BOOT related stuff
@@ -41,12 +45,12 @@ in
     ];
 
     # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+    kernelModules = ["v4l2loopback"];
+    extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
 
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
-      kernelModules = [ ];
+      availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
+      kernelModules = [];
     };
 
     # Needed For Some Steam Games
@@ -54,7 +58,7 @@ in
     #  "vm.max_map_count" = 2147483642;
     #};
 
-    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
+    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub
     # Bootloader SystemD
     loader.systemd-boot.enable = true;
 
@@ -105,7 +109,6 @@ in
   #  theme = "nixos";
   #};
 
-
   # Extra Module Options
   drivers.amdgpu.enable = true;
   drivers.intel.enable = false;
@@ -115,13 +118,15 @@ in
     intelBusID = "";
     nvidiaBusID = "";
   };
+
+  ##QEMU Guest services
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
 
   # networking
   networking.networkmanager.enable = true;
   networking.hostName = "${host}";
-  networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
+  networking.timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -150,7 +155,6 @@ in
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
       xwayland.enable = true;
     };
-
 
     waybar.enable = true;
     hyprlock.enable = true;
@@ -187,23 +191,29 @@ in
       enable = true;
       enableSSHSupport = true;
     };
-
   };
 
   users = {
     mutableUsers = true;
   };
+  # Moved to packages.nix
+  # Pacakges added here will be host specific.
 
-  environment.systemPackages = (with pkgs; [
-    # System Packages
+  environment.systemPackages =
+    (with pkgs; [
+      # System Packages
 
-    #waybar  # if wanted experimental next line
-    #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
-  ]) ++ [
-    python-packages
-  ];
+      #waybar  # if wanted experimental next line
+      #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
+    ])
+    ++ [
+      python-packages
+    ];
 
   # FONTS
+  #  Fonts moved to packages.nix
+  #  Font's added here will be host specific
+
   fonts.packages = with pkgs; [
     #noto-fonts
     #fira-code
@@ -313,11 +323,10 @@ in
     #  dataDir = "/home/${username}";
     #  configDir = "/home/${username}/.config/syncthing";
     #};
-
   };
 
   systemd.services.flatpak-repo = {
-    path = [ pkgs.flatpak ];
+    path = [pkgs.flatpak];
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
@@ -339,8 +348,8 @@ in
 
   hardware.sane = {
     enable = true;
-    extraBackends = [ pkgs.sane-airscan ];
-    disabledDefaultBackends = [ "escl" ];
+    extraBackends = [pkgs.sane-airscan];
+    disabledDefaultBackends = ["escl"];
   };
 
   # Extra Logitech Support
@@ -397,8 +406,8 @@ in
         "nix-command"
         "flakes"
       ];
-      substituters = [ "https://hyprland.cachix.org" ];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
     gc = {
       automatic = true;
@@ -442,11 +451,11 @@ in
     enable = true;
     extraRules = [
       {
-        users = [ "dwilliams" ];
+        users = ["dwilliams"];
         commands = [
           {
             command = "ALL";
-            options = [ "NOPASSWD" ];
+            options = ["NOPASSWD"];
           }
         ];
       }

@@ -1,5 +1,4 @@
 # Main default config
-
 {
   config,
   pkgs,
@@ -10,19 +9,16 @@
   inputs,
   system,
   ...
-}:
-let
-
+}: let
   inherit (import ./variables.nix) keyboardLayout;
   python-packages = pkgs.python3.withPackages (
-    ps: with ps; [
-      requests
-      pyquery # needed for hyprland-dots Weather script
-    ]
+    ps:
+      with ps; [
+        requests
+        pyquery # needed for hyprland-dots Weather script
+      ]
   );
-
-in
-{
+in {
   imports = [
     ./hardware.nix
     ./users.nix
@@ -49,8 +45,8 @@ in
     ];
 
     # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+    kernelModules = ["v4l2loopback"];
+    extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
 
     initrd = {
       availableKernelModules = [
@@ -61,7 +57,7 @@ in
         "usbhid"
         "sd_mod"
       ];
-      kernelModules = [ ];
+      kernelModules = [];
     };
 
     # Needed For Some Steam Games
@@ -69,7 +65,7 @@ in
     #  "vm.max_map_count" = 2147483642;
     #};
 
-    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
+    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub
     # Bootloader SystemD
     loader.systemd-boot.enable = true;
 
@@ -135,10 +131,10 @@ in
   # networking
   networking.networkmanager.enable = true;
   networking.hostName = "${host}";
-  networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
+  networking.timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
 
   # Set your time zone.
-  time.timeZone = "Asia/Seoul";
+  time.timeZone = "America/New_York";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -201,7 +197,6 @@ in
       enable = true;
       enableSSHSupport = true;
     };
-
   };
 
   users = {
@@ -292,11 +287,11 @@ in
 
     libinput.enable = true;
 
-    rpcbind.enable = false;
-    nfs.server.enable = false;
+    rpcbind.enable = true;
+    nfs.server.enable = true;
 
     openssh.enable = true;
-    flatpak.enable = false;
+    flatpak.enable = true;
 
     blueman.enable = true;
 
@@ -330,11 +325,10 @@ in
     #  dataDir = "/home/${username}";
     #  configDir = "/home/${username}/.config/syncthing";
     #};
-
   };
 
   systemd.services.flatpak-repo = {
-    path = [ pkgs.flatpak ];
+    path = [pkgs.flatpak];
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
@@ -414,8 +408,8 @@ in
         "nix-command"
         "flakes"
       ];
-      substituters = [ "https://hyprland.cachix.org" ];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
     gc = {
       automatic = true;
