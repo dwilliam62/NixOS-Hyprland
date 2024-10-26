@@ -18,6 +18,10 @@
         pyquery # needed for hyprland-dots Weather script
       ]
   );
+  #| |__   __ _ _ __ __| |_      ____ _ _ _____
+  #| '_ \ / _` | '__/ _` \ \ /\ / / _` | '__/ _ \
+  #| | | | (_| | | | (_| |\ V  V / (_| | | |  __/
+  #|_| |_|\__,_|_|  \__,_| \_/\_/ \__,_|_|  \___|
 in {
   imports = [
     ./hardware.nix
@@ -34,7 +38,9 @@ in {
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    kernelPackages = pkgs.linuxPackages_latest; #Latest  Kernel
+    #kernelPackages = pkgs.linuxPackages; #LTS Kernel
+    #kernelPackages = pkgs.linuxPackages_zen; #Zen Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
@@ -74,7 +80,7 @@ in {
       canTouchEfiVariables = true;
     };
 
-    loader.timeout = 1;
+    loader.timeout = 10;
 
     # Bootloader GRUB
     #loader.grub = {
@@ -125,13 +131,128 @@ in {
     intelBusID = "";
     nvidiaBusID = "";
   };
-  vm.guest-services.enable = false;
+
+  # zram
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    memoryPercent = 30;
+    swapDevices = 1;
+    algorithm = "zstd";
+  };
+
   local.hardware-clock.enable = false;
 
   # networking
   networking.networkmanager.enable = true;
   networking.hostName = "${host}";
   networking.timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
+
+  # OpenGL
+  hardware.graphics = {
+    enable = true;
+  };
+
+  smartd = {
+    enable = false;
+    autodetect = true;
+  };
+
+  pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+  };
+
+  udev.enable = true;
+  envfs.enable = true;
+  dbus.enable = true;
+
+  fstrim = {
+    enable = true;
+    interval = "weekly";
+  };
+
+  blueman.enable = true;
+
+  # OpenRGB
+  hardware.openrgb.enable = false;
+  hardware.openrgb.motherboard = "amd";
+
+  # Extra Logitech Support
+  hardware.logitech.wireless.enable = false;
+  hardware.logitech.wireless.enableGraphical = false;
+
+  # Bluetooth
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+          Experimental = true;
+        };
+      };
+    };
+  };
+
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
+
+  fwupd.enable = true;
+
+  upower.enable = true;
+
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "schedutil";
+  };
+
+  # ___  ___  / _| |___      ____ _ _ __ ___
+  #/ __|/ _ \| |_| __\ \ /\ / / _` | '__/ _ \
+  #\__ \ (_) |  _| |_ \ V  V / (_| | | |  __/
+  #|___/\___/|_|  \__| \_/\_/ \__,_|_|  \___|
+
+  environment.systemPackages =
+    (with pkgs; [
+      # System Packages
+      gotop
+      #waybar  # if wanted experimental next line
+      #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
+    ])
+    ++ [
+      python-packages
+    ];
+
+  # FONTS
+  fonts.packages = with pkgs; [
+    # Moved to systemPackages,nix
+    #noto-fonts
+    #fira-code
+    #noto-fonts-cjk-sans
+    # jetbrains-mono
+    font-awesome
+    #  terminus_font
+    #(nerdfonts.override {fonts = ["JetBrainsMono"];})
+  ];
+
+  # Extra Portal Configuration
+  xdg.portal = {
+    enable = true;
+    wlr.enable = false;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    configPackages = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal
+    ];
+  };
+
+  console.keyMap = "${keyboardLayout}";
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -162,32 +283,7 @@ in {
       xwayland.enable = true;
     };
 
-    waybar.enable = true;
-    hyprlock.enable = true;
-    firefox.enable = true;
-    git.enable = true;
-    nm-applet.indicator = true;
-    neovim.enable = true;
-
-    thunar.enable = true;
-    thunar.plugins = with pkgs.xfce; [
-      exo
-      mousepad
-      thunar-archive-plugin
-      thunar-volman
-      tumbler
-    ];
-
-    virt-manager.enable = false;
-
-    #steam = {
-    #  enable = true;
-    #  gamescopeSession.enable = true;
-    #  remotePlay.openFirewall = true;
-    #  dedicatedServer.openFirewall = true;
-    #};
-
-    xwayland.enable = true;
+    xwayland.enable = true; # Why is this here twice?
 
     dconf.enable = true;
     seahorse.enable = true;
@@ -199,45 +295,53 @@ in {
     };
   };
 
+  waybar.enable = true;
+  hyprlock.enable = true;
+  firefox.enable = true;
+  git.enable = true;
+  nm-applet.indicator = true;
+  neovim.enable = true;
+
+  thunar.enable = true;
+  thunar.plugins = with pkgs.xfce; [
+    exo
+    mousepad
+    thunar-archive-plugin
+    thunar-volman
+    tumbler
+  ];
+
+  #\ \   / (_)_ __| |_ _   _  __ _| (_)______ _| |_(_) ___  _ __
+  # \ \ / /| | '__| __| | | |/ _` | | |_  / _` | __| |/ _ \| '_ \
+  #\ V / | | |  | |_| |_| | (_| | | |/ / (_| | |_| | (_) | | | |
+  #\_/  |_|_|   \__|\__,_|\__,_|_|_/___\__,_|\__|_|\___/|_| |_|
+
+  vm.guest-services.enable = false;
+  virt-manager.enable = false;
+
+  #steam = {
+  #  enable = true;
+  #  gamescopeSession.enable = true;
+  #  remotePlay.openFirewall = true;
+  #  dedicatedServer.openFirewall = true;
+  #};
+
+  # Virtualization / Containers
+  virtualisation.libvirtd.enable = false;
+  virtualisation.podman = {
+    enable = false;
+    dockerCompat = false;
+    defaultNetwork.settings.dns_enabled = false;
+  };
+
   users = {
     mutableUsers = true;
   };
 
-  environment.systemPackages =
-    (with pkgs; [
-      # System Packages
-
-      #waybar  # if wanted experimental next line
-      #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
-    ])
-    ++ [
-      python-packages
-    ];
-
-  # FONTS
-  fonts.packages = with pkgs; [
-    # Moved to systemPackages,nix
-    #noto-fonts
-    #fira-code
-    #noto-fonts-cjk-sans
-    # jetbrains-mono
-    # font-awesome
-    #  terminus_font
-    #(nerdfonts.override {fonts = ["JetBrainsMono"];})
-  ];
-
-  # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-  };
+  # ___  ___ _ ____   _(_) ___ ___  ___
+  #/ __|/ _ \ '__\ \ / / |/ __/ _ \/ __|
+  #\__ \  __/ |   \ V /| | (_|  __/\__ \
+  #|___/\___|_|    \_/ |_|\___\___||___/
 
   # Services to start
   services = {
@@ -260,30 +364,16 @@ in {
       };
     };
 
-    smartd = {
-      enable = false;
-      autodetect = true;
+    flatpak.enable = true;
+    systemd.services.flatpak-repo = {
+      path = [pkgs.flatpak];
+      script = ''
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      '';
     };
 
     gvfs.enable = true;
     tumbler.enable = true;
-
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-    };
-
-    udev.enable = true;
-    envfs.enable = true;
-    dbus.enable = true;
-
-    fstrim = {
-      enable = true;
-      interval = "weekly";
-    };
 
     libinput.enable = true;
 
@@ -291,89 +381,37 @@ in {
     nfs.server.enable = true;
 
     openssh.enable = true;
-    flatpak.enable = true;
-
-    blueman.enable = true;
-
-    #hardware.openrgb.enable = true;
-    #hardware.openrgb.motherboard = "amd";
-
-    fwupd.enable = true;
-
-    upower.enable = true;
 
     gnome.gnome-keyring.enable = true;
 
-    #printing = {
-    #  enable = false;
-    #  drivers = [
-    # pkgs.hplipWithPlugin
-    #  ];
-    #};
-
-    #avahi = {
-    #  enable = true;
-    #  nssmdns4 = true;
-    #  openFirewall = true;
-    #};
-
-    #ipp-usb.enable = true;
-
-    #syncthing = {
-    #  enable = false;
-    #  user = "${username}";
-    #  dataDir = "/home/${username}";
-    #  configDir = "/home/${username}/.config/syncthing";
-    #};
-  };
-
-  systemd.services.flatpak-repo = {
-    path = [pkgs.flatpak];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
-  # zram
-  zramSwap = {
-    enable = true;
-    priority = 100;
-    memoryPercent = 30;
-    swapDevices = 1;
-    algorithm = "zstd";
-  };
-
-  powerManagement = {
-    enable = true;
-    cpuFreqGovernor = "schedutil";
-  };
-
-  #hardware.sane = {
-  #  enable = true;
-  #  extraBackends = [ pkgs.sane-airscan ];
-  #  disabledDefaultBackends = [ "escl" ];
-  #};
-
-  # Extra Logitech Support
-  hardware.logitech.wireless.enable = false;
-  hardware.logitech.wireless.enableGraphical = false;
-
-  # Bluetooth
-  hardware = {
-    bluetooth = {
+    printing = {
       enable = true;
-      powerOnBoot = true;
-      settings = {
-        General = {
-          Enable = "Source,Sink,Media,Socket";
-          Experimental = true;
-        };
-      };
+      drivers = [
+        pkgs.hplipWithPlugin
+      ];
+    };
+
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
+
+    ipp-usb.enable = true;
+
+    syncthing = {
+      enable = false;
+      user = "${username}";
+      dataDir = "/home/${username}";
+      configDir = "/home/${username}/.config/syncthing";
     };
   };
 
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  hardware.sane = {
+    enable = false;
+    extraBackends = [pkgs.sane-airscan];
+    disabledDefaultBackends = ["escl"];
+  };
 
   # Security / Polkit
   security.rtkit.enable = true;
@@ -417,21 +455,6 @@ in {
       options = "--delete-older-than 7d";
     };
   };
-
-  # Virtualization / Containers
-  virtualisation.libvirtd.enable = false;
-  virtualisation.podman = {
-    enable = false;
-    dockerCompat = false;
-    defaultNetwork.settings.dns_enabled = false;
-  };
-
-  # OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
-
-  console.keyMap = "${keyboardLayout}";
 
   # For Electron apps to use wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
