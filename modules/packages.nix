@@ -138,6 +138,7 @@
     vscode-fhs
     w3m
     warp-terminal
+    waypaper
     wf-recorder
     xclip
     yad
