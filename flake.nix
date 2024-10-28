@@ -9,40 +9,37 @@
     wezterm.url = "github:wez/wezterm?dir=nix";
   };
 
-  outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      wezterm,
-      ...
-    }:
-    let
-      system = "x86_64-linux";
-      host = "explorer";
-      username = "dwilliams";
-      defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    wezterm,
+    ...
+  }: let
+    system = "x86_64-linux";
+    host = "p520-jakos";
+    username = "dwilliams";
+    defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
-    in
-    {
-      nixosConfigurations = {
-        "${host}" = nixpkgs.lib.nixosSystem rec {
-          specialArgs = {
-            inherit system;
-            inherit inputs;
-            inherit username;
-            inherit host;
-          };
-          modules = [
-            ./hosts/${host}/config.nix
-            inputs.distro-grub-themes.nixosModules.${system}.default
-          ];
-        };
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
       };
     };
+  in {
+    nixosConfigurations = {
+      "${host}" = nixpkgs.lib.nixosSystem rec {
+        specialArgs = {
+          inherit system;
+          inherit inputs;
+          inherit username;
+          inherit host;
+        };
+        modules = [
+          ./hosts/${host}/config.nix
+          inputs.distro-grub-themes.nixosModules.${system}.default
+        ];
+      };
+    };
+  };
 }
