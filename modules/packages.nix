@@ -143,7 +143,6 @@
     xclip
     yad
     yazi
-    zed-editor
     zellij
     zig
     zoxide
