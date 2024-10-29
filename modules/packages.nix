@@ -7,7 +7,7 @@
     # My programs
     (inputs.wezterm.packages.${pkgs.system}.default)
 
-    # Override for cliphis  Waiting for update to reach unstable bracnh
+    # Override for cliphis  aiting for update to reach unstable bracnh
     #  10-16-24
     #  https://nixpk.gs/pr-tracker.html?pr=348887
 
@@ -139,6 +139,7 @@
     w3m
     warp-terminal
     waypaper
+    wayvnc
     wf-recorder
     xclip
     yad
