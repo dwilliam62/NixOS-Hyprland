@@ -23,8 +23,8 @@
 
     # plugins
 
-    #pkgs.hyprlandPlugins.hyprtrails
-    #pkgs.hyprlandPlugins.hyprexpo
+    pkgs.hyprlandPlugins.hyprtrails
+    pkgs.hyprlandPlugins.hyprexpo
 
     alacritty
     alejandra
