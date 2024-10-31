@@ -21,6 +21,11 @@
     #        vendorHash = "sha256-M5n7/QWQ5POWE4hSCMa0+GOVhEDCOILYqkSYIGoy/l0=";
     #      }))
 
+    # plugins
+
+    #pkgs.hyprlandPlugins.hyprtrails
+    #pkgs.hyprlandPlugins.hyprexpo
+
     alacritty
     alejandra
     appimage-run
