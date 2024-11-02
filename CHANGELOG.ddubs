@@ -1,4 +1,7 @@
 
+11-2-24
+   - Updated flake
+   - Added Oglo's chicklet CSS file to dotfiles
 11-1-24
    - Updated flake
    - Added kitty themes to dotfiles/kitty/kitty-themes
