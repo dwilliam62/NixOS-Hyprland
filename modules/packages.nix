@@ -127,6 +127,7 @@
     remmina
     rio #terminal emulator
     ripgrep
+    shortwave
     smartmontools
     socat
     stacer
