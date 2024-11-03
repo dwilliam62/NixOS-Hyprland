@@ -23,14 +23,15 @@
 
     # plugins
 
-  #  pkgs.hyprlandPlugins.hyprtrails
-  #  pkgs.hyprlandPlugins.hyprexpo
+    #  pkgs.hyprlandPlugins.hyprtrails
+    #  pkgs.hyprlandPlugins.hyprexpo
 
     alacritty
     alejandra
     appimage-run
     aquamarine
     atop
+    atuin
     bat
     bottom
     brightnessctl
@@ -127,7 +128,6 @@
     remmina
     rio #terminal emulator
     ripgrep
-    shortwave
     smartmontools
     socat
     stacer
