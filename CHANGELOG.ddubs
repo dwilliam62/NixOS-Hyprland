@@ -1,4 +1,10 @@
 
+11-8-24
+   - Updated flake
+   - Huge update to hyprland and aquamarine
+   - many program updates. 
+   - Edit hyprland config for new shadow decoration primatives
+     (commented them out for the moment)
 11-2-24
    - Updated flake
    - Added Oglo's chicklet CSS file to dotfiles
