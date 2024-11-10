@@ -1,4 +1,9 @@
 
+11-10-24
+   - Updated flake
+   - Add postgres service to help someone
+     leaving it in place for now in prometheus conifg
+   - Got update to Hyprland 0.45 and aquamarin 0.4.4
 11-9-24
    - Updated flake
    - Hyprland 0.45 aquamarine 0.4.4 and related prgms
@@ -53,7 +58,7 @@
     -- Added lua-lsp
 10-21-24
   - Updated flake
-  - Added luarocks, xclip to try NVCHAD
+  -Added luarocks, xclip to try NVCHAD
 10-19-24
   - Updated flake
   - Removed google-chrome from packages.nix
