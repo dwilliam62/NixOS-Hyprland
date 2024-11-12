@@ -27,18 +27,20 @@
 	"group/mobo_drawer",
 	"custom/separator#blank",
 	"custom/separator#line",
+	"clock",
+	"custom/separator#line",
 	],
 
 "modules-center": [
 	"custom/swaync",
+	"custom/separator#dot-line",
 	"custom/cava_mviz",
 	"custom/separator#dot-line",
-	"clock",
 	"custom/separator#line",
-	"hyprland/workspaces#",
+	"hyprland/workspaces#roman",
 	"custom/separator#dot-line",
 	"idle_inhibitor",
-	"custom/hint",	
+    "hyprland/submap",
 	], 
 
 "modules-right": [
