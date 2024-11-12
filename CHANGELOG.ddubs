@@ -1,6 +1,7 @@
 
 11-11-24
    - Updated flake
+   - Add input, overlay and package Hyprpanel with config files 
 11-10-24
    - Updated flake
    - Add postgres service to help someone

@@ -12,6 +12,7 @@
 
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     wezterm.url = "github:wez/wezterm?dir=nix";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs = inputs @ {
@@ -21,12 +22,15 @@
     ...
   }: let
     system = "x86_64-linux";
-    host = "prometheus";
+    host = "p520-jakos";
     username = "dwilliams";
     defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 
     pkgs = import nixpkgs {
       inherit system;
+      overlays = [
+        inputs.hyprpanel.overlay
+      ];
       config = {
         allowUnfree = true;
       };

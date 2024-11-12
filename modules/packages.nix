@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     # My programs
     (inputs.wezterm.packages.${pkgs.system}.default)
+    (inputs.hyprpanel.packages.${pkgs.system}.default)
 
     # Override for cliphis  aiting for update to reach unstable bracnh
     #  10-16-24
@@ -118,6 +119,7 @@
     obs-studio
     okular
     ouch
+    pactl
     pfetch
     ptyxis
     powertop
