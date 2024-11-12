@@ -119,7 +119,6 @@
     obs-studio
     okular
     ouch
-    pactl
     pfetch
     ptyxis
     powertop
