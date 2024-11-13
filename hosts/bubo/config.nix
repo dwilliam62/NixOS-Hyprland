@@ -241,7 +241,9 @@
       settings = {
         default_session = {
           user = username;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
+          # start Hyprland with a TUI login manager
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cm
+d Hyprland"; 
         };
       };
     };
