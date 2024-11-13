@@ -2,6 +2,7 @@
 11-12-24
    - Updated flake
    - Updated Modules sumbap feature copies to dotfiles folder
+   - Themeing TUIGreeter
 11-11-24
    - Updated flake
    - Add input, overlay and package Hyprpanel with config files 
