@@ -3,6 +3,7 @@
    - Updated flake
    - Updated Modules sumbap feature copies to dotfiles folder
    - Themeing TUIGreeter for all hosts dracula theme + user menu
+   - Fixed split line is greetd command due copy/paste error
 11-11-24
    - Updated flake
    - Add input, overlay and package Hyprpanel with config files 
