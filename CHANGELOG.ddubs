@@ -2,7 +2,8 @@
 11-13-24
    - Updated flake
    - Updated hyprland, aquamarine, hyprutils, qtwayland
-   - Added ironbar but panics on startup
+   - Added ironbar fixed config.toml swaymode caused panics
+   - Added simple ironbar config to assets/dotfiles
 11-12-24
    - Updated flake
    - Updated Modules sumbap feature copies to dotfiles folder

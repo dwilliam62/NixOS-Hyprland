@@ -12,15 +12,18 @@ on_scroll_down = "swaymsg workspace next_on_output"
 [[end]]
 type = "sys_info"
 format = [
-    "⟮  {cpu_percent}% ⟯",
+    "⟮  {cpu_percent}% {temp_c:k10temp-Tccd2}°C⟯",
     "⟮  {memory_percent}%⟯",
     "⟮󰋊 {disk_percent:/}%⟯",
+    "⟮󰓢 {net_down:eno1} / {net_up:eno1} Mbps⟯",
 ]
 
 [end.interval]
 memory = 30
 cpu = 1
+temps = 5
 disks = 300
+networks = 3
 
 [[end]]
 type = "volume"
@@ -46,6 +49,9 @@ format = "  %H:%M:%S %d/%m/%Y"
 [[end]]
 type = "tray"
 direction = "left_to_right"
+
+[[start]]
+type = "sway_mode"
 
 [[end]]
 type = "notifications"
