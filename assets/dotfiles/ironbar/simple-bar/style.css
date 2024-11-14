@@ -1,0 +1,199 @@
+@define-color color_bg alpha(#2d2d2d, 0.7);
+@define-color color_bg_dark alpha(#1c1c1c, 0.7);
+@define-color color_border alpha(#424242, 0.7);
+@define-color color_border_active alpha(#6699cc, 0.7);
+@define-color color_text #ffffff;
+@define-color color_urgent #8f0a0a;
+
+/* -- base styles -- */
+
+* {
+    font-family: CaskaydiaCove Nerd Font, sans-serif;
+    font-size: 16px;
+    text-shadow: none;
+    border: none;
+    border-radius: 0;
+    opacity: 1.0;
+}
+.background {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+button, label {
+    box-shadow: none;
+    background: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: @color_text;
+}
+
+button:hover {
+    background-color: @color_bg_dark;
+}
+
+#bar {
+    background-color: @color_bg;
+    background-image: none;
+    box-shadow: none;
+}
+
+.popup {
+    border: 1px solid @color_border;
+    padding: 1em;
+}
+
+/* -- gtkscale -- */
+scale trough {
+    border-radius: 4px;
+    background-color: #535854;
+}
+
+scale trough highlight {
+    border-radius: 4px;
+    background-color: #96b9d0;
+}
+
+scale value {
+    color: #ffffff;
+}
+
+scale trough slider {
+    color: purple;
+    background-color: purple;
+}
+
+.popup-volume .slider slider {
+    background-color: #D9DDDC;
+    border-radius: 15;
+    border: 2px outset gold;
+    background-image: none;
+}
+
+/* -- clipboard -- */
+
+.clipboard {
+    margin-left: 5px;
+    font-size: 1.1em;
+}
+
+.popup-clipboard .item {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid @color_border;
+}
+
+.popup-clipboard {
+    background-color: @color_bg;
+}
+
+
+/* -- clock -- */
+
+.clock {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.popup-clock .calendar-clock {
+    color: @color_text;
+    font-size: 2.5em;
+    padding-bottom: 0.1em;
+}
+
+.popup-clock {
+    background-color: @color_bg;
+    color: @color_text;
+}
+
+.popup-clock .calendar .header {
+    padding-top: 1em;
+    border-top: 1px solid @color_border;
+    font-size: 1.5em;
+}
+
+.popup-clock .calendar:selected {
+    background-color: @color_border_active;
+}
+
+/* notifications */
+
+.notifications .count {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #DA373C;
+    color: white;
+    border-radius: 100%;
+    margin-right: 3px;
+    margin-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    opacity: 1;
+}
+
+/* -- script -- */
+
+.script {
+    padding-left: 10px;
+}
+
+
+/* -- sys_info -- */
+
+.sysinfo {
+    margin-right: 10px;
+}
+
+.sysinfo .item {
+    margin-left: 5px;
+}
+
+
+/* -- tray -- */
+
+.tray {
+    background-color: rgba(0,0,0,0);
+    margin-left: 10px;
+}
+.tray menu {
+    background-color: rgba(0,0,0, 0.7);
+    padding: 8px 0;
+}
+/* Overrides the label text just for the tray */
+.tray label {
+    /* color: black; */
+}
+
+/* -- volume -- */
+
+.popup-volume .device-box {
+    border-right: 1px solid @color_border;
+}
+
+.popup-volume {
+    background-color: @color_bg;
+}
+
+/* -- power -- */
+
+.popup-upower {
+    background-color: @color_bg;
+}
+
+/* -- workspaces -- */
+
+.workspaces .item.focused {
+    box-shadow: inset 0 -3px;
+    background-color: @color_bg_dark;
+}
+
+.workspaces .item:hover {
+    box-shadow: inset 0 -3px;
+}
+
+/* -- upower -- */
+.upower .icon {
+    opacity: 0;
+}
+
+.upower .contents {
+    color: @color_text;
+}
+

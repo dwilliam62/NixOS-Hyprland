@@ -79,6 +79,7 @@
     imagemagick
     iotop
     ipfetch
+    ironbar #waybar replacement
     jellyfin-media-player
     lazygit
     libvirt
