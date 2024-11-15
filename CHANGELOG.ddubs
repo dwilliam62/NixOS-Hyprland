@@ -3,6 +3,7 @@
    - Updated flake
    - Added override for AGS in system.packages.nix to 
      keep ags at v1.8.2 since v2.0 isn't backwardly compatible
+   - Added mighty-mini host to repo
 11-13-24
    - Updated flake
    - Added nvim config to assets/dotfiles  NVCHAD
