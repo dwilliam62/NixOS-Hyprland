@@ -1,5 +1,6 @@
 
 11-15-24
+   - Updated flake
    - Added override for AGS in system.packages.nix to 
      keep ags at v1.8.2 since v2.0 isn't backwardly compatible
 11-13-24
