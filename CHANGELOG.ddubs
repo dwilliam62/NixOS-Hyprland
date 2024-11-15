@@ -1,6 +1,9 @@
 
 11-13-24
    - Updated flake
+   - Added nvim config to assets/dotfiles  NVCHAD
+11-13-24
+   - Updated flake
    - Updated hyprland, aquamarine, hyprutils, qtwayland
    - Added ironbar fixed config.toml swaymode caused panics
    - Added simple ironbar config to assets/dotfiles
