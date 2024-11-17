@@ -27,11 +27,14 @@
     ranger
 
     # Hyprland Stuff
+    #  override for AGS to keep it at v1
        (ags.overrideAttrs (oldAttrs: {
         inherit (oldAttrs) pname;
         version = "1.8.2";
       }))
-    #ags
+
+    #version 2.0 not backward compatible with v1
+    #ags 
     btop
     #cava
     cmake
