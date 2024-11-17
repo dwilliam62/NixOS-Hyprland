@@ -33,7 +33,8 @@
       }))
     #ags
     btop
-    cava
+    #cava
+    cmake
     cliphist
     eog
     gnome-system-monitor
