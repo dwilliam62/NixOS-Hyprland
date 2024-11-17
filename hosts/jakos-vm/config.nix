@@ -230,9 +230,8 @@
       vt = 3;
       settings = {
         default_session = {
-          # Wayland Desktop Manager is installed only for user ryan via home-manager!
           user = username;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland"; 
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=cyan;container=blue;input=red' --cmd Hyprland"; 
         };
       };
     };

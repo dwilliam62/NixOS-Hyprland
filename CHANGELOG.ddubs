@@ -1,4 +1,6 @@
 
+11-17-24
+   - Fixed entries in xps and jakos-vm config.nix and users.nix
 11-16-24
    - Updated flake
    - Updated bubo laptop long overdue
