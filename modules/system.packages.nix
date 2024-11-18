@@ -33,11 +33,18 @@
         version = "1.8.2";
       }))
 
+    #  override for AGS to keep it at v1
+#       (cava.overrideAttrs (oldAttrs: {
+#        inherit (oldAttrs) pname;
+#        version = "10.3";
+#      }))
+
     #version 2.0 not backward compatible with v1
     #ags 
     btop
     #cava
     cmake
+    m4
     cliphist
     eog
     gnome-system-monitor

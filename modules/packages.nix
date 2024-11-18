@@ -27,6 +27,15 @@
     #  pkgs.hyprlandPlugins.hyprtrails
     #  pkgs.hyprlandPlugins.hyprexpo
 
+#    (pkgs.neovide.overrideAttrs {
+#    nativeBuildInputs = with pkgs; [
+#        makeWrapper
+#        pkg-config
+#        python3 # skia
+#        removeReferencesTo
+#       ];
+#    })
+
     alacritty
     alejandra
     appimage-run
