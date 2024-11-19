@@ -1,4 +1,7 @@
 
+11-18-24
+   - disabled cava
+   - Updated flake
 11-17-24
    - Fixed entries in xps and jakos-vm config.nix and users.nix
    - Updated flake 

@@ -33,7 +33,7 @@
         version = "1.8.2";
       }))
 
-    #  override for AGS to keep it at v1
+    #  override for cava build failure didn't work 
 #       (cava.overrideAttrs (oldAttrs: {
 #        inherit (oldAttrs) pname;
 #        version = "10.3";
