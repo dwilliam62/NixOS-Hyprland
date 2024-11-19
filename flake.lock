@@ -223,18 +223,16 @@
       },
       "locked": {
         "lastModified": 1731978971,
-        "narHash": "sha256-P9DXCxDvjFt4aMc2x67hvSpNvSqX18X840w6cEVZXoo=",
-        "ref": "refs/heads/main",
+        "narHash": "sha256-iwELdS0z0Yr8e3zRIBw07ug451T0rkEfGo3+vA5/Gg0=",
+        "owner": "hyprwm",
+        "repo": "Hyprland",
         "rev": "67cee430061626ccd73dc6d30eed9db289053608",
-        "revCount": 5480,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/hyprwm/Hyprland"
+        "type": "github"
       },
       "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/hyprwm/Hyprland"
+        "owner": "hyprwm",
+        "repo": "Hyprland",
+        "type": "github"
       }
     },
     "hyprland-plugins": {
@@ -645,11 +643,11 @@
       },
       "locked": {
         "dir": "nix",
-        "lastModified": 1731625276,
-        "narHash": "sha256-NbgX4nfGJYFflQauJZMTJrpgTD5oY3hgs+KNE3JJgSc=",
+        "lastModified": 1732036472,
+        "narHash": "sha256-8lv1bc7Lw5S7UFOduShwSHfBzB4Vl0ex22Cb+q/qLi0=",
         "owner": "wez",
         "repo": "wezterm",
-        "rev": "979df7826965348345a3305ed889a4b9aef838e1",
+        "rev": "4050072da21cc3106d0985281d75978c07e22abc",
         "type": "github"
       },
       "original": {

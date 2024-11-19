@@ -158,6 +158,7 @@
     waypaper
     wayvnc
     wf-recorder
+    wtfis
     xclip
     yad
     yazi
