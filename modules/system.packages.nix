@@ -33,18 +33,23 @@
         version = "1.8.2";
       }))
 
-    #  override for cava build failure didn't work 
-#       (cava.overrideAttrs (oldAttrs: {
-#        inherit (oldAttrs) pname;
-#        version = "10.3";
-#      }))
+    #  override for aquamarine 
+       (aquamarine.overrideAttrs (oldAttrs: {
+        inherit (oldAttrs) pname;
+        version = "0.4.5";
+      }))
+
+   #   override for hyprland 
+       (hyprland.overrideAttrs (oldAttrs: {
+        inherit (oldAttrs) pname;
+        version = "0.45";
+      }))
 
     #version 2.0 not backward compatible with v1
     #ags 
     btop
     #cava
     cmake
-    m4
     cliphist
     eog
     gnome-system-monitor

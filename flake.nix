@@ -2,7 +2,8 @@
   description = "KooL's NixOS-Hyprland";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/release-24.11";
+    #nixpkgs.url = "nixpkgs/nixos-unstable";
     #wallust.url = "git+https://codeberg.org/explosion-mental/wallust?ref=dev";
     hyprland.url = "github:hyprwm/Hyprland";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development

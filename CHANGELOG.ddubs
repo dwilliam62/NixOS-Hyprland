@@ -1,4 +1,8 @@
-
+11-19-24
+  - Hyprland crashed on startup
+  - Reverted to vicuna (stable) 
+  - Pinned aquamarin at 0.4.5
+  - Pinned hyprland at 0.45
 11-18-24
    - disabled cava
    - Updated flake
