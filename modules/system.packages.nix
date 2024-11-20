@@ -42,7 +42,7 @@
    #   override for hyprland 
        (hyprland.overrideAttrs (oldAttrs: {
         inherit (oldAttrs) pname;
-        version = "0.45";
+        version = "0.45.2";
       }))
 
     #version 2.0 not backward compatible with v1
