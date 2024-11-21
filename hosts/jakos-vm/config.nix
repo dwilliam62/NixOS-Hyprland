@@ -302,7 +302,7 @@
   # Bluetooth Support
   hardware.bluetooth.enable = false;
   hardware.bluetooth.powerOnBoot = false;
-  services.blueman.enable = true;
+  services.blueman.enable = false;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
