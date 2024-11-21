@@ -6,11 +6,15 @@
     #nixpkgs.url = "nixpkgs/nixos-unstable";
     #wallust.url = "git+https://codeberg.org/explosion-mental/wallust?ref=dev";
     hyprland.url = "github:hyprwm/Hyprland";
-    #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+
+   # Optional features currently disable
+   # I am not using plugins anymore 
+   #  Return IRL 
+   #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
+   # hyprland-plugins = {
+   #   url = "github:hyprwm/hyprland-plugins";
+   #   inputs.hyprland.follows = "hyprland";
+   # };
 
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     wezterm.url = "github:wez/wezterm?dir=nix";
