@@ -71,7 +71,6 @@
     libsForQt5.qtstyleplugin-kvantum # kvantum
     networkmanagerapplet
     nwg-look # requires unstable channel
-    nvtopPackages.full
     pamixer
     pavucontrol
     playerctl

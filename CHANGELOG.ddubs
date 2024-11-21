@@ -1,6 +1,8 @@
 
 11-20-24
   - updated flake
+  - Removed nvtop from packages moved to hosts
+  - Remove nomachine-client wasn't using it 
 11-19-24
   - Hyprland crashed on startup
   - Reverted to vicuna (stable) 

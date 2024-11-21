@@ -114,9 +114,7 @@
     neovim
     nh
     nix-ld
-    nomachine-client
     nomacs
-    nvtopPackages.full
     nwg-drawer
     nwg-dock-hyprland
     nwg-launchers
