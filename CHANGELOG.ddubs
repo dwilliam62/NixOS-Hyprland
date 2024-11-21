@@ -5,6 +5,8 @@
   - Pinned hyprland at 0.45.2
   - Updated flake
   - Updated aquamarin to 0.5.0 as test
+  - Removed gnome-system-monitor 
+    Don't need it and it caused gnome.bluetooth warning
 11-18-24
    - disabled cava
    - Updated flake

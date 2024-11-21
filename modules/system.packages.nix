@@ -45,6 +45,12 @@
         version = "0.45.2";
       }))
 
+   #   override for cava 
+   #    (cava.overrideAttrs (oldAttrs: {
+   #     inherit (oldAttrs) pname;
+   #     version = "0.10.3";
+   #   }))
+
     #version 2.0 not backward compatible with v1
     #ags 
     btop
@@ -52,7 +58,7 @@
     cmake
     cliphist
     eog
-    gnome-system-monitor
+    #gnome-system-monitor
     file-roller
     grim
     gtk-engine-murrine # for gtk themes
