@@ -36,7 +36,7 @@
     #  override for aquamarine 
        (aquamarine.overrideAttrs (oldAttrs: {
         inherit (oldAttrs) pname;
-        version = "0.5.0";
+        version = "0.4.5";
       }))
 
    #   override for hyprland 
