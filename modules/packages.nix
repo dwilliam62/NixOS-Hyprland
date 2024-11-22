@@ -99,6 +99,7 @@
     luarocks
     luajitPackages.lua-lsp
     lua-language-server
+    lunarvim
     mc
     meld
     meson
