@@ -22,7 +22,6 @@ in
 
     # define user packages here
     packages = with pkgs; [
-      nvtopPackages.full
       ];
     };
     
@@ -30,7 +29,10 @@ in
   }; 
   
   environment.shells = with pkgs; [ zsh ];
-  environment.systemPackages = with pkgs; [ fzf ]; 
+  environment.systemPackages = with pkgs; [ 
+  fzf
+  nvtopPackages.full
+  ]; 
     
   programs = {
   # Zsh configuration

@@ -6,6 +6,7 @@
   - Disabled bluetooth jakos-vm
   - Added nvtop to mighty-mini and p520 fixed syntax error
   - Made nixos icon smaller in fastfetch
+  - Added nvtop to other hosts in systempackages not user pkgs.
 11-19-24
   - Hyprland crashed on startup
   - Reverted to vicuna (stable) 
