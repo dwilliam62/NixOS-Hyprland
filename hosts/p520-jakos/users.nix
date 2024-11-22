@@ -22,8 +22,8 @@ in
 
     # define user packages here
     packages = with pkgs; [
-      ];
       nvtopPackages.full
+      ];
     };
     
     defaultUserShell = pkgs.zsh;

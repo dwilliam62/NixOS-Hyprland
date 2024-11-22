@@ -4,6 +4,7 @@
   - Removed nvtop from packages moved to hosts
   - Remove nomachine-client wasn't using it 
   - Disabled bluetooth jakos-vm
+  - Added nvtop to mighty-mini and p520 fixed syntax error
 11-19-24
   - Hyprland crashed on startup
   - Reverted to vicuna (stable) 
