@@ -1,6 +1,7 @@
 
 11-21-24
   - updated prometheus kernel to 6.11 
+  - updated flake
 11-20-24
   - updated flake
   - Removed nvtop from packages moved to hosts
