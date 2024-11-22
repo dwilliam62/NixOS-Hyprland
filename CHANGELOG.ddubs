@@ -5,6 +5,7 @@
   - Remove nomachine-client wasn't using it 
   - Disabled bluetooth jakos-vm
   - Added nvtop to mighty-mini and p520 fixed syntax error
+  - Made nixos icon smaller in fastfetch
 11-19-24
   - Hyprland crashed on startup
   - Reverted to vicuna (stable) 
