@@ -33,13 +33,12 @@ outputs = inputs @ {
     ];
     config = {
       allowUnfree = true;
-      allowUnsupportedSystem = true;
-      # Add the binary cache substituters here
+      #allowUnsupportedSystem = true;
+      # binary cache substituters 
       extra-substituters = [
         "https://cache.nixos.org"
         "https://hydra.nixos.org"
       ];
-      # Add the public keys if required (check documentation)
       # extra-trusted-public-keys = [...];
     };
   };
