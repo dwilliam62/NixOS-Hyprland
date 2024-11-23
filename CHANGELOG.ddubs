@@ -1,4 +1,8 @@
 
+11-22-24
+  - updated flake 
+  - updated prometheus to start hyprland in offload mode
+  - updated colors for prometheus greeter
 11-21-24
   - updated flake 
   - merged systempackages.nix to packages.nix
