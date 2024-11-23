@@ -256,7 +256,7 @@ in {
       settings = {
         default_session = {
           user = username;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=green;container=blue;input=red' --cmd nvidia-offload Hyprland"; # start Hyprland with a TUI login manager
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=green;container=blue;input=red' --cmd 'nvidia-offload Hyprland'"; # start Hyprland with a TUI login manager
         };
       };
     };
