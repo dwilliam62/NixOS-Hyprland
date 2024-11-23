@@ -1,17 +1,11 @@
 {
-     description = "KooL's NixOS-Hyprland";
+     description = "ddubs's NixOS-Hyprland";
 
 inputs = {
   nixpkgs.url = "nixpkgs/release-24.11";
-  # ... other inputs
-
   hyprland.url = "github:hyprwm/Hyprland";
-  # ... other inputs
-
   distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
-
   wezterm.url = "github:wez/wezterm?dir=nix";
-
   hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 };
 
