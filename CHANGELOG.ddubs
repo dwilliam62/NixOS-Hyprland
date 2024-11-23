@@ -3,6 +3,7 @@
   - updated flake 
   - merged systempackages.nix to packages.nix
   - updated configs for all hosts 
+  - Added cache.nixos.org and hydra.nixos.org as substitutors
 11-21-24
   - updated prometheus kernel to 6.11 
   - updated flake

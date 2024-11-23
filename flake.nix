@@ -1,68 +1,63 @@
 {
-  description = "KooL's NixOS-Hyprland";
+     description = "KooL's NixOS-Hyprland";
 
-  inputs = {
-    nixpkgs.url = "nixpkgs/release-24.11";
-    #nixpkgs.url = "nixpkgs/nixos-unstable";
-    #wallust.url = "git+https://codeberg.org/explosion-mental/wallust?ref=dev";
-    hyprland.url = "github:hyprwm/Hyprland";
+inputs = {
+  nixpkgs.url = "nixpkgs/release-24.11";
+  # ... other inputs
 
-   #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
-   # Another way pin versions 
-   # url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.42.0&submodules=1";
+  hyprland.url = "github:hyprwm/Hyprland";
+  # ... other inputs
 
-   # Not using hyprland-plugins
+  distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
 
-   # hyprland-plugins = {
-   #   url = "github:hyprwm/hyprland-plugins";
-   #   inputs.hyprland.follows = "hyprland";
-   # };
+  wezterm.url = "github:wez/wezterm?dir=nix";
 
-    distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+  hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+};
 
-    # Build wexterm from source - nnixpkgs version doesn't run
+outputs = inputs @ {
+  self,
+  nixpkgs,
+  wezterm,
+  ...
+}: let
+  system = "x86_64-linux";
+  host = "p520-jakos";
+  username = "dwilliams";
+  defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 
-    wezterm.url = "github:wez/wezterm?dir=nix";
-
-    # Possible waybar replacement 
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-  };
-
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    wezterm,
-    ...
-  }: let
-    system = "x86_64-linux";
-    host = "p520-jakos";
-    username = "dwilliams";
-    defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
-
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [
-        inputs.hyprpanel.overlay
+  pkgs = import nixpkgs {
+    inherit system;
+    overlays = [
+      inputs.hyprpanel.overlay
+    ];
+    config = {
+      allowUnfree = true;
+      allowUnsupportedSystem = true;
+      # Add the binary cache substituters here
+      extra-substituters = [
+        "https://cache.nixos.org"
+        "https://hydra.nixos.org"
       ];
-      config = {
-        allowUnfree = true;
-        allowUnsupportedSystem = true;
-      };
-    };
-  in {
-    nixosConfigurations = {
-      "${host}" = nixpkgs.lib.nixosSystem rec {
-        specialArgs = {
-          inherit system;
-          inherit inputs;
-          inherit username;
-          inherit host;
-        };
-        modules = [
-          ./hosts/${host}/config.nix
-          inputs.distro-grub-themes.nixosModules.${system}.default
-        ];
-      };
+      # Add the public keys if required (check documentation)
+      # extra-trusted-public-keys = [...];
     };
   };
+in {
+  nixosConfigurations = {
+    "${host}" = nixpkgs.lib.nixosSystem rec {
+      specialArgs = {
+        inherit system;
+        inherit inputs;
+        inherit username;
+        inherit host;
+      };
+      modules = [
+        ./hosts/${host}/config.nix
+        inputs.distro-grub-themes.nixosModules.${system}.default
+      ];
+    };
+  };
+};
 }
+

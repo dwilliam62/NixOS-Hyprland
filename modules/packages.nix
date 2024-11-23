@@ -57,14 +57,15 @@
         version = "0.45.2";
       }))
 
-   #   override for cava 
-   #    (cava.overrideAttrs (oldAttrs: {
-   #     inherit (oldAttrs) pname;
-   #     version = "0.10.3";
-   #   }))
+    #  override for cava 
+#       (cava.overrideAttrs (oldAttrs: {
+#        inherit (oldAttrs) pname;
+#        version = "0.9.3";
+#      }))
 
 
     baobab
+    #cava
     clang
     cpufrequtils
     duf
@@ -89,7 +90,6 @@
  #version 2.0 not backward compatible with v1
     #ags 
     btop
-    #cava
     cmake
     cliphist
     eog
