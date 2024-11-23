@@ -4,10 +4,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    # My programs
-    (inputs.wezterm.packages.${pkgs.system}.default)
-    (inputs.hyprpanel.packages.${pkgs.system}.default)
-
+ 
     # Override for cliphis  aiting for update to reach unstable bracnh
     #  10-16-24
     #  https://nixpk.gs/pr-tracker.html?pr=348887
@@ -35,6 +32,108 @@
 #        removeReferencesTo
 #       ];
 #    })
+
+ ## From systemPackages.nix
+ # System Packages
+
+ #  Overrides
+
+ # Hyprland Stuff
+    #  override for AGS to keep it at v1
+       (ags.overrideAttrs (oldAttrs: {
+        inherit (oldAttrs) pname;
+        version = "1.8.2";
+      }))
+
+    #  override for aquamarine 
+       (aquamarine.overrideAttrs (oldAttrs: {
+        inherit (oldAttrs) pname;
+        version = "0.4.5";
+      }))
+
+   #   override for hyprland 
+       (hyprland.overrideAttrs (oldAttrs: {
+        inherit (oldAttrs) pname;
+        version = "0.45.2";
+      }))
+
+   #   override for cava 
+   #    (cava.overrideAttrs (oldAttrs: {
+   #     inherit (oldAttrs) pname;
+   #     version = "0.10.3";
+   #   }))
+
+
+    baobab
+    clang
+    cpufrequtils
+    duf
+    eza
+    fastfetch
+    ffmpeg
+    glib # for gsettings to work
+    gsettings-qt
+    killall
+    libappindicator
+    libnotify
+    (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
+    openssl # required by Rainbow borders
+    pciutils
+    ranger
+    vim
+    wget
+    xdg-user-dirs
+    xdg-utils
+   
+
+ #version 2.0 not backward compatible with v1
+    #ags 
+    btop
+    #cava
+    cmake
+    cliphist
+    eog
+    #gnome-system-monitor
+    file-roller
+    grim
+    gtk-engine-murrine # for gtk themes
+    hyprcursor # requires unstable channel
+    hypridle # requires unstable channel
+    imagemagick
+    inxi
+    jq
+    kitty
+    libsForQt5.qtstyleplugin-kvantum # kvantum
+    libsForQt5.qt5ct
+    networkmanagerapplet
+    nwg-look # requires unstable channel
+    pamixer
+    pavucontrol
+    playerctl
+    polkit_gnome
+    pyprland
+    qt6ct
+    qt6.qtwayland
+    qt6Packages.qtstyleplugin-kvantum # kvantum
+    rofi-wayland
+    slurp
+    swappy
+    swaynotificationcenter
+    swww
+    unzip
+    wallust
+    wl-clipboard
+    wlogout
+    yad
+    yt-dlp
+
+
+ ## My packages 
+
+
+    (inputs.wezterm.packages.${pkgs.system}.default)
+    (inputs.hyprpanel.packages.${pkgs.system}.default)
+
 
     alacritty
     alejandra
@@ -73,7 +172,6 @@
     git
     github-desktop
     glances
-    #google-chrome
     gotop
     gping
     gpu-screen-recorder
@@ -88,7 +186,6 @@
     imagemagick
     iotop
     ipfetch
-    ironbar #waybar replacement
     jellyfin-media-player
     lazygit
     libvirt
@@ -166,6 +263,18 @@
     zig
     zoxide
   ];
+
+  # FONTS
+  fonts.packages = with pkgs; [
+    noto-fonts
+    fira-code
+    noto-fonts-cjk-sans
+    jetbrains-mono
+    font-awesome
+    terminus_font
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
   # Added per VIMjoyner vidoe on setting up nixd
   nix.nixPath = ["nixpkgs = ${inputs.nixpkgs}"];
 }

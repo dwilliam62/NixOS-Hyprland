@@ -7,17 +7,24 @@
     #wallust.url = "git+https://codeberg.org/explosion-mental/wallust?ref=dev";
     hyprland.url = "github:hyprwm/Hyprland";
 
-   # Optional features currently disable
-   # I am not using plugins anymore 
-   #  Return IRL 
    #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; # hyprland development
+   # Another way pin versions 
+   # url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.42.0&submodules=1";
+
+   # Not using hyprland-plugins
+
    # hyprland-plugins = {
    #   url = "github:hyprwm/hyprland-plugins";
    #   inputs.hyprland.follows = "hyprland";
    # };
 
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+
+    # Build wexterm from source - nnixpkgs version doesn't run
+
     wezterm.url = "github:wez/wezterm?dir=nix";
+
+    # Possible waybar replacement 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 

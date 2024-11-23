@@ -1,5 +1,9 @@
 
 11-21-24
+  - updated flake 
+  - merged systempackages.nix to packages.nix
+  - updated configs for all hosts 
+11-21-24
   - updated prometheus kernel to 6.11 
   - updated flake
 11-20-24
