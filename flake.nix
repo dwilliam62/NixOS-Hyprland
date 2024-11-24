@@ -6,7 +6,7 @@ inputs = {
   hyprland.url = "github:hyprwm/Hyprland";
   distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
   wezterm.url = "github:wez/wezterm?dir=nix";
-  hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+#  hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 };
 
 outputs = inputs @ {

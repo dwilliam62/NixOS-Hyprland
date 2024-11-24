@@ -2,6 +2,7 @@
 11-24-24
   - updated flake 
   - Running current hyprland/aq revisions on mighty-mini
+  - Disabled Hyprpanel   Not using it and fails on VM build
 11-23-24
   - updated flake 
   - Commented out hyprland/aquamarine overrides
