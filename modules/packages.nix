@@ -46,16 +46,16 @@
       }))
 
     #  override for aquamarine 
-       (aquamarine.overrideAttrs (oldAttrs: {
-        inherit (oldAttrs) pname;
-        version = "0.4.5";
-      }))
+        #   (aquamarine.overrideAttrs (oldAttrs: {
+        #  inherit (oldAttrs) pname;
+        # version = "0.4.5";
+        # }))
 
    #   override for hyprland 
-       (hyprland.overrideAttrs (oldAttrs: {
-        inherit (oldAttrs) pname;
-        version = "0.45.2";
-      }))
+        #       (hyprland.overrideAttrs (oldAttrs: {
+        #inherit (oldAttrs) pname;
+        # version = "0.45.2";
+        #  }))
 
     #  override for cava 
 #       (cava.overrideAttrs (oldAttrs: {

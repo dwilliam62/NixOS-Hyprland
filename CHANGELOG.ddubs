@@ -1,4 +1,8 @@
 
+11-23-24
+  - updated flake 
+  - Commented out hyprland/aquamarine overrides
+    testing AQ 5.0 and 45.2 Hyprland
 11-22-24
   - updated flake 
   - updated prometheus to start hyprland in offload mode
