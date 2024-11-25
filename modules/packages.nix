@@ -65,7 +65,7 @@
 
 
     baobab
-    #cava
+        #cava
     clang
     cpufrequtils
     duf

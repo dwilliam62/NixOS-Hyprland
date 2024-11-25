@@ -16,7 +16,7 @@ outputs = inputs @ {
   ...
 }: let
   system = "x86_64-linux";
-  host = "explorer";
+  host = "prometheus";
   username = "dwilliams";
   defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 
