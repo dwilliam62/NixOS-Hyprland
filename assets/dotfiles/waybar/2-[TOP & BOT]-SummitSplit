@@ -29,19 +29,16 @@
 	],
   
 "modules-center": [
+	"custom/swaync",
 	"idle_inhibitor",
 	"clock",  
-	"custom/light_dark",
+	"hyprland/workspaces#", 
 	], 
 
 "modules-right": [
-	"custom/weather",	  
-	"battery", 
-	"backlight",
-	"bluetooth",
-	"network",
-	"custom/updater",
-	"custom/cycle_wall",
+	"tray",
+	"pulseaudio",
+	"pulseaudio#microphone",	  
 	"custom/lock", 
 	],
 },
@@ -73,18 +70,11 @@
 	 ],
 
 "modules-center": [
-	"hyprland/workspaces#rw", 
+	"mpris",
 	],
 
 "modules-right": [
 	"hyprland/window",
-	"tray",
-	"custom/swaync",
-	"mpris",
-	"keyboard-state",
-	"pulseaudio",
-	//"wireplumber", 
-	"pulseaudio#microphone",	  
 	"custom/power",
 	],  
 }],
