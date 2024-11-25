@@ -16,7 +16,7 @@ outputs = inputs @ {
   ...
 }: let
   system = "x86_64-linux";
-  host = "explorer";
+  host = "p520-jakos";
   username = "dwilliams";
   defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 
