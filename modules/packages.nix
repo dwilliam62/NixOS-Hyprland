@@ -60,12 +60,11 @@
     #  override for cava 
 #       (cava.overrideAttrs (oldAttrs: {
 #        inherit (oldAttrs) pname;
-#        version = "0.9.3";
+#        version = "10.3";
 #      }))
 
 
-    baobab
-        #cava
+    #cava
     clang
     cpufrequtils
     duf
@@ -80,8 +79,6 @@
     (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
     openssl # required by Rainbow borders
     pciutils
-    ranger
-    vim
     wget
     xdg-user-dirs
     xdg-utils
@@ -93,7 +90,6 @@
     cmake
     cliphist
     eog
-    #gnome-system-monitor
     file-roller
     grim
     gtk-engine-murrine # for gtk themes
@@ -167,7 +163,7 @@
     fzf
     fishPlugins.grc
     grc
-    #  End
+    #  End fish packages
     gcc
     git
     github-desktop

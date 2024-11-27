@@ -5,6 +5,7 @@
     - Reverted kernel to LTS
   - Added src input for neovim 
   - Disabled neovim.enable on all hosts
+  - Removed gnome-system-monitor, vim 
 11-24-24
   - updated flake 
   - Running current hyprland/aq revisions on mighty-mini
