@@ -54,7 +54,7 @@
    #   override for hyprland 
         #       (hyprland.overrideAttrs (oldAttrs: {
         #inherit (oldAttrs) pname;
-        # version = "0.45.2";
+        # version = "0.45.0";
         #  }))
 
     #  override for cava 
