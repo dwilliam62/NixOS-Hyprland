@@ -2,6 +2,7 @@
 11-27-24
   - updated flake 
   - Added hyprpolkitagent
+  - Set it to autostart 
 11-26-24
   - updated flake 
   - Added new VM host
