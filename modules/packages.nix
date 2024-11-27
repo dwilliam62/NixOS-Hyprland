@@ -95,6 +95,7 @@
     gtk-engine-murrine # for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
+    hyprpolkitagent
     imagemagick
     inxi
     jq
