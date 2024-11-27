@@ -3,9 +3,17 @@
 
 inputs = {
   nixpkgs.url = "nixpkgs/release-24.11";
+  #nixpkgs.url = "nixpkgs/nixos-unstable";
   hyprland.url = "github:hyprwm/Hyprland";
   distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
   wezterm.url = "github:wez/wezterm?dir=nix";
+
+  neovim-src = {
+      url = "github:neovim/neovim";
+      flake = false;
+   };
+
+
 #  hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 };
 
@@ -16,7 +24,7 @@ outputs = inputs @ {
   ...
 }: let
   system = "x86_64-linux";
-  host = "p520-jakos";
+  host = "jak-nixos";
   username = "dwilliams";
   defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 

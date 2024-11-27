@@ -1,16 +1,14 @@
 # Main default config
 
 { config, pkgs, host, username, options, lib, inputs, system, ...}: let
-  
-  inherit (import ./variables.nix) keyboardLayout;
-  python-packages = pkgs.python3.withPackages (
-    ps:
-      with ps; [
-        requests
-        pyquery # needed for hyprland-dots Weather script
+    inherit (import ./variables.nix) keyboardLayout;
+    python-packages = pkgs.python3.withPackages (
+      ps:
+        with ps; [
+          requests
+          pyquery # needed for hyprland-dots Weather script
         ]
-    );
-  
+  	  );
   in {
   imports = [
     ./hardware.nix
@@ -21,19 +19,18 @@
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
-    ../../modules/packages.nix  
-   
+    ../../modules/packages.nix
   ];
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_11; # Kernel
+    kernelPackages = pkgs.linuxPackages; # Kernel
 
     kernelParams = [
-      "systemd.mask=systemd-vconsole-setup.service"
-      "systemd.mask=dev-tpmrm0.device" #this is to mask that stupid 1.5 mins systemd bug
+    	"systemd.mask=systemd-vconsole-setup.service"
+    	"systemd.mask=dev-tpmrm0.device" #this is to mask that stupid 1.5 mins systemd bug
       "nowatchdog" 
-      "modprobe.blacklist=sp5100_tco" #watchdog for AMD
+	   	"modprobe.blacklist=sp5100_tco" #watchdog for AMD
       "modprobe.blacklist=iTCO_wdt" #watchdog for Intel
  	  ];
 
@@ -68,13 +65,16 @@
 	    #  devices = [ "nodev" ];
 	    #  efiSupport = true;
       #  gfxmodeBios = "auto";
-	    #  memtest86.enable = true;
-	    #  extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #  configurationName = "${host}";
-  	  #	 };
+	    #memtest86.enable = true;
+	    #extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
+	    #configurationName = "${host}";
+  	  #	};
 
-    # Bootloader GRUB theme, configure below
-
+    # Bootloader GRUB theme  
+    #loader.grub = rec {
+    #  theme = inputs.distro-grub-themes.packages.${system}.nixos-grub-theme;
+    #  splashImage = "${theme}/splash_image.jpg";
+      #};
     ## -end of BOOTLOADERS----- ##
   
     # Make /tmp a tmpfs
@@ -92,27 +92,19 @@
       mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
       magicOrExtension = ''\x7fELF....AI\x02'';
       };
-    
-    plymouth.enable = false;
+    plymouth.enable = true;
   };
-
-  # GRUB Bootloader theme. Of course you need to enable GRUB above.. duh!
-  #distro-grub-themes = {
-  #  enable = true;
-  #  theme = "nixos";
-  #};
-
 
   # Extra Module Options
   drivers.amdgpu.enable = false;
-  drivers.intel.enable = false;
-  drivers.nvidia.enable = true;
+  drivers.nvidia.enable = false;
   drivers.nvidia-prime = {
     enable = false;
     intelBusID = "";
     nvidiaBusID = "";
   };
-  vm.guest-services.enable = false;
+  drivers.intel.enable = false;
+  vm.guest-services.enable = true;
   local.hardware-clock.enable = false;
 
   # networking
@@ -138,44 +130,29 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  nixpkgs.config.allowUnfree = true;
-  
   programs = {
 	  hyprland = {
       enable = true;
 		  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
 		  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
-  	  xwayland.enable = true;
-      };
+  	  };
 
+	xwayland.enable = true;
+
+	waybar.enable = true;
+	hyprlock.enable = true;
+	firefox.enable = false;
+	git.enable = true;
+
+	thunar.enable = true;
+	thunar.plugins = with pkgs.xfce; [
+		exo
+		mousepad
+		thunar-archive-plugin
+		thunar-volman
+		tumbler
+  	];
 	
-	  waybar.enable = true;
-	  hyprlock.enable = true;
-	  firefox.enable = false;
-	  git.enable = true;
-    nm-applet.indicator = true;
-    neovim.enable = false;
-
-	  thunar.enable = true;
-	  thunar.plugins = with pkgs.xfce; [
-		  exo
-		  mousepad
-		  thunar-archive-plugin
-		  thunar-volman
-		  tumbler
-  	  ];
-	
-    virt-manager.enable = true;
-    
-    #steam = {
-    #  enable = true;
-    #  gamescopeSession.enable = true;
-    #  remotePlay.openFirewall = true;
-    #  dedicatedServer.openFirewall = true;
-    #};
-    
-    xwayland.enable = true;
-
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -184,8 +161,18 @@
       enable = true;
       enableSSHSupport = true;
     };
+    virt-manager.enable = false;
+    
+    #steam = {
+    #  enable = true;
+    #  gamescopeSession.enable = true;
+    #  remotePlay.openFirewall = true;
+    #  dedicatedServer.openFirewall = true;
+    #};
 	
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   users = {
     mutableUsers = true;
@@ -193,7 +180,18 @@
 
   environment.systemPackages = (with pkgs; [
   # System Packages
+  #  override for aquamarine 
+           (aquamarine.overrideAttrs (oldAttrs: {
+          inherit (oldAttrs) pname;
+         version = "0.4.5";
+         }))
 
+   #   override for hyprland 
+               (hyprland.overrideAttrs (oldAttrs: {
+        inherit (oldAttrs) pname;
+         version = "0.45.0";
+          }))
+    
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
@@ -202,22 +200,23 @@
 
   # FONTS
   fonts.packages = with pkgs; [
-        #Moved to system.oackages.nix
-        #noto-fonts
-        #  fira-code
-        # noto-fonts-cjk-sans
-        # jetbrains-mono
-        # font-awesome
+        # Moved to system.packages.nix
+    #noto-fonts
+    #fira-code
+    #noto-fonts-cjk-sans
+        #jetbrains-mono
+        #font-awesome
         #  terminus_font
-        #(nerdfonts.override {fonts = ["JetBrainsMono"];})
+        #  (nerdfonts.override {fonts = ["JetBrainsMono"];})
  	];
 
-  # Extra Portal Configuration
+    # Extra Portal Configuration
   xdg.portal = {
     enable = true;
     wlr.enable = false;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
+      #pkgs.xdg-desktop-portal
     ];
     configPackages = [
       pkgs.xdg-desktop-portal-gtk
@@ -241,71 +240,39 @@
       settings = {
         default_session = {
           user = username;
-           # start Hyprland with a TUI login manager
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=blue;container=black;input=red' --cmd Hyprland"; 
-          #command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=cyan;container=blue;input=red' --cmd Hyprland"; 
         };
       };
     };
     
     smartd = {
-      enable = true;
+      enable = false;
       autodetect = true;
     };
     
-	  gvfs.enable = true;
-	  tumbler.enable = true;
-
-	  pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-	    wireplumber.enable = true;
-  	  };
-	
-	  udev.enable = true;
-	  envfs.enable = true;
-	  dbus.enable = true;
-
-	  fstrim = {
-      enable = true;
-      interval = "weekly";
-      };
-  
+    envfs.enable = true;
     libinput.enable = true;
-
-    rpcbind.enable = true;
-    nfs.server.enable = true;
-  
+    fstrim.enable = true;
+    gvfs.enable = true;
     openssh.enable = true;
     flatpak.enable = true;
-	
-  	blueman.enable = true;
-  	
-  	#hardware.openrgb.enable = true;
-  	#hardware.openrgb.motherboard = "amd";
-
-	  fwupd.enable = true;
-
-	  upower.enable = true;
+    
+    #printing = {
+    #  enable = false;
+    #  drivers = [
+        # pkgs.hplipWithPlugin
+    #  ];
+    #};
     
     gnome.gnome-keyring.enable = true;
     
-    printing = {
-      enable = false;
-      drivers = [
-         pkgs.hplipWithPlugin
-      ];
-    };
+    #avahi = {
+    #  enable = true;
+    #  nssmdns4 = true;
+    #  openFirewall = true;
+    #};
     
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-    };
-    
-    ipp-usb.enable = true;
+    #ipp-usb.enable = true;
     
     #syncthing = {
     #  enable = false;
@@ -313,7 +280,15 @@
     #  dataDir = "/home/${username}";
     #  configDir = "/home/${username}/.config/syncthing";
     #};
-
+    
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+    rpcbind.enable = true;
+    nfs.server.enable = true;
   };
   
   systemd.services.flatpak-repo = {
@@ -322,44 +297,21 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
-  # zram
-  zramSwap = {
-	  enable = true;
-	  priority = 100;
-	  memoryPercent = 30;
-	  swapDevices = 1;
-    algorithm = "zstd";
-    };
-
-  powerManagement = {
-  	enable = true;
-	  cpuFreqGovernor = "schedutil";
-  };
-
- hardware.sane = {
-    enable = true;
-    extraBackends = [ pkgs.sane-airscan ];
-    disabledDefaultBackends = [ "escl" ];
-  };
+  
+  #hardware.sane = {
+  #  enable = true;
+  #  extraBackends = [ pkgs.sane-airscan ];
+  #  disabledDefaultBackends = [ "escl" ];
+  #};
 
   # Extra Logitech Support
   hardware.logitech.wireless.enable = false;
   hardware.logitech.wireless.enableGraphical = false;
 
-  # Bluetooth
-  hardware = {
-  	bluetooth = {
-	    enable = true;
-	    powerOnBoot = true;
-	    settings = {
-		    General = {
-		      Enable = "Source,Sink,Media,Socket";
-		      Experimental = true;
-		    };
-      };
-    };
-  };
+  # Bluetooth Support
+  hardware.bluetooth.enable = false;
+  hardware.bluetooth.powerOnBoot = false;
+  services.blueman.enable = false;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -422,23 +374,7 @@
 
   console.keyMap = "${keyboardLayout}";
 
-  # For Electron apps to use wayland
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-
- security.sudo = { 
+   security.sudo = { 
    enable = true;
    extraRules = [ 
     {
@@ -453,5 +389,18 @@
    ];
   };
 
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }

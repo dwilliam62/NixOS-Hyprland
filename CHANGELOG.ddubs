@@ -1,6 +1,10 @@
 
 11-26-24
   - updated flake 
+  - Added new VM host
+    - Reverted kernel to LTS
+  - Added src input for neovim 
+  - Disabled neovim.enable on all hosts
 11-24-24
   - updated flake 
   - Running current hyprland/aq revisions on mighty-mini
