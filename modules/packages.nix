@@ -133,7 +133,6 @@
 
 
     alacritty
-    alejandra
     appimage-run
     aquamarine
     atop
@@ -148,8 +147,9 @@
     cpuid
     cpu-x
     dig
-    discord
+    discord-canary
     dua
+    fh
     figlet
     flameshot
     freeoffice
