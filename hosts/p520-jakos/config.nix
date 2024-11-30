@@ -247,7 +247,7 @@ in {
     };
 
     greetd = {
-      enable = true;
+      enable = false;
       vt = 3;
       settings = {
         default_session = {
@@ -256,6 +256,18 @@ in {
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland"; 
         };
       };
+    };
+
+    displayManager.sddm = {
+      enable = true;
+      theme = "maya";
+      wayland.enable = true;
+      extraPackages = with pkgs; [
+          sddm 
+          kdePackages.sddm
+          libsForQt5.qt5.qtgraphicaleffects
+          where-is-my-sddm-theme
+      ];
     };
 
     smartd = {

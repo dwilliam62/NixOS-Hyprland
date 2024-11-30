@@ -83,6 +83,12 @@
     xdg-user-dirs
     xdg-utils
    
+    # SDDM
+#       kdePackages 
+  #    sddm 
+  #    libsForQt5.qt5.qtgraphicaleffects
+  #    where-is-my-sddm-theme
+
 
  #version 2.0 not backward compatible with v1
     #ags 
