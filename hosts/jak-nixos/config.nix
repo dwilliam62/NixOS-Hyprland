@@ -235,7 +235,7 @@
     };
     
     greetd = {
-      enable = false;
+      enable = true;
       vt = 3;
       settings = {
         default_session = {
@@ -246,7 +246,7 @@
     };
 
       displayManager.sddm = {
-      enable = true;
+      enable = false;
       theme = "elarun";
       wayland.enable = true;
       extraPackages = with pkgs; [
