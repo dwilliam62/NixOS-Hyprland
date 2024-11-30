@@ -241,7 +241,7 @@
     };
     
     greetd = {
-      enable = true;
+      enable = false;
       vt = 3;
       settings = {
         default_session = {
@@ -250,6 +250,19 @@
         };
       };
     };
+
+     displayManager.sddm = {
+      enable = true;
+      theme = "elarun";
+      wayland.enable = true;
+      extraPackages = with pkgs; [
+          sddm 
+          kdePackages.sddm
+          libsForQt5.qt5.qtgraphicaleffects
+          where-is-my-sddm-theme
+      ];
+    };
+
     
     smartd = {
       enable = false;

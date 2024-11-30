@@ -381,7 +381,7 @@ in {
     };
 
     greetd = {
-      enable = true;
+      enable = false;
       vt = 3;
       settings = {
         default_session = {
@@ -391,6 +391,20 @@ in {
         };
       };
     };
+
+ displayManager.sddm = {
+      enable = true;
+      theme = "elarun";
+      wayland.enable = true;
+      extraPackages = with pkgs; [
+          sddm 
+          kdePackages.sddm
+          libsForQt5.qt5.qtgraphicaleffects
+          where-is-my-sddm-theme
+      ];
+    };
+
+
 
     flatpak.enable = true;
     systemd.services.flatpak-repo = {
