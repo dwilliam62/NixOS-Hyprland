@@ -260,7 +260,7 @@ in {
 
     displayManager.sddm = {
       enable = true;
-      theme = "maya";
+      theme = "elarun";
       wayland.enable = true;
       extraPackages = with pkgs; [
           sddm 
