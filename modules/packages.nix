@@ -64,7 +64,7 @@
 #      }))
 
 
-    #cava
+    cava
     clang
     cpufrequtils
     duf
