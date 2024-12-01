@@ -18,10 +18,6 @@
         pyquery # needed for hyprland-dots Weather script
       ]
   );
-  #| |__   __ _ _ __ __| |_      ____ _ _ _____
-  #| '_ \ / _` | '__/ _` \ \ /\ / / _` | '__/ _ \
-  #| | | | (_| | | | (_| |\ V  V / (_| | | |  __/
-  #|_| |_|\__,_|_|  \__,_| \_/\_/ \__,_|_|  \___|
 in {
   imports = [
     ./hardware.nix
@@ -36,44 +32,30 @@ in {
   ];
 
   # BOOT related stuff
-  # Select which kernel by uncommenting it and comment out the default which is latest kernel
-
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest; #Latest  Kernel
-    #kernelPackages = pkgs.linuxPackages; #LTS Kernel
-    #kernelPackages = pkgs.linuxPackages_zen; #Zen Kernel
+    kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
-      "systemd.mask=dev-tpmrm0.device" # this is to mask that stupid 1.5 mins systemd bug
+      "systemd.mask=dev-tpmrm0.device" #this is to mask that stupid 1.5 mins systemd bug
       "nowatchdog"
-      "modprobe.blacklist=sp5100_tco" # watchdog for AMD
-      "modprobe.blacklist=iTCO_wdt" # watchdog for Intel
+      "modprobe.blacklist=sp5100_tco" #watchdog for AMD
+      "modprobe.blacklist=iTCO_wdt" #watchdog for Intel
     ];
 
     # This is for OBS Virtual Cam Support
-    # Which is need to share screen in discord and other
-    # Electron based apps
-
     kernelModules = ["v4l2loopback"];
     extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
 
     initrd = {
-      availableKernelModules = [
-        "xhci_pci"
-        "ahci"
-        "nvme"
-        "usb_storage"
-        "usbhid"
-        "sd_mod"
-      ];
+      availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
       kernelModules = [];
     };
 
     # Needed For Some Steam Games
-    kernel.sysctl = {
-      "vm.max_map_count" = 2147483642;
-    };
+    #kernel.sysctl = {
+    #  "vm.max_map_count" = 2147483642;
+    #};
 
     ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub
     # Bootloader SystemD
@@ -84,7 +66,7 @@ in {
       canTouchEfiVariables = true;
     };
 
-    loader.timeout = 10;
+    loader.timeout = 1;
 
     # Bootloader GRUB
     #loader.grub = {
@@ -102,14 +84,9 @@ in {
     ## -end of BOOTLOADERS----- ##
 
     # Make /tmp a tmpfs
-    #  Be cautions enableing this.
-    #  If you make it too small rebuilds and upgrades will fail
-    #  Suggest leaving this as FALSE unless you know what you
-    #  are doing.
-
     tmp = {
       useTmpfs = false;
-      tmpfsSize = "40%";
+      tmpfsSize = "30%";
     };
 
     # Appimage Support
@@ -122,11 +99,7 @@ in {
       magicOrExtension = ''\x7fELF....AI\x02'';
     };
 
-    # Tis is for the NIXOS splash screen on startup
-    # Leavign this off rprevents a number of packages
-    # from being installed and speeds up the boot process
-
-    plymouth.enable = true;
+    plymouth.enable = false;
   };
 
   # GRUB Bootloader theme. Of course you need to enable GRUB above.. duh!
@@ -145,142 +118,14 @@ in {
     nvidiaBusID = "";
   };
 
-  # zram
-  zramSwap = {
-    enable = true;
-    priority = 100;
-    memoryPercent = 30;
-    swapDevices = 1;
-    algorithm = "zstd";
-  };
-
+  ##QEMU Guest services
+  vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
 
   # networking
   networking.networkmanager.enable = true;
   networking.hostName = "${host}";
   networking.timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
-
-  # OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
-
-  # Checke hardrves for errors
-  #  Disable when running in a VM
-  # or on older hardrives.
-
-  smartd = {
-    enable = false;
-    autodetect = true;
-  };
-
-  pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
-
-  udev.enable = true;
-  envfs.enable = true;
-  dbus.enable = true;
-
-  fstrim = {
-    enable = true;
-    interval = "weekly";
-  };
-
-  blueman.enable = true;
-
-  # OpenRGB
-  hardware.openrgb.enable = false;
-  hardware.openrgb.motherboard = "amd";
-
-  # Extra Logitech Support
-  hardware.logitech.wireless.enable = false;
-  hardware.logitech.wireless.enableGraphical = false;
-
-  # Bluetooth
-  hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-      settings = {
-        General = {
-          Enable = "Source,Sink,Media,Socket";
-          Experimental = true;
-        };
-      };
-    };
-  };
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-
-  fwupd.enable = true;
-
-  upower.enable = true;
-
-  powerManagement = {
-    enable = true;
-    cpuFreqGovernor = "schedutil";
-  };
-
-  # ___  ___  / _| |___      ____ _ _ __ ___
-  #/ __|/ _ \| |_| __\ \ /\ / / _` | '__/ _ \
-  #\__ \ (_) |  _| |_ \ V  V / (_| | | |  __/
-  #|___/\___/|_|  \__| \_/\_/ \__,_|_|  \___|
-
-  # environmental.systemPackagespackages installs software for this host
-  # only.  moduels/packaages.nix should be used for common
-  # packages for all hosts.
-
-  users = {
-    mutableUsers = true;
-  };
-
-  environment.systemPackages =
-    (with pkgs; [
-      # System Packages
-      gotop
-      #waybar  # if wanted experimental next line
-      #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
-    ])
-    ++ [
-      python-packages
-    ];
-
-  # FONTS
-  # Added here will only be installed on this host
-  # # Use modelues/packages.nix for fonts you want on every host
-
-  fonts.packages = with pkgs; [
-    # Moved to systemPackages,nix
-    #noto-fonts
-    #fira-code
-    #noto-fonts-cjk-sans
-    # jetbrains-mono
-    font-awesome
-    #  terminus_font
-    #(nerdfonts.override {fonts = ["JetBrainsMono"];})
-  ];
-
-  # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-  };
-
-  console.keyMap = "${keyboardLayout}";
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -305,13 +150,37 @@ in {
   programs = {
     hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; # hyprland-git
-      portalPackage =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
-      xwayland.enable = true; #enables xwayland in hyprland
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
+      xwayland.enable = true;
     };
 
-    xwayland.enable = true; # Enabled xwayland the package
+    waybar.enable = true;
+    hyprlock.enable = true;
+    firefox.enable = false;
+    git.enable = true;
+    nm-applet.indicator = true;
+    neovim.enable = false;
+
+    thunar.enable = true;
+    thunar.plugins = with pkgs.xfce; [
+      exo
+      mousepad
+      thunar-archive-plugin
+      thunar-volman
+      tumbler
+    ];
+
+    virt-manager.enable = true;
+
+    #steam = {
+    #  enable = true;
+    #  gamescopeSession.enable = true;
+    #  remotePlay.openFirewall = true;
+    #  dedicatedServer.openFirewall = true;
+    #};
+
+    xwayland.enable = true;
 
     dconf.enable = true;
     seahorse.enable = true;
@@ -323,52 +192,49 @@ in {
     };
   };
 
-  waybar.enable = true;
-  hyprlock.enable = true;
-  firefox.enable = true;
-  git.enable = true;
-  nm-applet.indicator = true;
-  neovim.enable = false;
+  users = {
+    mutableUsers = true;
+  };
+  # Moved to packages.nix
+  # Pacakges added here will be host specific.
 
-  thunar.enable = true;
-  thunar.plugins = with pkgs.xfce; [
-    exo
-    mousepad
-    thunar-archive-plugin
-    thunar-volman
-    tumbler
+  environment.systemPackages =
+    (with pkgs; [
+      # System Packages
+
+      #waybar  # if wanted experimental next line
+      #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
+    ])
+    ++ [
+      python-packages
+    ];
+
+  # FONTS
+  #  Fonts moved to packages.nix
+  #  Font's added here will be host specific
+
+  fonts.packages = with pkgs; [
+    #noto-fonts
+    #fira-code
+    # noto-fonts-cjk-sans
+    #jetbrains-mono
+    #  font-awesome
+    #  terminus_font
+    # (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
-  steam = {
-    enable = false;
-    gamescopeSession.enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
+  # Extra Portal Configuration
+  xdg.portal = {
+    enable = true;
+    wlr.enable = false;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    configPackages = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal
+    ];
   };
-
-  # For Electron apps to use wayland
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  #\ \   / (_)_ __| |_ _   _  __ _| (_)______ _| |_(_) ___  _ __
-  # \ \ / /| | '__| __| | | |/ _` | | |_  / _` | __| |/ _ \| '_ \
-  #  \ V / | | |  | |_| |_| | (_| | | |/ / (_| | |_| | (_) | | | |
-  #   \_/  |_|_|   \__|\__,_|\__,_|_|_/___\__,_|\__|_|\___/|_| |_|
-
-  vm.guest-services.enable = false;
-  virt-manager.enable = false;
-
-  # Virtualization / Containers
-  virtualisation.libvirtd.enable = false;
-  virtualisation.podman = {
-    enable = false;
-    dockerCompat = false;
-    defaultNetwork.settings.dns_enabled = false;
-  };
-
-  # ___  ___ _ ____   _(_) ___ ___  ___
-  #/ __|/ _ \ '__\ \ / / |/ __/ _ \/ __|
-  #\__ \  __/ |   \ V /| | (_|  __/\__ \
-  #|___/\___|_|    \_/ |_|\___\___||___/
 
   # Services to start
   services = {
@@ -386,13 +252,13 @@ in {
       settings = {
         default_session = {
           user = username;
-           # start Hyprland with a TUI login manager
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland";
+          # start Hyprland with a TUI login manager
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland"; 
         };
       };
     };
 
- displayManager.sddm = {
+    displayManager.sddm = {
       enable = true;
       theme = "elarun";
       wayland.enable = true;
@@ -404,18 +270,30 @@ in {
       ];
     };
 
-
-
-    flatpak.enable = true;
-    systemd.services.flatpak-repo = {
-      path = [pkgs.flatpak];
-      script = ''
-        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-      '';
+    smartd = {
+      enable = true;
+      autodetect = true;
     };
 
     gvfs.enable = true;
     tumbler.enable = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+
+    udev.enable = true;
+    envfs.enable = true;
+    dbus.enable = true;
+
+    fstrim = {
+      enable = true;
+      interval = "weekly";
+    };
 
     libinput.enable = true;
 
@@ -423,37 +301,89 @@ in {
     nfs.server.enable = true;
 
     openssh.enable = true;
+    flatpak.enable = true;
+
+    blueman.enable = true;
+
+    #hardware.openrgb.enable = true;
+    #hardware.openrgb.motherboard = "amd";
+
+    fwupd.enable = false;
+
+    upower.enable = true;
 
     gnome.gnome-keyring.enable = true;
 
     printing = {
-      enable = true;
+      enable = false;
       drivers = [
         pkgs.hplipWithPlugin
       ];
     };
 
     avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-    };
-
-    ipp-usb.enable = true;
-
-    syncthing = {
       enable = false;
-      user = "${username}";
-      dataDir = "/home/${username}";
-      configDir = "/home/${username}/.config/syncthing";
+      nssmdns4 = false;
+      openFirewall = false;
     };
+
+    ipp-usb.enable = false;
+
+    #syncthing = {
+    #  enable = false;
+    #  user = "${username}";
+    #  dataDir = "/home/${username}";
+    #  configDir = "/home/${username}/.config/syncthing";
+    #};
+  };
+
+  systemd.services.flatpak-repo = {
+    path = [pkgs.flatpak];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
+
+  # zram
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    memoryPercent = 30;
+    swapDevices = 1;
+    algorithm = "zstd";
+  };
+
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "schedutil";
   };
 
   hardware.sane = {
-    enable = false;
+    enable = true;
     extraBackends = [pkgs.sane-airscan];
     disabledDefaultBackends = ["escl"];
   };
+
+  # Extra Logitech Support
+  hardware.logitech.wireless.enable = false;
+  hardware.logitech.wireless.enableGraphical = false;
+
+  # Bluetooth
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+          Experimental = true;
+        };
+      };
+    };
+  };
+
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
 
   # Security / Polkit
   security.rtkit.enable = true;
@@ -479,10 +409,6 @@ in {
       auth include login
     '';
   };
-  #_ __ (_)_  __
-  #| '_ \| \ \/ /
-  #| | | | |>  <
-  #|_| |_|_/_/\_\
 
   # Cachix, Optimization settings and garbage collection automation
   nix = {
@@ -502,11 +428,29 @@ in {
     };
   };
 
+  # Virtualization / Containers
+  virtualisation.libvirtd.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
+
+  # OpenGL
+  hardware.graphics = {
+    enable = true;
+  };
+
+  console.keyMap = "${keyboardLayout}";
+
+  # For Electron apps to use wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -514,5 +458,23 @@ in {
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+
+ security.sudo.wheelNeedsPassword = false;
+
+  security.sudo = {
+    enable = true;
+    extraRules = [
+      {
+        users = ["dwilliams"];
+        commands = [
+          {
+            command = "ALL";
+            options = ["NOPASSWD"];
+          }
+        ];
+      }
+    ];
+  };
+
   system.stateVersion = "24.05"; # Did you read the comment?
 }

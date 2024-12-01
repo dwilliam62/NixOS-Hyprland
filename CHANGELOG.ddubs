@@ -1,4 +1,7 @@
 
+12-1-24
+  - added  security.sudo.wheelNeedsPassword = false;  to p520
+  - copied p520 config.nix to default/config.nix  was broken and now updated to current revision
 11-31-24
   - Updated flake
     Updated aquamarin hyprland and hyprutils
