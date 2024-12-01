@@ -1,5 +1,9 @@
 
+11-31-24
+  - Updated flake
+    Updated aquamarin hyprland and hyprutils
 11-30-24
+  - Added SDDM to P520-jakos config
   - Added SDDM to P520-jakos config
   - Updated flake
   - Enabled cava! 
