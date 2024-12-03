@@ -139,6 +139,7 @@
     atuin
     bat
     bottom
+    boxbuddy
     brightnessctl
     clang
     clang-tools
@@ -148,6 +149,8 @@
     cpu-x
     dig
     discord-canary
+    distrobox
+    distrobox-tui
     dua
     fh
     figlet

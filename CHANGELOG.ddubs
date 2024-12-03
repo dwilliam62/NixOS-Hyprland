@@ -1,4 +1,6 @@
 
+12-3-24
+   - Added boxbuddy, distrobox, distrobox-tui
 12-2-24
   - Updated flake
   - Removed override for cava not needed
