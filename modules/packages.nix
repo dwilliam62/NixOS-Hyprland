@@ -187,7 +187,6 @@
     iotop
     ipfetch
     jellyfin-media-player
-    lazydocker
     lazygit
     libvirt
     light
