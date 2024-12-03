@@ -57,12 +57,6 @@
         # version = "0.45.0";
         #  }))
 
-    #  override for cava 
-#       (cava.overrideAttrs (oldAttrs: {
-#        inherit (oldAttrs) pname;
-#        version = "10.3";
-#      }))
-
 
     cava
     clang
