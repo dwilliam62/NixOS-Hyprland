@@ -119,6 +119,7 @@
     swww
     unzip
     wallust
+    wdisplays
     wl-clipboard
     wlogout
     yad
