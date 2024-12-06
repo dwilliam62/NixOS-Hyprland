@@ -1,6 +1,7 @@
 
 12-6-24 
   - Added wdisplays
+  - Changed systemd login on prometheus to disable lid switch
 12-3-24
    - Added boxbuddy, distrobox, distrobox-tui
 12-2-24

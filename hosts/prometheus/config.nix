@@ -250,6 +250,13 @@ in {
     #    '';
     #  };
 
+    logind.extraConfig = ''
+       HandleLidSwitch=ignore
+       HandleLidSwitchExternalPower=ignore
+       HandleLidSwitchDocked=ignore
+    '';
+
+
     greetd = {
       enable = false;
       vt = 3;
