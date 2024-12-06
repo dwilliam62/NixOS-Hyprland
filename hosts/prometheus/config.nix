@@ -155,7 +155,7 @@ in {
 
     waybar.enable = true;
     hyprlock.enable = true;
-    firefox.enable = false;
+    firefox.enable = true;
     git.enable = true;
     nm-applet.indicator = true;
     neovim.enable = false;
