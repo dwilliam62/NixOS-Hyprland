@@ -32,6 +32,7 @@ in
   environment.systemPackages = with pkgs; [ 
   fzf
   nvtopPackages.full
+  lact
   ]; 
     
   programs = {

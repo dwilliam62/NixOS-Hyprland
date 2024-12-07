@@ -3,6 +3,7 @@
   - Added wdisplays
   - Changed systemd login on prometheus to disable lid switch
    - Added firefox to prometheus.  thorium won't work with search.nixos.org
+   - Add lact to P520-jakos fo AMD GPU monitor
 12-3-24
    - Added boxbuddy, distrobox, distrobox-tui
 12-2-24
