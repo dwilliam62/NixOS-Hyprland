@@ -205,6 +205,7 @@
     nixpkgs-fmt
     nixd
     nixfmt-rfc-style
+    nix-tree
     nodejs_22
     neofetch
     #neovide
