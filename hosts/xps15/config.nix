@@ -244,6 +244,14 @@ networking.extraHosts =
         variant = "";
       };
     };
+
+    
+    logind.extraConfig = ''
+       HandleLidSwitch=ignore
+       HandleLidSwitchExternalPower=ignore
+       HandleLidSwitchDocked=ignore
+    '';
+
     
     greetd = {
       enable = false;
