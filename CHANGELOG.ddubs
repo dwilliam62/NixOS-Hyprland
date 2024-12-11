@@ -1,4 +1,8 @@
 
+12-10-24 
+   - Finally neovim issues resolved and updated flake 
+   - large number of package updates 
+   - hyprqtils initial version added as new dependency for Hyprland
 12-8-24 
    - Disabled suspend for xps15/bubo on lid close
 12-7-24 
