@@ -33,7 +33,8 @@ in {
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_11; # Kernel
+    kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    #kernelPackages = pkgs.linuxPackages_6_11; # Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
@@ -155,7 +156,7 @@ in {
 
     waybar.enable = true;
     hyprlock.enable = true;
-    firefox.enable = true;
+    firefox.enable = false;
     git.enable = true;
     nm-applet.indicator = true;
     neovim.enable = false;

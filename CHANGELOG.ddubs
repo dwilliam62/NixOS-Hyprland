@@ -1,4 +1,7 @@
 
+12-11-24 
+  - Updated flake 
+  - Removed firefox on prometheus
 12-10-24 
    - Finally neovim issues resolved and updated flake 
    - large number of package updates 
