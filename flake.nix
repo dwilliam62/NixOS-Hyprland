@@ -22,7 +22,7 @@ outputs = inputs @ {
   ...
 }: let
   system = "x86_64-linux";
-  host = "explorer";
+  host = "jak-nixos";
   username = "dwilliams";
   #defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 
