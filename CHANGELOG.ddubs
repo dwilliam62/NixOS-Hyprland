@@ -2,6 +2,8 @@
 12-11-24 
   - Updated flake 
   - Removed firefox on prometheus
+  - added nethogs CLI utils 
+  - huge electron-unwrapped update 5hrs to build! 
 12-10-24 
    - Finally neovim issues resolved and updated flake 
    - large number of package updates 

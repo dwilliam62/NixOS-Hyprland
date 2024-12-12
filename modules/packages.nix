@@ -102,6 +102,7 @@
     kitty
     libsForQt5.qtstyleplugin-kvantum # kvantum
     libsForQt5.qt5ct
+    nethogs
     networkmanagerapplet
     nwg-look # requires unstable channel
     pamixer
