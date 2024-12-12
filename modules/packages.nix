@@ -130,7 +130,7 @@
  ## My packages 
 
 
-    (inputs.wezterm.packages.${pkgs.system}.default)
+ #   (inputs.wezterm.packages.${pkgs.system}.default)
  #   (inputs.hyprpanel.packages.${pkgs.system}.default)
 
 
@@ -254,6 +254,7 @@
     warp-terminal
     waypaper
     wayvnc
+    wezterm
     wf-recorder
     wtfis
     xclip

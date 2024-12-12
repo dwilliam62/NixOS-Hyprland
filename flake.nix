@@ -3,15 +3,14 @@
 
 inputs = {
   nixpkgs.url = "nixpkgs/release-24.11";
-  #nixpkgs.url = "nixpkgs/nixos-unstable";
   hyprland.url = "github:hyprwm/Hyprland";
-  distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
-  wezterm.url = "github:wez/wezterm?dir=nix";
+  #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+  #wezterm.url = "github:wez/wezterm?dir=nix";
 
-  neovim-src = {
-      url = "github:neovim/neovim";
-      flake = false;
-   };
+  #neovim-src = {
+  #    url = "github:neovim/neovim";
+  #    flake = false;
+  # };
 
 
 #  hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
@@ -20,19 +19,18 @@ inputs = {
 outputs = inputs @ {
   self,
   nixpkgs,
-  wezterm,
   ...
 }: let
   system = "x86_64-linux";
-  host = "p520-jakos";
+  host = "explorer";
   username = "dwilliams";
-  defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
+  #defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 
   pkgs = import nixpkgs {
     inherit system;
-    overlays = [
-      inputs.hyprpanel.overlay
-    ];
+    #overlays = [
+    #  inputs.hyprpanel.overlay
+    #];
     config = {
       allowUnfree = true;
       #allowUnsupportedSystem = true;
@@ -55,7 +53,7 @@ in {
       };
       modules = [
         ./hosts/${host}/config.nix
-        inputs.distro-grub-themes.nixosModules.${system}.default
+        #inputs.distro-grub-themes.nixosModules.${system}.default
       ];
     };
   };

@@ -4,6 +4,8 @@
   - Removed firefox on prometheus
   - added nethogs CLI utils 
   - huge electron-unwrapped update 5hrs to build! 
+  - Removed wexterm, hyprpanel and grub inputs fixed long build issue 
+  - Upd wezterm config for webgpu disabled wayland NixPkg still broken 
 12-10-24 
    - Finally neovim issues resolved and updated flake 
    - large number of package updates 
