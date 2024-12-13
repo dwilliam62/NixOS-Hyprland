@@ -171,7 +171,6 @@ in {
       tumbler
     ];
 
-    virt-manager.enable = true;
 
     #steam = {
     #  enable = true;
@@ -201,7 +200,11 @@ in {
   environment.systemPackages =
     (with pkgs; [
       # System Packages
-
+        qemu 
+        quickemu 
+        guestfs-tools
+        libvirt-glib
+        virtiofsd
       #waybar  # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])
@@ -435,6 +438,10 @@ in {
     dockerCompat = true;
     defaultNetwork.settings.dns_enabled = true;
   };
+
+   # Enable virt-manager
+   programs.virt-manager.enable = true;
+
 
   # OpenGL
   hardware.graphics = {

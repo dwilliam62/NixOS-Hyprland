@@ -230,9 +230,6 @@
     ptyxis
     powertop
     putty
-    quickemu
-    #  QuickGUI won't build
-    #quickgui
     remmina
     rio #terminal emulator
     ripgrep
@@ -246,7 +243,6 @@
     unrar
     v4l-utils
     vesktop
-    virt-manager
     virt-viewer
     vlc
     vscode-fhs

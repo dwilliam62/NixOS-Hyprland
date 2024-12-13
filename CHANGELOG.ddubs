@@ -1,4 +1,9 @@
 
+12-13-24 
+  - Updated flake 
+  - Added virt-manager files to the host packages for p520
+  - Removed them from system packages by default 
+  - Next is to add them only when virt-manager is enabled 
 12-11-24 
   - Updated flake 
   - Removed firefox on prometheus
