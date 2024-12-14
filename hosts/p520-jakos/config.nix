@@ -205,6 +205,7 @@ in {
         guestfs-tools
         libvirt-glib
         virtiofsd
+        freecad-wayland
       #waybar  # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])
