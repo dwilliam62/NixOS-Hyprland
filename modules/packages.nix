@@ -227,7 +227,9 @@
     okular
     ouch
     pfetch
+    picom
     ptyxis
+    polybar
     powertop
     putty
     remmina
@@ -236,6 +238,7 @@
     smartmontools
     socat
     stacer
+    sxhkd
     tilix
     tldr
     tmux

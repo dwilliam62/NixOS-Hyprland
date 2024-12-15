@@ -243,11 +243,14 @@ in {
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
+   windowManager.bspwm.enable=true;
+   windowManager.bspwm.configFile = builtins.getEnv "HOME" + "/.config/bspwm/bspwmrc";
+   windowManager.bspwm.sxhkd.configFile = builtins.getEnv "HOME" + "/.config/sxhkd/sxhkdrc";
     };
 
     greetd = {
@@ -261,6 +264,7 @@ in {
         };
       };
     };
+
 
     displayManager.sddm = {
       enable = true;
