@@ -227,9 +227,9 @@
     okular
     ouch
     pfetch
-    picom
+        #picom
     ptyxis
-    polybar
+        #polybar
     powertop
     putty
     remmina
@@ -238,8 +238,8 @@
     smartmontools
     socat
     stacer
-    sxhkd
-    tilix
+        #sxhkd
+        #tilix
     tldr
     tmux
     ugrep

@@ -200,12 +200,12 @@ in {
   environment.systemPackages =
     (with pkgs; [
       # System Packages
-        qemu 
-        quickemu 
-        guestfs-tools
-        libvirt-glib
-        virtiofsd
-        freecad-wayland
+            #qemu 
+            #quickemu 
+            #guestfs-tools
+            # libvirt-glib
+            # virtiofsd
+            # freecad-wayland
       #waybar  # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])
@@ -243,12 +243,12 @@ in {
   # Services to start
   services = {
     xserver = {
-      enable = true;
+      enable = false;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
-   windowManager.bspwm.enable=true;
+   windowManager.bspwm.enable=false;
    windowManager.bspwm.configFile = builtins.getEnv "HOME" + "/.config/bspwm/bspwmrc";
    windowManager.bspwm.sxhkd.configFile = builtins.getEnv "HOME" + "/.config/sxhkd/sxhkdrc";
     };
@@ -354,7 +354,7 @@ in {
 
   # zram
   zramSwap = {
-    enable = true;
+    enable = false;
     priority = 100;
     memoryPercent = 30;
     swapDevices = 1;
@@ -445,7 +445,7 @@ in {
   };
 
    # Enable virt-manager
-   programs.virt-manager.enable = true;
+   programs.virt-manager.enable = false;
 
 
   # OpenGL

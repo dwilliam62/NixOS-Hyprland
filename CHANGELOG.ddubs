@@ -1,6 +1,10 @@
 
 12-15-24 
   - Updated flake 
+  - Removed BSPWM,etc  Would not start black screen
+  - Removed Tilix never used it 
+12-15-24 
+  - Updated flake 
   - Added X11 and BSPWM to p520 config 
 12-14-24 
   - Updated flake 
