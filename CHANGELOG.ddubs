@@ -1,4 +1,9 @@
 
+12-16-24 
+  - Updated flake
+  - hl 0.46 released won't build 
+  - Pinned HL/AQ to 0.45.2/AQ 0.4.4
+  - Saving as working config for now. 
 12-15-24 
   - Updated flake 
   - Removed BSPWM,etc  Would not start black screen

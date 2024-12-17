@@ -179,6 +179,7 @@ in {
     #  dedicatedServer.openFirewall = true;
     #};
 
+
     xwayland.enable = true;
 
     dconf.enable = true;
@@ -194,11 +195,26 @@ in {
   users = {
     mutableUsers = true;
   };
+
   # Moved to packages.nix
   # Pacakges added here will be host specific.
 
   environment.systemPackages =
     (with pkgs; [
+
+    #  override for aquamarine 
+    (aquamarine.overrideAttrs (oldAttrs: {
+          inherit (oldAttrs) pname;
+         version = "0.5.0";
+      }))
+
+    #   override for hyprland 
+    (hyprland.overrideAttrs (oldAttrs: {
+        inherit (oldAttrs) pname;
+         version = "0.45.0";
+      }))
+
+    
       # System Packages
             #qemu 
             #quickemu 
