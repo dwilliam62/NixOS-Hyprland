@@ -201,27 +201,8 @@ in {
 
   environment.systemPackages =
     (with pkgs; [
-
-    #  override for aquamarine 
-    (aquamarine.overrideAttrs (oldAttrs: {
-          inherit (oldAttrs) pname;
-         version = "0.5.0";
-      }))
-
-    #   override for hyprland 
-    (hyprland.overrideAttrs (oldAttrs: {
-        inherit (oldAttrs) pname;
-         version = "0.45.0";
-      }))
-
-    
-      # System Packages
-            #qemu 
-            #quickemu 
-            #guestfs-tools
-            # libvirt-glib
-            # virtiofsd
-            # freecad-wayland
+      fzf
+      re2
       #waybar  # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])

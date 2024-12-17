@@ -1,5 +1,6 @@
 
 12-16-24 
+  - UPDATE: Build issue resolved unpinned HL/AQ 0.46 builds
   - Updated flake
   - hl 0.46 released won't build 
   - Pinned HL/AQ to 0.45.2/AQ 0.4.4
