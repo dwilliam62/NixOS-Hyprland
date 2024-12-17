@@ -90,12 +90,14 @@
     cmake
     cliphist
     eog
+    feh
     file-roller
     grim
     gtk-engine-murrine # for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
     hyprpolkitagent
+    hyprpaper
     imagemagick
     inxi
     jq
