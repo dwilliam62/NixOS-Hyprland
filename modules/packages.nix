@@ -228,6 +228,7 @@
     obs-studio
     okular
     ouch
+    pika-backup
     pfetch
         #picom
     ptyxis
