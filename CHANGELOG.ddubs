@@ -1,6 +1,12 @@
 
 12-18-24 
   - Updated flake
+  - Trying input change to get updated aquamarine for VMs.
+    -  hyprland = {
+         url = "github:hyprwm/Hyprland/v0.46.1";
+           # TODO: causes a full build of hyprland, remove this once flake gets updated
+         inputs.aquamarine.url = "github:hyprwm/Aquamarine/a23e9a9bdfa745efe578442f180e1079602ad6b9";
+       };
 12-16-24 
   - UPDATE: Build issue resolved unpinned HL/AQ 0.46 builds
   - Updated flake
