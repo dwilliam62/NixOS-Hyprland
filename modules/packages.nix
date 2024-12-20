@@ -45,6 +45,12 @@
         version = "1.8.2";
       }))
 
+    #  override for Yazi to keep it at v3.3
+      (yazi.overrideAttrs (oldAttrs: {
+        inherit (oldAttrs) pname;
+        version = "0.3.3";
+      }))
+
     #  override for aquamarine 
         #   (aquamarine.overrideAttrs (oldAttrs: {
         #  inherit (oldAttrs) pname;
@@ -211,7 +217,7 @@
     nix-tree
     nodejs_22
     neofetch
-    #neovide
+    neovide
     neovim
     nh
     nix-ld
@@ -261,7 +267,7 @@
     wtfis
     xclip
     yad
-    yazi
+    #yazi
     zed-editor
     zellij
     zig
