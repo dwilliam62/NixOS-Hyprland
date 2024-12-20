@@ -1,4 +1,7 @@
 
+12-20-24 
+  - Added neovide and mission center back in 
+  - made override for yazi at 0.3.3 for now 
 12-19-24 
   - Updated flake
   - Added waybar modules to assets/dotfiles/waybar

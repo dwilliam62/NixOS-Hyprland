@@ -208,7 +208,7 @@
     mc
     meld
     meson
-    #mission-center
+    mission-center
     ncdu
     ncftp
     nixpkgs-fmt
