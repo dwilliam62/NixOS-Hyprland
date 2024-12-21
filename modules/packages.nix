@@ -160,6 +160,7 @@
     discord-canary
     distrobox
     dua
+    evolution
     fh
     figlet
     flameshot
