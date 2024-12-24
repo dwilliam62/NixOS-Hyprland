@@ -2,6 +2,7 @@
 12-23-24 
   - Update flake
   - disabled podman/virt on explorer
+  - remvoed overried for hyprland/AQ for jak-nixos VM
 12-21-24 
   - Update flake
   - Added evolution to manage emails

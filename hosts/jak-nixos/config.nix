@@ -181,16 +181,16 @@
   environment.systemPackages = (with pkgs; [
   # System Packages
   #  override for aquamarine 
-           (aquamarine.overrideAttrs (oldAttrs: {
-             inherit (oldAttrs) pname;
-        version = "0.4.5";
-         }))
+        #           (aquamarine.overrideAttrs (oldAttrs: {
+        #     inherit (oldAttrs) pname;
+        #version = "0.4.5";
+        # }))
 
    #   override for hyprland 
-               (hyprland.overrideAttrs (oldAttrs: {
-        inherit (oldAttrs) pname;
-         version = "0.45.0";
-          }))
+        #       (hyprland.overrideAttrs (oldAttrs: {
+        #inherit (oldAttrs) pname;
+        # version = "0.45.0";
+        #  }))
     
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
