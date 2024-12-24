@@ -160,13 +160,13 @@
 	  thunar.enable = true;
 	  thunar.plugins = with pkgs.xfce; [
 		  exo
-		  mousepad
+		  #mousepad
 		  thunar-archive-plugin
 		  thunar-volman
 		  tumbler
   	  ];
 	
-    virt-manager.enable = true;
+    virt-manager.enable = false;
     
     #steam = {
     #  enable = true;
@@ -421,9 +421,9 @@
   };
 
   # Virtualization / Containers
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.enable = false;
   virtualisation.podman = {
-    enable = true;
+    enable = false;
     dockerCompat = true;
     defaultNetwork.settings.dns_enabled = true;
   };
