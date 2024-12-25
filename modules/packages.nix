@@ -76,6 +76,7 @@
     cargo
     cliphist
     eog
+    fd
     feh
     file-roller
     grim

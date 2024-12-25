@@ -174,7 +174,8 @@ networking.extraHosts =
 		thunar-volman
 		tumbler
   	];
-	
+
+    neovim.enable = true;
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
