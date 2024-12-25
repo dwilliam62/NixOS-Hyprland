@@ -2,6 +2,7 @@
  - Updated jak-nixos vm to 6.12.l6 
  - Added laucher submap to UserKeybinds copied to assets/dotfiles/hypr/UserConfigs
  - cleaning up old packages from modules/packages.nix
+ - Had to enable neovim on jak-nixos vm 
 12-23-24 
   - Update flake
   - disabled podman/virt on explorer

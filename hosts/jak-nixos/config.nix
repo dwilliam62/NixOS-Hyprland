@@ -162,6 +162,7 @@
       enableSSHSupport = true;
     };
     virt-manager.enable = false;
+    neovim.enable = true;
     
     #steam = {
     #  enable = true;
