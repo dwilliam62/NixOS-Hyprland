@@ -75,6 +75,7 @@
     cmake
     cargo
     cliphist
+    dunst
     eog
     fd
     feh

@@ -233,10 +233,10 @@
         layout = "${keyboardLayout}";
         variant = "";
       };
+   desktopManager.cinnamon.enable=true;
    windowManager.bspwm.enable=true;
    windowManager.bspwm.configFile = builtins.getEnv "HOME" + "/.config/bspwm/bspwmrc";
    windowManager.bspwm.sxhkd.configFile = builtins.getEnv "HOME" + "/.config/bspwmrc/sxhkdrc";
-
     };
     
     greetd = {
