@@ -71,6 +71,7 @@
  #version 2.0 not backward compatible with v1
     #ags 
     aquamarine
+    arandr
     btop
     cmake
     cargo
@@ -132,6 +133,7 @@
 
 
     alacritty
+    arandr
     appimage-run
     aquamarine
     atop
