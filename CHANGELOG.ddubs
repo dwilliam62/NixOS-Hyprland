@@ -4,6 +4,7 @@
  - cleaning up old packages from modules/packages.nix
  - Had to enable neovim on jak-nixos vm 
  - Added fd find and enabled neovim on all hosts
+ - Added bspwm to jak-nixos vm
 12-23-24 
   - Update flake
   - disabled podman/virt on explorer

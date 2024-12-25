@@ -228,15 +228,19 @@
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
+   windowManager.bspwm.enable=true;
+   windowManager.bspwm.configFile = builtins.getEnv "HOME" + "/.config/bspwm/bspwmrc";
+   windowManager.bspwm.sxhkd.configFile = builtins.getEnv "HOME" + "/.config/bspwmrc/sxhkdrc";
+
     };
     
     greetd = {
-      enable = true;
+      enable = false;
       vt = 3;
       settings = {
         default_session = {
@@ -247,7 +251,7 @@
     };
 
       displayManager.sddm = {
-      enable = false;
+      enable = true;
       theme = "elarun";
       wayland.enable = true;
       extraPackages = with pkgs; [

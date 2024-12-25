@@ -224,9 +224,9 @@
     ouch
     pika-backup
     pfetch
-        #picom
+    picom
     ptyxis
-        #polybar
+    polybar
     powertop
     putty
     remmina
@@ -235,8 +235,8 @@
     smartmontools
     socat
     stacer
-        #sxhkd
-        #tilix
+    sxhkd
+    tilix
     tldr
     tmux
     ugrep
@@ -253,6 +253,8 @@
     wezterm
     wf-recorder
     wtfis
+    variety
+    volumeicon
     xclip
     yad
     #yazi
