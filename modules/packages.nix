@@ -193,7 +193,7 @@
     luarocks
     luajitPackages.lua-lsp
     lua-language-server
-        #lunarvim
+    lunarvim
     mc
     meld
     meson
