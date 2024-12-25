@@ -1,6 +1,7 @@
 12-25-24
  - updated flake
  - Enable bspwm on explorer host
+ - Added aswsome to jakos vm and explorer
 12-24-24
  - Updated jak-nixos vm to 6.12.l6 
  - Added laucher submap to UserKeybinds copied to assets/dotfiles/hypr/UserConfigs

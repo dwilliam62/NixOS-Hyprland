@@ -181,6 +181,7 @@
 
   environment.systemPackages = (with pkgs; [
   # System Packages
+        luaPackages.vicious
   #  override for aquamarine 
         #           (aquamarine.overrideAttrs (oldAttrs: {
         #     inherit (oldAttrs) pname;
@@ -234,9 +235,10 @@
         variant = "";
       };
    desktopManager.cinnamon.enable=true;
-   windowManager.bspwm.enable=true;
-   windowManager.bspwm.configFile = builtins.getEnv "HOME" + "/.config/bspwm/bspwmrc";
-   windowManager.bspwm.sxhkd.configFile = builtins.getEnv "HOME" + "/.config/bspwmrc/sxhkdrc";
+   windowManager.awesome.enable=true;
+   windowManager.bspwm.enable=false;
+      windowManager.bspwm.configFile = builtins.getEnv "HOME" + "/.config/bspwm/bspwmrc";
+      windowManager.bspwm.sxhkd.configFile = builtins.getEnv "HOME" + "/.config/bspwmrc/sxhkdrc";
     };
     
     greetd = {
