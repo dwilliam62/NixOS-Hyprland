@@ -229,26 +229,17 @@
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
-      };
+      }; 
+      desktopManager.cinnamon.enable=true;
+      windowManager.bspwm.enable=false;
+      windowManager.bspwm.configFile = builtins.getEnv "HOME" + "/.config/bspwm/bspwmrc";
+      windowManager.bspwm.sxhkd.configFile = builtins.getEnv "HOME" + "/.config/bspwmrc/sxhkdrc";
     };
     
-    greetd = {
-      enable = false;
-      vt = 3;
-      settings = {
-        default_session = {
-          user = username;
-           # start Hyprland with a TUI login manager
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=blue;container=black;input=red' --cmd Hyprland"; 
-          #command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
-        };
-      };
-    };
-
      displayManager.sddm = {
       enable = true;
       theme = "elarun";

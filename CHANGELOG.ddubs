@@ -6,6 +6,7 @@
  - Added fd find and enabled neovim on all hosts
  - Added bspwm to jak-nixos vm - black screen
  - Added cinnamon to jak-nos vm works fine
+ - Added cinnamon to explorer system
 12-23-24 
   - Update flake
   - disabled podman/virt on explorer
