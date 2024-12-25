@@ -236,11 +236,10 @@
         layout = "${keyboardLayout}";
         variant = "";
       }; 
+      displayManager.defaultSession = "hyprland";  
       desktopManager.cinnamon.enable=true;
       windowManager.awesome.enable=true;
-      windowManager.bspwm.enable=false;
-      windowManager.bspwm.configFile = builtins.getEnv "HOME" + "/.config/bspwm/bspwmrc";
-      windowManager.bspwm.sxhkd.configFile = builtins.getEnv "HOME" + "/.config/bspwmrc/sxhkdrc";
+      windowManager.bspwm.enable=true;
     };
     
      displayManager.sddm = {
