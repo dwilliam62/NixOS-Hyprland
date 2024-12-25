@@ -2,6 +2,9 @@
  - updated flake
  - Enable bspwm on explorer host
  - Added aswsome to jakos vm and explorer
+ - Got bspwm working finally removed builtin options to specify config files 
+   bspwm will source .config/bspwm/bspwmrc by default 
+ - Removing awesomeWM 
 12-24-24
  - Updated jak-nixos vm to 6.12.l6 
  - Added laucher submap to UserKeybinds copied to assets/dotfiles/hypr/UserConfigs

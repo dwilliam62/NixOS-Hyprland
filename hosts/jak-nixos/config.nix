@@ -181,7 +181,7 @@
 
   environment.systemPackages = (with pkgs; [
   # System Packages
-        luaPackages.vicious
+        # luaPackages.vicious  #for awesomeWM
   #  override for aquamarine 
         #           (aquamarine.overrideAttrs (oldAttrs: {
         #     inherit (oldAttrs) pname;
@@ -234,9 +234,9 @@
         layout = "${keyboardLayout}";
         variant = "";
       };
-   displayManager.defaultSession = "Hyprland";
+   displayManager.defaultSession = "none+bspwm";
    desktopManager.cinnamon.enable=true;
-   windowManager.awesome.enable=true;
+   windowManager.awesome.enable=false;
    windowManager.bspwm.enable=true;
     };
     
