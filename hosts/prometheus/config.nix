@@ -239,7 +239,7 @@ in {
         layout = "${keyboardLayout}";
         variant = "";
       };
-      displayManager.defaultSession = "none+bspwm"; 
+      displayManager.defaultSession = "hyprland"; 
       windowManager.bspwm.enable=true;
     };
 
@@ -329,7 +329,7 @@ in {
     gnome.gnome-keyring.enable = true;
 
     printing = {
-      enable = false;
+      enable = true;
       drivers = [
         pkgs.hplipWithPlugin
       ];
