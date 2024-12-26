@@ -239,11 +239,14 @@ networking.extraHosts =
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
+    displayManager.defaultSession = "none+bspwm";
+   desktopManager.cinnamon.enable=true;
+   windowManager.bspwm.enable=true;
     };
 
     

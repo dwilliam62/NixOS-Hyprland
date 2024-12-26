@@ -1,5 +1,7 @@
 12-26-24
  - Enabled bspwm on prometheus
+ - Enabled bspwm/cinnmon on xps15
+ - Updated Flake
 12-25-24
  - updated flake
  - Enable bspwm on explorer host
