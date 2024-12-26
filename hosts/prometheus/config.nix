@@ -234,11 +234,13 @@ in {
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
+      displayManager.defaultSession = "none+bspwm"; 
+      windowManager.bspwm.enable=true;
     };
 
     # ... Added as test to help someone
