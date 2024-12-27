@@ -49,6 +49,22 @@
         "type": "github"
       }
     },
+    "flake-compat_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696426674,
+        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -69,16 +85,17 @@
     },
     "ghostty": {
       "inputs": {
+        "flake-compat": "flake-compat",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1735255310,
-        "narHash": "sha256-iAKNXAEfX+f+ETIgNPxCoNtmFpQsdEG3YYGhEPvohHI=",
+        "lastModified": 1735327789,
+        "narHash": "sha256-2czyfStf0qq2Kmb9P+5i3r+hGmr1J12DtJr1OoTqPDM=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "35b9ceee2116331b83c0c86269394e2545070b0f",
+        "rev": "4b3c1b031e22f8e5aeeb43459f2b632900381d88",
         "type": "github"
       },
       "original": {
@@ -183,11 +200,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1735209119,
-        "narHash": "sha256-zarY0tzIHyWcaImbIJOYRbBbHdLRdNDkRfOmzPVapRk=",
+        "lastModified": 1735318145,
+        "narHash": "sha256-TBtdzTTdlYLX+KJ3tQw1JQeJ4q8xGzzVD+BGn8YvaWQ=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "e75e2cdac79417ffdbbbe903f72668953483a4e7",
+        "rev": "534adad6b1940fcf0929a59be62dc78e5effaccc",
         "type": "github"
       },
       "original": {
@@ -395,11 +412,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1735253656,
-        "narHash": "sha256-zUfNgGopg1+/xYRnFaI6PAhlF2JofdEG789CsKclYSw=",
+        "lastModified": 1735326919,
+        "narHash": "sha256-BZlgs4l9CXAauo78giGCZdazMMk5VZNro7o5SHFUuyE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b41d02428f1226a56240fa87f45e8b9d89d2e96d",
+        "rev": "8f0aa155aa29f7d2b471aa2ffd322745bf2b2036",
         "type": "github"
       },
       "original": {
@@ -410,7 +427,7 @@
     },
     "pre-commit-hooks": {
       "inputs": {
-        "flake-compat": "flake-compat",
+        "flake-compat": "flake-compat_2",
         "gitignore": "gitignore",
         "nixpkgs": [
           "hyprland",
