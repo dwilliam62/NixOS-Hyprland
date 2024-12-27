@@ -3,6 +3,7 @@
  - Enabled bspwm/cinnmon on xps15
  - Updated Flake
  - Added ghostty terminal https://ghostty.org/
+ - Updated keybinds for ghostty 
 12-25-24
  - updated flake
  - Enable bspwm on explorer host
