@@ -1,0 +1,7 @@
+theme = AdventureTime
+#theme = Dracula
+theme = catppuccin-frappe
+
+background-opacity = 1
+copy-on-select = true
+
