@@ -4,9 +4,9 @@
  - Updated Flake
  - Added ghostty terminal https://ghostty.org/
  - Updated keybinds for ghostty 
- - Added initial ghostty config file to dotfiles
- - Added btop-rocm for AMD support in btop-rocm
- - Added python nvidia ml for NVIDIA support in btop
+ - Added initial ghostty config file to dotfilesS
+ - Removed btop-rocm 
+ - Added override to enable both NVIDIA and AMD
 12-25-24
  - updated flake
  - Enable bspwm on explorer host
