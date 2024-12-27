@@ -4,16 +4,8 @@
 inputs = {
   nixpkgs.url = "nixpkgs/release-24.11";
   hyprland.url = "github:hyprwm/Hyprland";
-  #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
-  #wezterm.url = "github:wez/wezterm?dir=nix";
 
-  #neovim-src = {
-  #    url = "github:neovim/neovim";
-  #    flake = false;
-  # };
-
-   #  hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-  # Ghosty Termioal
+  # Ghosty Terminal
    ghostty = {
       url = "github:ghostty-org/ghostty";
     };
