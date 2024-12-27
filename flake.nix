@@ -13,15 +13,20 @@ inputs = {
   # };
 
    #  hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+  # Ghosty Termioal
+   ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
 };
 
 outputs = inputs @ {
   self,
   nixpkgs,
+  ghostty,
   ...
 }: let
   system = "x86_64-linux";
-  host = "xps15";
+  host = "p520-jakos";
   username = "dwilliams";
   #defaultPackage.x86_64-linux = wezterm.packages.x86_64-linux.default;
 

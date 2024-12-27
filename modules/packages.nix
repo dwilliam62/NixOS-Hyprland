@@ -130,6 +130,7 @@
 
  #   (inputs.wezterm.packages.${pkgs.system}.default)
  #   (inputs.hyprpanel.packages.${pkgs.system}.default)
+    (inputs.ghostty.packages.${pkgs.system}.default)
 
 
     alacritty

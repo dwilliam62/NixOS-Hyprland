@@ -2,6 +2,7 @@
  - Enabled bspwm on prometheus
  - Enabled bspwm/cinnmon on xps15
  - Updated Flake
+ - Added ghostty terminal https://ghostty.org/
 12-25-24
  - updated flake
  - Enable bspwm on explorer host
