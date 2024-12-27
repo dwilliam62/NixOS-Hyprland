@@ -72,7 +72,8 @@
     #ags 
     aquamarine
     arandr
-    btop
+        #btop-rocm
+    (btop-rocm.override { cudaSupport = true; })
     cmake
     cargo
     cliphist
