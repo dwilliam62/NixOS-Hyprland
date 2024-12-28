@@ -9,6 +9,8 @@ inputs = {
    ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+   #3 NVIDA graphics switcher
+   envycontrol.url = github:bayasdev/envycontrol;
 };
 
 outputs = inputs @ {
