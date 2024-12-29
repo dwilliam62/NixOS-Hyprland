@@ -4,9 +4,11 @@
 inputs = {
   nixpkgs.url = "nixpkgs/release-24.11";
   hyprland.url = "github:hyprwm/Hyprland";
-  hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
+
   # Ghosty Terminal
-   ghostty.url = "github:ghostty-org/ghostty";
+   ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
    #3 NVIDA graphics switcher
    envycontrol.url = github:bayasdev/envycontrol;
 };
@@ -14,6 +16,7 @@ inputs = {
 outputs = inputs @ {
   self,
   nixpkgs,
+  ghostty,
   ...
 }: let
   system = "x86_64-linux";
@@ -31,11 +34,10 @@ outputs = inputs @ {
       #allowUnsupportedSystem = true;
       # binary cache substituters 
       extra-substituters = [
-        "https://cacheix.nixos.org"
-        #"https://hydra.nixos.org"
+        "https://cache.nixos.org"
+        "https://hydra.nixos.org"
       ];
       # extra-trusted-public-keys = [...];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
     };
   };
 in {

@@ -132,10 +132,9 @@
  ## My packages 
 
 
- #   (inputs.wezterm.packages.${pkgs.system}.default)
- #   (inputs.hyprpanel.packages.${pkgs.system}.default)
     (inputs.ghostty.packages.${pkgs.system}.default)
     (inputs.envycontrol.packages.${pkgs.system}.default)
+    (inputs.hyprland-qtutils.packages.${pkgs.system}.default)
 
 
     alacritty
