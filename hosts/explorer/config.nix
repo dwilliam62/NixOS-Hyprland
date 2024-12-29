@@ -229,6 +229,7 @@
   };
 
   # Services to start
+  services.displayManager.defaultSession = "hyprland"
   services = {
     xserver = {
       enable = true;
@@ -236,7 +237,7 @@
         layout = "${keyboardLayout}";
         variant = "";
       }; 
-      displayManager.defaultSession = "hyprland";  
+      #displayManager.defaultSession = "hyprland";  
       desktopManager.cinnamon.enable=true;
       windowManager.awesome.enable=true;
       windowManager.bspwm.enable=true;

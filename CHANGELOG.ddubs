@@ -1,6 +1,9 @@
 
 12-29-24
  - Updated flake
+ - Updated explorer 
+ - default session syntax changed fixed in explorer
+    Need to do for the other hosts 
 12-28-24
  - Updated flake
  - ghostty 1.0.1 update
