@@ -156,22 +156,21 @@
     discord-canary
     distrobox
     dua
-    evolution
     fh
     figlet
     flameshot
     freeoffice
     foot
     # fish shell and plugins
-    fish
-    fishPlugins.done
-    fishPlugins.fzf
-    fishPlugins.forgit
-    fishPlugins.hydro
-    fishPlugins.bass
-    fzf
-    fishPlugins.grc
-    grc
+    #fish
+    #fishPlugins.done
+    #fishPlugins.fzf
+    #fishPlugins.forgit
+    #fishPlugins.hydro
+    #fishPlugins.bass
+    #fzf
+    #fishPlugins.grc
+    #grc
     #  End fish packages
     gcc
     git
