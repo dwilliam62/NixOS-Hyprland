@@ -28,6 +28,7 @@
   fileSystems."/mnt/nas" =
     { device = "192.168.40.11:/volume1/DiskStation54TB";
       fsType = "nfs";
+      options = [ "rw" "bg" "tcp" "_netdev" ];
     };
 
   swapDevices =

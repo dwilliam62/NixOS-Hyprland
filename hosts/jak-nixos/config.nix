@@ -228,29 +228,18 @@
 
   # Services to start
   services = {
+    displayManager.defaultSession = "none+bspwm";
     xserver = {
       enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
-   displayManager.defaultSession = "none+bspwm";
-   desktopManager.cinnamon.enable=true;
-   windowManager.awesome.enable=false;
-   windowManager.bspwm.enable=true;
+        desktopManager.cinnamon.enable=true;
+        windowManager.awesome.enable=false;
+        windowManager.bspwm.enable=true;
     };
     
-    greetd = {
-      enable = false;
-      vt = 3;
-      settings = {
-        default_session = {
-          user = username;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=cyan;container=blue;input=red' --cmd Hyprland"; 
-        };
-      };
-    };
-
       displayManager.sddm = {
       enable = true;
       theme = "elarun";
@@ -292,13 +281,6 @@
     
     #ipp-usb.enable = true;
     
-    #syncthing = {
-    #  enable = false;
-    #  user = "${username}";
-    #  dataDir = "/home/${username}";
-    #  configDir = "/home/${username}/.config/syncthing";
-    #};
-    
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -313,6 +295,7 @@
     path = [ pkgs.flatpak ];
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
     '';
   };
   
@@ -393,7 +376,6 @@
   console.keyMap = "${keyboardLayout}";
 
    security.sudo.wheelNeedsPassword = false;
-
 
    security.sudo = { 
    enable = true;

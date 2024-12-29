@@ -5,6 +5,7 @@
  - default session syntax changed fixed in explorer
     Need to do for the other hosts 
  - Moved evolution to p520 only 
+ - Updated jak-nixos displaymgr setting 
 12-28-24
  - Updated flake
  - ghostty 1.0.1 update
