@@ -1,4 +1,7 @@
 
+12-31-24
+ - Updated flake
+ - Commented out uneeded apps in modules/packages.nix
 12-29-24
  - Updated flake
 12-29-24

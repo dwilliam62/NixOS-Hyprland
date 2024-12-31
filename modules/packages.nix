@@ -61,11 +61,6 @@
     xdg-user-dirs
     xdg-utils
    
-    # SDDM
-#       kdePackages 
-  #    sddm 
-  #    libsForQt5.qt5.qtgraphicaleffects
-  #    where-is-my-sddm-theme
 
 
  #version 2.0 not backward compatible with v1
@@ -90,7 +85,6 @@
     gtk-engine-murrine # for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
-    hyprland
     hyprutils
     hyprlock
     hyprpolkitagent
@@ -98,6 +92,7 @@
     hyprshot
     hyprcursor
     hyprland
+    hyprlang
     imagemagick
     inxi
     jq
@@ -140,7 +135,6 @@
     alacritty
     arandr
     appimage-run
-    aquamarine
     atop
     atuin
     bat
@@ -156,7 +150,7 @@
     discord-canary
     distrobox
     dua
-    fh
+    #fh
     figlet
     flameshot
     freeoffice
@@ -181,12 +175,9 @@
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     gsmartcontrol
-    gtop
+    #gtop
     htop
     hyfetch
-    hyprlang
-    hyprshot
-    hyprutils
     imagemagick
     iotop
     ipfetch
@@ -201,7 +192,7 @@
     luajitPackages.lua-lsp
     lua-language-server
     lunarvim
-    mc
+    #mc
     meld
     meson
     mission-center
@@ -237,7 +228,7 @@
     powertop
     putty
     remmina
-    rio #terminal emulator
+    #rio #terminal emulator
     ripgrep
     smartmontools
     socat
@@ -254,9 +245,9 @@
     vlc
     vscode-fhs
     w3m
-    warp-terminal
+    #warp-terminal
     waypaper
-    wayvnc
+    #wayvnc
     wezterm
     wf-recorder
     wtfis
@@ -266,7 +257,7 @@
     yad
     #yazi
     zed-editor
-    zellij
+    #zellij
     zig
     zoxide
   ];
