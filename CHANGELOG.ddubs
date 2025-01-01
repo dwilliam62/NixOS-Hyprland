@@ -2,6 +2,7 @@
 12-31-24
  - Updated flake
  - Commented out uneeded apps in modules/packages.nix
+ - Added new ghostty config to assets/dotfiles dir
 12-29-24
  - Updated flake
 12-29-24
