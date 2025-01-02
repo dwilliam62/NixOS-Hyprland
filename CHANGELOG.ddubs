@@ -4,6 +4,7 @@
   - deleted configfile references for BSPWM and renabled
   - Added lightdm to explorer X11 sessions start but Hyprland doesn't
   - Removed lightdm switched to GDM, enabled wayland support
+  - Tried enabling river w/archcrapft config Starts but blank screen
 1-1-25
  - Updated flake
  - Added handbrake to explorer host

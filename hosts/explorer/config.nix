@@ -153,6 +153,7 @@
 	  waybar.enable = true;
 	  hyprlock.enable = true;
 	  firefox.enable = false;
+      river.enable = false;
 	  git.enable = true;
     nm-applet.indicator = true;
     neovim.enable = true;
@@ -218,7 +219,7 @@
   # Extra Portal Configuration
   xdg.portal = {
     enable = true;
-    wlr.enable = false;
+    wlr.enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
@@ -245,15 +246,7 @@
       desktopManager.cinnamon.enable=true;
       windowManager.awesome.enable=false;
       windowManager.bspwm.enable=true;
-      displayManager.lightdm.enable=false;
-      displayManager.gdm = {
-        enable = true;
-         settings = {
-           greeter = {
-            Background = /home/dwilliams/Pictures/wallpapers/a_rocky_beach_with_water_in_the_background.jpg;
-           };
-         };
-        };
+      displayManager.gdm.enable = true;
       displayManager.gdm.wayland = true;
     };
     

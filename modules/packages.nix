@@ -121,6 +121,7 @@
     wallust
     wdisplays
     wl-clipboard
+    wlr-randr
     wlogout
     yad
     yt-dlp
@@ -195,6 +196,7 @@
     lua-language-server
     lunarvim
     #mc
+    mako #for River
     meld
     meson
     mission-center
@@ -251,6 +253,7 @@
     waypaper
     #wayvnc
     wezterm
+    wofi #for river
     wf-recorder
     wtfis
     variety
