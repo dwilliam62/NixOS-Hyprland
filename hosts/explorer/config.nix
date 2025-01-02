@@ -237,14 +237,19 @@
         layout = "${keyboardLayout}";
         variant = "";
       }; 
+       displayManager.lightdm.greeters = {
+        slick.enable = true;
+        gtk.enable = false;
+       }; 
       #displayManager.defaultSession = "hyprland";  
       desktopManager.cinnamon.enable=true;
       windowManager.awesome.enable=false;
       windowManager.bspwm.enable=true;
+      displayManager.lightdm.enable=true;
     };
     
      displayManager.sddm = {
-      enable = true;
+      enable = false;
       theme = "elarun";
       wayland.enable = true;
       extraPackages = with pkgs; [

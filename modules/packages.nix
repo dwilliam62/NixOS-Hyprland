@@ -102,6 +102,7 @@
     libsForQt5.qt5ct
     nethogs
     networkmanagerapplet
+    nitrogen
     nwg-look # requires unstable channel
     pamixer
     pavucontrol
