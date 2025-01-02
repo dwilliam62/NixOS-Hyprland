@@ -1,6 +1,7 @@
 
 1-1-25
  - Updated flake
+ - Added handbrake to explorer host
 12-31-24
  - Updated flake
  - Commented out uneeded apps in modules/packages.nix

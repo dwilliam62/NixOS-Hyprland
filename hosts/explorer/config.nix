@@ -195,7 +195,8 @@
   environment.systemPackages = (with pkgs; [
   # System Packages
 
-        luaPackages.vicious  #for awesome window mgr
+       # luaPackages.vicious  #for awesome window mgr
+       handbrake
 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
