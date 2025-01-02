@@ -83,6 +83,7 @@
     grim
     gnumake
     gtk-engine-murrine # for gtk themes
+    handbrake
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
     hyprutils
