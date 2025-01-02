@@ -246,9 +246,7 @@ in {
         layout = "${keyboardLayout}";
         variant = "";
       };
-   windowManager.bspwm.enable=false;
-   windowManager.bspwm.configFile = builtins.getEnv "HOME" + "/.config/bspwm/bspwmrc";
-   windowManager.bspwm.sxhkd.configFile = builtins.getEnv "HOME" + "/.config/sxhkd/sxhkdrc";
+   windowManager.bspwm.enable=true;
     };
 
     greetd = {

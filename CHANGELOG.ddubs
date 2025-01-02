@@ -1,4 +1,7 @@
 
+1-2-25
+  - Updated flake
+  - deleted configfile references for BSPWM and renabled
 1-1-25
  - Updated flake
  - Added handbrake to explorer host
