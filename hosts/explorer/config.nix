@@ -153,10 +153,10 @@
 	  waybar.enable = true;
 	  hyprlock.enable = true;
 	  firefox.enable = false;
-      river.enable = false;
+      river.enable = true;
 	  git.enable = true;
-    nm-applet.indicator = true;
-    neovim.enable = true;
+      nm-applet.indicator = true;
+      neovim.enable = true;
 
 	  thunar.enable = true;
 	  thunar.plugins = with pkgs.xfce; [
@@ -231,7 +231,7 @@
 
   # Services to start
   services = {
-      displayManager.defaultSession = "hyprland";  
+      displayManager.defaultSession = "none+bspwm";  
     xserver = {
       enable = true;
       xkb = {
@@ -242,7 +242,6 @@
         slick.enable = true;
         gtk.enable = false;
        }; 
-      #displayManager.defaultSession = "hyprland";  
       desktopManager.cinnamon.enable=true;
       windowManager.awesome.enable=false;
       windowManager.bspwm.enable=true;

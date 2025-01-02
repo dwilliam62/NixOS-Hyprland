@@ -90,7 +90,7 @@
     nethogs
     networkmanagerapplet
     nitrogen
-    nwg-look # requires unstable channel
+    nwg-look 
     pamixer
     pavucontrol
     playerctl
@@ -124,7 +124,7 @@
     arandr
     appimage-run
     atop
-    atuin
+    #atuin
     bat
     bottom
     cmatrix
@@ -216,6 +216,7 @@
     #warp-terminal
     alacritty
     foot
+    kitty
     putty 
     ptyxis
     tmux
@@ -251,8 +252,8 @@
     nwg-menu
     gpu-screen-recorder
     gpu-screen-recorder-gtk
-    hyprcursor # requires unstable channel
-    hypridle # requires unstable channel
+    hyprcursor 
+    hypridle 
     hyprutils
     hyprlock
     hyprpolkitagent
@@ -263,15 +264,14 @@
     hyprlang
 
     # Editor
-    neovim
     neovide
     zed-editor
     lunarvim
 
     # River
-     #makp
-     #wofi
-     #dmenu
+     mako
+     wofi
+     dmenu
 
     # fish shell and plugins
      #fish

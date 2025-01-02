@@ -6,6 +6,7 @@
   - Removed lightdm switched to GDM, enabled wayland support
   - Tried enabling river w/archcrapft config Starts but blank screen
   - Reorganizing packages.nix by catagory
+  - New kernel 6.12.8
 1-1-25
  - Updated flake
  - Added handbrake to explorer host
