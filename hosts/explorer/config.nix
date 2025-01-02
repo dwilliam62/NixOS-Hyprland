@@ -245,7 +245,9 @@
       desktopManager.cinnamon.enable=true;
       windowManager.awesome.enable=false;
       windowManager.bspwm.enable=true;
-      displayManager.lightdm.enable=true;
+      displayManager.lightdm.enable=false;
+      displayManager.gdm.enable=true;
+      displayManager.gdm.wayland = true;
     };
     
      displayManager.sddm = {

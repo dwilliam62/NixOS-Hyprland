@@ -3,6 +3,7 @@
   - Updated flake
   - deleted configfile references for BSPWM and renabled
   - Added lightdm to explorer X11 sessions start but Hyprland doesn't
+  - Removed lightdm switched to GDM, enabled wayland support
 1-1-25
  - Updated flake
  - Added handbrake to explorer host
