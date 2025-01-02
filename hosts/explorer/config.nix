@@ -246,7 +246,14 @@
       windowManager.awesome.enable=false;
       windowManager.bspwm.enable=true;
       displayManager.lightdm.enable=false;
-      displayManager.gdm.enable=true;
+      displayManager.gdm = {
+        enable = true;
+         settings = {
+           greeter = {
+            Background = /home/dwilliams/Pictures/wallpapers/a_rocky_beach_with_water_in_the_background.jpg;
+           };
+         };
+        };
       displayManager.gdm.wayland = true;
     };
     
