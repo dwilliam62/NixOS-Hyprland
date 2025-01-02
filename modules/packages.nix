@@ -83,21 +83,8 @@
     grim
     gnumake
     gtk-engine-murrine # for gtk themes
-    handbrake
-    hyprcursor # requires unstable channel
-    hypridle # requires unstable channel
-    hyprutils
-    hyprlock
-    hyprpolkitagent
-    hyprpaper
-    hyprshot
-    hyprcursor
-    hyprland
-    hyprlang
-    imagemagick
     inxi
     jq
-    kitty
     libsForQt5.qtstyleplugin-kvantum # kvantum
     libsForQt5.qt5ct
     nethogs
@@ -107,7 +94,6 @@
     pamixer
     pavucontrol
     playerctl
-    polkit_gnome
     pyprland
     qt6ct
     qt6.qtwayland
@@ -134,84 +120,126 @@
     (inputs.envycontrol.packages.${pkgs.system}.default)
     (inputs.hyprland-qtutils.packages.${pkgs.system}.default)
 
-
-    alacritty
+    # Utils
     arandr
     appimage-run
     atop
     atuin
     bat
     bottom
-    brightnessctl
-    clang
-    clang-tools
     cmatrix
-    cpufetch
-    cpuid
-    cpu-x
-    dig
-    discord-canary
-    distrobox
     dua
-    #fh
-    figlet
-    flameshot
-    freeoffice
-    foot
-    # fish shell and plugins
-    #fish
-    #fishPlugins.done
-    #fishPlugins.fzf
-    #fishPlugins.forgit
-    #fishPlugins.hydro
-    #fishPlugins.bass
-    #fzf
-    #fishPlugins.grc
-    #grc
-    #  End fish packages
-    gcc
-    git
-    github-desktop
     glances
     gotop
     gping
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    gsmartcontrol
-    #gtop
     htop
     hyfetch
-    imagemagick
     iotop
     ipfetch
-    jellyfin-media-player
-    lazygit
-    libvirt
+    lsd
+    neofetch
+    ncdu
+    ncftp
+    figlet
+    okular
+    ouch
+    pika-backup
+    ripgrep
+    socat
+    tldr
+    ugrep
+    unrar
+    #v4l-utils
+    #obs-studio
+    zoxide
+    starship
+    lolcat
+
+
+    # Hardware related
+    brightnessctl
+    cpufetch
+    cpuid
+    cpu-x
+    gsmartcontrol
+    smartmontools
     light
     lm_sensors
-    lsd
-    lolcat
+    pfetch
+    mission-center
+    stacer
+    pfetch
+    powertop
+
+    # Development related
+    clang
+    clang-tools
+    dig
+    gcc
+    git
+    github-desktop
+    lazygit
     luarocks
     luajitPackages.lua-lsp
     lua-language-server
-    lunarvim
-    #mc
-    mako #for River
     meld
     meson
-    mission-center
-    ncdu
-    ncftp
     nixpkgs-fmt
     nixd
     nixfmt-rfc-style
     nix-tree
     nodejs_22
-    neofetch
-    neovide
     nh
     nix-ld
+    vscode-fhs
+    w3m
+    zig
+
+    # Internet
+    discord-canary
+    vesktop
+    wtfis
+    discord-canary
+    distrobox
+    freeoffice
+
+    # Virtuaizaiton
+    virt-viewer
+    libvirt
+
+    # Video
+     vlc
+    jellyfin-media-player
+    handbrake
+
+    # Terminals
+    #warp-terminal
+    alacritty
+    foot
+    putty 
+    ptyxis
+    tmux
+    wezterm
+    remmina
+
+    # bspwm
+    sxhkd
+    tilix
+    flameshot
+    picom
+    polybar
+    variety
+    volumeicon
+    xclip
+    yad
     nomacs
+    polkit_gnome
+
+    # Hyprland related
+
+    imagemagick
+    waypaper
+    wf-recorder
     nwg-drawer
     nwg-dock-hyprland
     nwg-launchers
@@ -221,50 +249,49 @@
     nwg-wrapper
     nwg-look
     nwg-menu
-        #obs-studio
-    okular
-    ouch
-    pika-backup
-    pfetch
-    picom
-    ptyxis
-    polybar
-    powertop
-    putty
-    remmina
-    #rio #terminal emulator
-    ripgrep
-    smartmontools
-    socat
-    stacer
-    sxhkd
-    tilix
-    tldr
-    tmux
-    ugrep
-    unrar
-    v4l-utils
-    vesktop
-    virt-viewer
-    vlc
-    vscode-fhs
-    w3m
-    #warp-terminal
-    waypaper
-    #wayvnc
-    wezterm
-    wofi #for river
-    wf-recorder
-    wtfis
-    variety
-    volumeicon
-    xclip
-    yad
-    #yazi
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
+    hyprcursor # requires unstable channel
+    hypridle # requires unstable channel
+    hyprutils
+    hyprlock
+    hyprpolkitagent
+    hyprpaper
+    hyprshot
+    hyprcursor
+    hyprland
+    hyprlang
+
+    # Editor
+    neovim
+    neovide
     zed-editor
-    #zellij
-    zig
-    zoxide
+    lunarvim
+
+    # River
+     #makp
+     #wofi
+     #dmenu
+
+    # fish shell and plugins
+     #fish
+     #fishPlugins.done
+     #fishPlugins.fzf
+     #fishPlugins.forgit
+     #fishPlugins.hydro
+     #fishPlugins.bass
+     #fzf
+     #fishPlugins.grc
+     #grc
+    #  End fish packages
+    
+
+    # Wayfire related
+    demu
+    wf-config
+    wofi
+    mako
+
   ];
 
   # FONTS
