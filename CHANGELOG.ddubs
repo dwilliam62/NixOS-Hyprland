@@ -7,6 +7,8 @@
   - Tried enabling river w/archcrapft config Starts but blank screen
   - Reorganizing packages.nix by catagory
   - New kernel 6.12.8
+  - Added sample unstable pkgs overlay to assets/dotfiles
+     Allows you to add individual unstable pkgs 
 1-1-25
  - Updated flake
  - Added handbrake to explorer host
