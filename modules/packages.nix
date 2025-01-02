@@ -287,7 +287,7 @@
     
 
     # Wayfire related
-    demu
+    dmenu
     wf-config
     wofi
     mako
