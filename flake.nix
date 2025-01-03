@@ -1,12 +1,13 @@
 {
-  description = "Just a Little NixOS Hyperland Flake";
+  description = "ddubs' Hyprland Flake";
       
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable"; #Unstable
-    hyprland.url = "github:hyprwm/Hyprland"; #Hyprland Development
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+        #hyprland.url = "github:hyprwm/Hyprland"; #Hyprland Development
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
-    distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+        #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     wallust.url = "git+https://codeberg.org/explosion-mental/wallust";
     ghostty.url = "github:ghostty-org/ghostty";
     envycontrol.url = github:bayasdev/envycontrol;
@@ -16,7 +17,7 @@
   inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
-      host = "jak-nixos";
+      host = "p520-jakos";
       username = "dwilliams";
 
       unstable = import nixpkgs-unstable {
@@ -32,7 +33,6 @@
            allowUnfree = true;
       };
     };
-
     in
       {
     nixosConfigurations = {
@@ -42,11 +42,11 @@
       inherit inputs;
       inherit username;
       inherit host;
-          inherit unstable;
+      inherit unstable;
     };
     modules = [
       ./hosts/${host}/config.nix
-      inputs.distro-grub-themes.nixosModules.${system}.default
+        #inputs.distro-grub-themes.nixosModules.${system}.default
         ];
       };
     };

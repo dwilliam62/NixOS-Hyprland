@@ -5,6 +5,8 @@
   - P520 hyprland crashes on unstable but NVIDIA doesn't  
   - Moved Hyprland pacakges to host files
   - Updated jak-nixos vm to GDM but have block cursor w/hyprland 
+  - Added old hyprland url
+  - Small cleanup on flake.nix commented out GRUB entries
 1-2-25
   - Updated flake
   - deleted configfile references for BSPWM and renabled
