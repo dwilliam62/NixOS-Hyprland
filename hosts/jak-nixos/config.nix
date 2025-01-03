@@ -1,6 +1,6 @@
 # Main default config
 
-{ config, pkgs, host, username, options, lib, inputs, system, ...}: let
+{ config, pkgs, host, username, options, lib, inputs,unstable, system, ...}: let
     inherit (import ./variables.nix) keyboardLayout;
     python-packages = pkgs.python3.withPackages (
       ps:
@@ -193,7 +193,37 @@
         #inherit (oldAttrs) pname;
         # version = "0.45.0";
         #  }))
-    
+   #    Hyprland related
+            mesa
+            glaze
+            aquamarine
+            imagemagick
+            waypaper
+            wf-recorder
+            nwg-drawer
+            nwg-dock-hyprland
+            nwg-launchers
+            nwg-panel
+            nwg-bar
+            nwg-displays
+            nwg-wrapper
+            nwg-look
+            nwg-menu
+            gpu-screen-recorder
+            gpu-screen-recorder-gtk
+            hyprcursor 
+            hypridle 
+            hyprutils
+            hyprlock
+            hyprpolkitagent
+            hyprpaper
+            hyprshot
+            hyprcursor
+            hyprland
+            hyprlang
+
+        lxappearance
+ 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
@@ -238,10 +268,13 @@
         desktopManager.cinnamon.enable=true;
         windowManager.awesome.enable=false;
         windowManager.bspwm.enable=true;
+        displayManager.gdm.enable = true;
+        displayManager.gdm.wayland = true;
+
     };
     
       displayManager.sddm = {
-      enable = true;
+      enable = false;
       theme = "elarun";
       wayland.enable = true;
       extraPackages = with pkgs; [

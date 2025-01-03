@@ -4,6 +4,7 @@
   - Added modified flake which allows for unstable pkgs with unstable.PKGNAME
   - P520 hyprland crashes on unstable but NVIDIA doesn't  
   - Moved Hyprland pacakges to host files
+  - Updated jak-nixos vm to GDM but have block cursor w/hyprland 
 1-2-25
   - Updated flake
   - deleted configfile references for BSPWM and renabled
