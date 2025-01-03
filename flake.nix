@@ -23,21 +23,10 @@ outputs = inputs @ {
 
   pkgs = import nixpkgs {
     inherit system;
-    #overlays = [
-    #  inputs.hyprpanel.overlay
-    #];
-    config = {
-      allowUnfree = true;
-      #allowUnsupportedSystem = true;
-      # binary cache substituters 
-      extra-substituters = [
-        "https://cacheix.nixos.org"
-        #"https://hydra.nixos.org"
-      ];
-      # extra-trusted-public-keys = [...];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+	config = {
+       	allowUnfree = true;
+      };
     };
-  };
 in {
   nixosConfigurations = {
     "${host}" = nixpkgs.lib.nixosSystem rec {
