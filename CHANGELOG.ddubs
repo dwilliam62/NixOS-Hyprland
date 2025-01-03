@@ -1,4 +1,7 @@
 
+1-3-25
+  - Updated flake
+  - Added modified flake which allows for unstable pkgs with unstable.PKGNAME
 1-2-25
   - Updated flake
   - deleted configfile references for BSPWM and renabled

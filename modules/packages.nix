@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  unstable,
   ...
 }: {
   environment.systemPackages = with pkgs; [
@@ -65,7 +66,6 @@
 
  #version 2.0 not backward compatible with v1
     #ags 
-    aquamarine
     arandr
     #btop-rocm
     (btop.override { 
@@ -238,6 +238,7 @@
 
     # Hyprland related
 
+    unstable.aquamarine
     imagemagick
     waypaper
     wf-recorder
@@ -252,16 +253,16 @@
     nwg-menu
     gpu-screen-recorder
     gpu-screen-recorder-gtk
-    hyprcursor 
-    hypridle 
-    hyprutils
-    hyprlock
-    hyprpolkitagent
-    hyprpaper
-    hyprshot
-    hyprcursor
-    hyprland
-    hyprlang
+    unstable.hyprcursor 
+    unstable.hypridle 
+    unstable.hyprutils
+    unstable.hyprlock
+    unstable.hyprpolkitagent
+    unstable.hyprpaper
+    unstable.hyprshot
+    unstable.hyprcursor
+    unstable.hyprland
+    unstable.hyprlang
 
     # Editor
     neovide
