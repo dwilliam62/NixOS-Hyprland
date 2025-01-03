@@ -202,13 +202,13 @@ in {
 
   environment.systemPackages =
     (with pkgs; [
-      fzf
-      re2
-      evolution
+
+         fzf
+         re2
         # Hyprland related
         mesa
         glaze
-        aquamarine
+           #aquamarine
         imagemagick
         waypaper
         wf-recorder
@@ -231,7 +231,7 @@ in {
         hyprpaper
         hyprshot
         hyprcursor
-        hyprland
+            #hyprland
         hyprlang
 
       #waybar  # if wanted experimental next line
