@@ -5,6 +5,7 @@
   host,
   username,
   options,
+  unstable,
   lib,
   inputs,
   system,
@@ -204,6 +205,35 @@ in {
       fzf
       re2
       evolution
+        # Hyprland related
+        mesa
+        glaze
+        aquamarine
+        imagemagick
+        waypaper
+        wf-recorder
+        nwg-drawer
+        nwg-dock-hyprland
+        nwg-launchers
+        nwg-panel
+        nwg-bar
+        nwg-displays
+        nwg-wrapper
+        nwg-look
+        nwg-menu
+        gpu-screen-recorder
+        gpu-screen-recorder-gtk
+        hyprcursor 
+        hypridle 
+        hyprutils
+        hyprlock
+        hyprpolkitagent
+        hyprpaper
+        hyprshot
+        hyprcursor
+        hyprland
+        hyprlang
+
       #waybar  # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])

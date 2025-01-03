@@ -2,6 +2,8 @@
 1-3-25
   - Updated flake
   - Added modified flake which allows for unstable pkgs with unstable.PKGNAME
+  - P520 hyprland crashes on unstable but NVIDIA doesn't  
+  - Moved Hyprland pacakges to host files
 1-2-25
   - Updated flake
   - deleted configfile references for BSPWM and renabled

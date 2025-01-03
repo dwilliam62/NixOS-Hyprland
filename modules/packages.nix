@@ -237,32 +237,33 @@
     polkit_gnome
 
     # Hyprland related
-
-    unstable.aquamarine
-    imagemagick
-    waypaper
-    wf-recorder
-    nwg-drawer
-    nwg-dock-hyprland
-    nwg-launchers
-    nwg-panel
-    nwg-bar
-    nwg-displays
-    nwg-wrapper
-    nwg-look
-    nwg-menu
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    unstable.hyprcursor 
-    unstable.hypridle 
-    unstable.hyprutils
-    unstable.hyprlock
-    unstable.hyprpolkitagent
-    unstable.hyprpaper
-    unstable.hyprshot
-    unstable.hyprcursor
-    unstable.hyprland
-    unstable.hyprlang
+#    mesa
+#    glaze
+#    aquamarine
+#    imagemagick
+#    waypaper
+#    wf-recorder
+#    nwg-drawer
+#    nwg-dock-hyprland
+#    nwg-launchers
+#    nwg-panel
+#    nwg-bar
+#    nwg-displays
+#    nwg-wrapper
+#    nwg-look
+#    nwg-menu
+#    gpu-screen-recorder
+#    gpu-screen-recorder-gtk
+#    hyprcursor 
+#    hypridle 
+#    hyprutils
+#    hyprlock
+#    hyprpolkitagent
+#    hyprpaper
+#    hyprshot
+#    hyprcursor
+#    hyprland
+#    hyprlang
 
     # Editor
     neovide

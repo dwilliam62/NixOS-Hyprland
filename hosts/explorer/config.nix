@@ -1,6 +1,6 @@
 # Main default config
 
-{ config, pkgs, host, username, options, lib, inputs, system, ...}: let
+{ config, pkgs, host, username, options, lib, inputs, unstable,system, ...}: let
   
   inherit (import ./variables.nix) keyboardLayout;
   python-packages = pkgs.python3.withPackages (
@@ -195,8 +195,35 @@
 
   environment.systemPackages = (with pkgs; [
   # System Packages
-
       #  luaPackages.vicious  #for awesome window mgr
+   # Hyprland related
+    unstable.mesa
+    unstable.glaze
+    unstable.aquamarine
+    imagemagick
+    waypaper
+    wf-recorder
+    nwg-drawer
+    nwg-dock-hyprland
+    nwg-launchers
+    nwg-panel
+    nwg-bar
+    nwg-displays
+    nwg-wrapper
+    nwg-look
+    nwg-menu
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
+    unstable.hyprcursor 
+    unstable.hypridle 
+    unstable.hyprutils
+    unstable.hyprlock
+    unstable.hyprpolkitagent
+    unstable.hyprpaper
+    unstable.hyprshot
+    unstable.hyprcursor
+    unstable.hyprland
+    unstable.hyprlang
 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
