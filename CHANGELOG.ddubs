@@ -7,6 +7,8 @@
   - Updated jak-nixos vm to GDM but have block cursor w/hyprland 
   - Added old hyprland url
   - Small cleanup on flake.nix commented out GRUB entries
+  - p520 won't start X environments reverted to SDDM 
+  - Disabled X environments for now 
 1-2-25
   - Updated flake
   - deleted configfile references for BSPWM and renabled

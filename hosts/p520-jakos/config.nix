@@ -208,7 +208,7 @@ in {
         # Hyprland related
         mesa
         glaze
-           #aquamarine
+        aquamarine
         imagemagick
         waypaper
         wf-recorder
@@ -231,7 +231,7 @@ in {
         hyprpaper
         hyprshot
         hyprcursor
-            #hyprland
+        hyprland
         hyprlang
 
       #waybar  # if wanted experimental next line
@@ -276,21 +276,7 @@ in {
         layout = "${keyboardLayout}";
         variant = "";
       };
-   windowManager.bspwm.enable=true;
     };
-
-    greetd = {
-      enable = false;
-      vt = 3;
-      settings = {
-        default_session = {
-          user = username;
-          # start Hyprland with a TUI login manager
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland"; 
-        };
-      };
-    };
-
 
     displayManager.sddm = {
       enable = true;
@@ -339,8 +325,8 @@ in {
 
     blueman.enable = true;
 
-    #hardware.openrgb.enable = true;
-    #hardware.openrgb.motherboard = "amd";
+    hardware.openrgb.enable = true;
+    hardware.openrgb.motherboard = "intel";
 
     fwupd.enable = true;
 
@@ -452,8 +438,8 @@ in {
         "nix-command"
         "flakes"
       ];
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+            substituters = ["https://hyprland.cachix.org"];
+             trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
     gc = {
       automatic = true;
