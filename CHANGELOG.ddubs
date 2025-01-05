@@ -1,4 +1,7 @@
 
+1-4-25
+  - Updated flake
+  - Added ixas host - 4k dell laptop 
 1-3-25
   - Updated flake
   - Added modified flake which allows for unstable pkgs with unstable.PKGNAME
