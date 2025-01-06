@@ -1,6 +1,7 @@
 
 1-6-25
-  - Added NVF neovim config flake.nix 
+  - Dumped NVF neovim config flake.nix 
+  - Updated flake
 1-5-25
   - Updated flake
   - Added basic river config

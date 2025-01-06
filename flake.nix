@@ -9,13 +9,12 @@
     wallust.url = "git+https://codeberg.org/explosion-mental/wallust";
     ghostty.url = "github:ghostty-org/ghostty";
     envycontrol.url = "github:bayasdev/envycontrol";
-    nvf.url = "github:notashelf/nvf";
         #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
         #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
   outputs = 
-  inputs@{ self, nixpkgs, nvf, nixpkgs-unstable, ... }:
+  inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
       host = "p520-jakos";
@@ -47,7 +46,6 @@
     };
     modules = [
       ./hosts/${host}/config.nix
-      nvf.nixosModules.default
         #inputs.distro-grub-themes.nixosModules.${system}.default
         ];
       };
