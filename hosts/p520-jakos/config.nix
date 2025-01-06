@@ -172,6 +172,33 @@ in {
       tumbler
     ];
 
+    # NVF Neovim Configuration
+    nvf = {
+i    enable = true; 
+      settings = {
+        vim.viAlias = true;
+        vim.vimAlias = true;
+        vim.lsp = {
+          enable = true;
+         };
+        tree-sitter.enable = true;
+        vim.theme.enable = true;
+        vim.theme.name = Dracula;
+        vim.theme.style = Dark;
+        vim.languages.nix.enable = true;
+        vim.languages.cpp.enable = true;
+        vim.languages.markdown.enable = true;
+        vim.languages.zsh.enable = true;
+        vim.languages.bash.enable = true;
+        vim.languages.lua.enable = true;
+        vim.languages.toml.enable = true;
+
+        vim.dashboard.alpha.enable = true;
+        vim.dashboard.dashboard-nvim.enable = true;
+
+      };
+    };
+
 
     #steam = {
     #  enable = true;
