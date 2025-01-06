@@ -266,7 +266,7 @@
         variant = "";
       }; 
        displayManager.lightdm.greeters = {
-        slick.enable = true;
+        slick.enable = false;
         gtk.enable = false;
        }; 
       desktopManager.cinnamon.enable=true;
@@ -279,7 +279,7 @@
      displayManager.sddm = {
       enable = false;
       theme = "elarun";
-      wayland.enable = true;
+      wayland.enable = false;
       extraPackages = with pkgs; [
           sddm 
           kdePackages.sddm
