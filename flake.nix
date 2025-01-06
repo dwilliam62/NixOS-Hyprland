@@ -4,17 +4,18 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable"; #Unstable
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-        #hyprland.url = "github:hyprwm/Hyprland"; #Hyprland Development
+    hyprland.url = "github:hyprwm/Hyprland"; #Hyprland Development
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
-        #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     wallust.url = "git+https://codeberg.org/explosion-mental/wallust";
     ghostty.url = "github:ghostty-org/ghostty";
-    envycontrol.url = github:bayasdev/envycontrol;
+    envycontrol.url = "github:bayasdev/envycontrol";
+    nvf.url = "github:notashelf/nvf";
+        #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+        #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
   outputs = 
-  inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
+  inputs@{ self, nixpkgs, nvf, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
       host = "explorer";
@@ -46,6 +47,7 @@
     };
     modules = [
       ./hosts/${host}/config.nix
+      nvf.nixosModules.default
         #inputs.distro-grub-themes.nixosModules.${system}.default
         ];
       };
