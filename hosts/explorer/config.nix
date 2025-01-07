@@ -197,8 +197,22 @@
   # System Packages
       #  luaPackages.vicious  #for awesome window mgr
    # Hyprland related
-    unstable.mesa
-    unstable.glaze
+    mesa
+    imagemagick
+    waypaper
+    wf-recorder
+    nwg-drawer
+    nwg-dock-hyprland
+    nwg-launchers
+    nwg-panel
+    nwg-bar
+    nwg-displays
+    nwg-wrapper
+    nwg-look
+    nwg-menu
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
+    glaze
     unstable.aquamarine
     imagemagick
     waypaper
@@ -214,6 +228,11 @@
     nwg-menu
     gpu-screen-recorder
     gpu-screen-recorder-gtk
+    unstable.hyprcursor 
+    unstable.hypridle 
+    unstable.hyprutils
+    unstable.hyprlock
+    unstable.hyprpolkitagent
     unstable.hyprcursor 
     unstable.hypridle 
     unstable.hyprutils

@@ -8,6 +8,7 @@
   lib,
   inputs,
   system,
+  unstable,
   ...
 }: let
   inherit (import ./variables.nix) keyboardLayout;
@@ -198,6 +199,53 @@ in {
   environment.systemPackages =
     (with pkgs; [
       # System Packages
+mesa
+    imagemagick
+    waypaper
+    wf-recorder
+    nwg-drawer
+    nwg-dock-hyprland
+    nwg-launchers
+    nwg-panel
+    nwg-bar
+    nwg-displays
+    nwg-wrapper
+    nwg-look
+    nwg-menu
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
+    glaze
+    aquamarine
+    imagemagick
+    waypaper
+    wf-recorder
+    nwg-drawer
+    nwg-dock-hyprland
+    nwg-launchers
+    nwg-panel
+    nwg-bar
+    nwg-displays
+    nwg-wrapper
+    nwg-look
+    nwg-menu
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
+    hyprcursor 
+    hypridle 
+    hyprutils
+    hyprlock
+    hyprpolkitagent
+    hyprcursor 
+    hypridle 
+    hyprutils
+    hyprlock
+    hyprpolkitagent
+    hyprpaper
+    hyprshot
+    hyprcursor
+    hyprland
+    hyprlang
+
 
       #waybar  # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
@@ -259,17 +307,6 @@ in {
        HandleLidSwitchDocked=ignore
     '';
 
-
-    greetd = {
-      enable = false;
-      vt = 3;
-      settings = {
-        default_session = {
-          user = username;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=green;container=blue;input=red' --cmd 'nvidia-offload Hyprland'"; # start Hyprland with a TUI login manager
-        };
-      };
-    };
 
     displayManager.sddm = {
       enable = true;

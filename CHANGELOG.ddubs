@@ -1,6 +1,7 @@
 
 1-7-25
   - Updated flake
+  - Added packages for prometheus config
 1-6-25
   - Dumped NVF neovim config flake.nix 
   - Updated flake
