@@ -1,6 +1,6 @@
 # Main default config
 
-{ config, pkgs, host, username, options, lib, inputs,unstable, system, ...}: let
+{ config, pkgs, host, username, options, lib, inputs, system, ...}: let
     inherit (import ./variables.nix) keyboardLayout;
     python-packages = pkgs.python3.withPackages (
       ps:
@@ -194,9 +194,7 @@
         # version = "0.45.0";
         #  }))
    #    Hyprland related
-            mesa
             glaze
-            aquamarine
             imagemagick
             waypaper
             wf-recorder
@@ -211,6 +209,8 @@
             nwg-menu
             gpu-screen-recorder
             gpu-screen-recorder-gtk
+            mesa
+            aquamarine
             hyprcursor 
             hypridle 
             hyprutils
@@ -221,8 +221,7 @@
             hyprcursor
             hyprland
             hyprlang
-
-        lxappearance
+            lxappearance
  
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
