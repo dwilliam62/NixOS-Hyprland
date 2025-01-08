@@ -1,4 +1,7 @@
 
+1-8-25
+  - Updated flake
+  - Small clean up in explorer config.nix 
 1-7-25
   - Updated flake
   - Added packages for prometheus config

@@ -61,7 +61,7 @@
 	    canTouchEfiVariables = true;
   	  };
 
-    loader.timeout = 1;    
+    loader.timeout = 10;    
   			
     # Bootloader GRUB
     #loader.grub = {
@@ -289,7 +289,6 @@
         gtk.enable = false;
        }; 
       desktopManager.cinnamon.enable=true;
-      windowManager.awesome.enable=false;
       windowManager.bspwm.enable=true;
       displayManager.gdm.enable = true;
       displayManager.gdm.wayland = true;
@@ -467,9 +466,9 @@
   };
 
   # Virtualization / Containers
-  virtualisation.libvirtd.enable = false;
+  virtualisation.libvirtd.enable = true;
   virtualisation.podman = {
-    enable = false;
+    enable = true;
     dockerCompat = true;
     defaultNetwork.settings.dns_enabled = true;
   };
@@ -496,6 +495,8 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+
+ security.sudo.wheelNeedsPassword = false;
 
  security.sudo = { 
    enable = true;
