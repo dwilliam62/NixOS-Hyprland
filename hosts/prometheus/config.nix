@@ -281,25 +281,20 @@ mesa
 
   # Services to start
   services = {
+      displayManager.defaultSession = "hyprland"; 
     xserver = {
       enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       };
-      displayManager.defaultSession = "hyprland"; 
+      displayManager.gdm.enable = true;
+      displayManager.gdm.wayland = true;
       windowManager.bspwm.enable=true;
+      desktopManager.cinnamon.enable=false;
+      desktopManager.gnome.enable=true;
     };
 
-    # ... Added as test to help someone
-    #   postgresql = {
-    #    enable = true;
-    #    ensureDatabases = [ "mydatabase" ];
-    #    authentication = pkgs.lib.mkOverride 10 ''
-    #      #type database  DBuser  auth-method
-    #      local all       all     trust
-    #    '';
-    #  };
 
     logind.extraConfig = ''
        HandleLidSwitch=ignore
@@ -309,7 +304,7 @@ mesa
 
 
     displayManager.sddm = {
-      enable = true;
+      enable = false;
       theme = "elarun";
       wayland.enable = true;
       extraPackages = with pkgs; [

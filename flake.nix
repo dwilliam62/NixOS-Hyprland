@@ -17,7 +17,7 @@
   inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
-      host = "explorer";
+      host = "prometheus";
       username = "dwilliams";
 
       unstable = import nixpkgs-unstable {
