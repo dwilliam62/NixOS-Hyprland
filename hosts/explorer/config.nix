@@ -140,6 +140,11 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+    #Disable autosuspend       
+        systemd.targets.sleep.enable = false;
+        systemd.targets.hibernate.enable = false;
+        systemd.targets.hybrid-sleep.enable = false;
   
   programs = {
 	  hyprland = {
@@ -213,7 +218,6 @@
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     glaze
-    unstable.aquamarine
     imagemagick
     waypaper
     wf-recorder
@@ -228,6 +232,7 @@
     nwg-menu
     gpu-screen-recorder
     gpu-screen-recorder-gtk
+    unstable.aquamarine
     unstable.hyprcursor 
     unstable.hypridle 
     unstable.hyprutils

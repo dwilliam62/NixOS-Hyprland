@@ -2,6 +2,7 @@
 1-10-25
   - Updated flake
   - Updated prometheus config after rebuild
+  - Disabled sleep and suspend in explorer config.nix file
 1-8-25
   - Updated flake
   - Small clean up in explorer config.nix 
