@@ -66,7 +66,7 @@ in {
       canTouchEfiVariables = true;
     };
 
-    loader.timeout = 1;
+    loader.timeout = 15;
 
     # Bootloader GRUB
     #loader.grub = {
@@ -243,18 +243,6 @@ in {
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
-      };
-    };
-
-    greetd = {
-      enable = false;
-      vt = 3;
-      settings = {
-        default_session = {
-          user = username;
-          # start Hyprland with a TUI login manager
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland"; 
-        };
       };
     };
 

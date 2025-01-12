@@ -57,7 +57,7 @@
 	    canTouchEfiVariables = true;
   	  };
 
-    loader.timeout = 1;    
+    loader.timeout = 15;    
   			
     # Bootloader GRUB
     #loader.grub = {
@@ -181,46 +181,6 @@
 
   environment.systemPackages = (with pkgs; [
   # System Packages
-        # luaPackages.vicious  #for awesomeWM
-  #  override for aquamarine 
-        #           (aquamarine.overrideAttrs (oldAttrs: {
-        #     inherit (oldAttrs) pname;
-        #version = "0.4.5";
-        # }))
-
-   #   override for hyprland 
-        #       (hyprland.overrideAttrs (oldAttrs: {
-        #inherit (oldAttrs) pname;
-        # version = "0.45.0";
-        #  }))
-   #    Hyprland related
-            glaze
-            imagemagick
-            waypaper
-            wf-recorder
-            nwg-drawer
-            nwg-dock-hyprland
-            nwg-launchers
-            nwg-panel
-            nwg-bar
-            nwg-displays
-            nwg-wrapper
-            nwg-look
-            nwg-menu
-            gpu-screen-recorder
-            gpu-screen-recorder-gtk
-            mesa
-            aquamarine
-            hyprcursor 
-            hypridle 
-            hyprutils
-            hyprlock
-            hyprpolkitagent
-            hyprpaper
-            hyprshot
-            hyprcursor
-            hyprland
-            hyprlang
             lxappearance
  
     #waybar  # if wanted experimental next line

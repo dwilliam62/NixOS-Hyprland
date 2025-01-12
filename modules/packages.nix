@@ -241,33 +241,34 @@
     polkit_gnome
 
     # Hyprland related
-#    mesa
-#    glaze
-#    aquamarine
-#    imagemagick
-#    waypaper
-#    wf-recorder
-#    nwg-drawer
-#    nwg-dock-hyprland
-#    nwg-launchers
-#    nwg-panel
-#    nwg-bar
-#    nwg-displays
-#    nwg-wrapper
-#    nwg-look
-#    nwg-menu
-#    gpu-screen-recorder
-#    gpu-screen-recorder-gtk
-#    hyprcursor 
-#    hypridle 
-#    hyprutils
-#    hyprlock
-#    hyprpolkitagent
-#    hyprpaper
-#    hyprshot
-#    hyprcursor
-#    hyprland
-#    hyprlang
+    mesa
+    glaze
+    aquamarine
+    imagemagick
+    waypaper
+    wf-recorder
+    nwg-drawer
+    nwg-dock-hyprland
+    nwg-launchers
+    nwg-panel
+    nwg-bar
+    nwg-displays
+    nwg-wrapper
+    nwg-look
+    nwg-menu
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
+    hyprcursor 
+    hypridle 
+    hyprutils
+    hyprlock
+    hyprpolkitagent
+    hyprpaper
+    hyprshot
+    hyprcursor
+    hyprland
+    hyprlang
+    xdg-desktop-portal-hyprland
 
     # Editor
     neovide

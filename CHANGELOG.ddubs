@@ -4,6 +4,8 @@
   - Added microfetch
   - Added pfetch
   - Focal screen/video capture rofi menu
+  - Moved packages for hyprland back to modules.nix 
+     Can't get unstable packages to install
 1-10-25
   - Updated flake
   - Updated prometheus config after rebuild

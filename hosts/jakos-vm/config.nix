@@ -57,7 +57,7 @@
 	    canTouchEfiVariables = true;
   	  };
 
-    loader.timeout = 1;    
+    loader.timeout = 15;    
   			
     # Bootloader GRUB
     #loader.grub = {
@@ -186,16 +186,16 @@
     #  Blackscreen
 
     #  override for aquamarine 
-           (aquamarine.overrideAttrs (oldAttrs: {
-          inherit (oldAttrs) pname;
-         version = "0.4.5";
-         }))
+        #           (aquamarine.overrideAttrs (oldAttrs: {
+        #  inherit (oldAttrs) pname;
+        # version = "0.4.5";
+        # }))
 
    #   override for hyprland 
-               (hyprland.overrideAttrs (oldAttrs: {
-        inherit (oldAttrs) pname;
-         version = "0.45.0";
-          }))
+        #       (hyprland.overrideAttrs (oldAttrs: {
+        #inherit (oldAttrs) pname;
+        # version = "0.45.0";
+        #  }))
 
 
 

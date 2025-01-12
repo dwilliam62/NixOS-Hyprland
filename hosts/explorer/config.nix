@@ -61,7 +61,7 @@
 	    canTouchEfiVariables = true;
   	  };
 
-    loader.timeout = 10;    
+    loader.timeout = 15;    
   			
     # Bootloader GRUB
     #loader.grub = {
@@ -201,54 +201,7 @@
   environment.systemPackages = (with pkgs; [
   # System Packages
       #  luaPackages.vicious  #for awesome window mgr
-   # Hyprland related
-    mesa
-    imagemagick
-    waypaper
-    wf-recorder
-    nwg-drawer
-    nwg-dock-hyprland
-    nwg-launchers
-    nwg-panel
-    nwg-bar
-    nwg-displays
-    nwg-wrapper
-    nwg-look
-    nwg-menu
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    glaze
-    imagemagick
-    waypaper
-    wf-recorder
-    nwg-drawer
-    nwg-dock-hyprland
-    nwg-launchers
-    nwg-panel
-    nwg-bar
-    nwg-displays
-    nwg-wrapper
-    nwg-look
-    nwg-menu
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    unstable.aquamarine
-    unstable.hyprcursor 
-    unstable.hypridle 
-    unstable.hyprutils
-    unstable.hyprlock
-    unstable.hyprpolkitagent
-    unstable.hyprcursor 
-    unstable.hypridle 
-    unstable.hyprutils
-    unstable.hyprlock
-    unstable.hyprpolkitagent
-    unstable.hyprpaper
-    unstable.hyprshot
-    unstable.hyprcursor
-    unstable.hyprland
-    unstable.hyprlang
-
+     fzf
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [

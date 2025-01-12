@@ -68,7 +68,7 @@ in {
       canTouchEfiVariables = true;
     };
 
-    loader.timeout = 1;
+    loader.timeout = 15;
 
     # Bootloader GRUB
     #loader.grub = {
@@ -199,53 +199,7 @@ in {
   environment.systemPackages =
     (with pkgs; [
       # System Packages
-mesa
-    imagemagick
-    waypaper
-    wf-recorder
-    nwg-drawer
-    nwg-dock-hyprland
-    nwg-launchers
-    nwg-panel
-    nwg-bar
-    nwg-displays
-    nwg-wrapper
-    nwg-look
-    nwg-menu
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    glaze
-    aquamarine
-    imagemagick
-    waypaper
-    wf-recorder
-    nwg-drawer
-    nwg-dock-hyprland
-    nwg-launchers
-    nwg-panel
-    nwg-bar
-    nwg-displays
-    nwg-wrapper
-    nwg-look
-    nwg-menu
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    hyprcursor 
-    hypridle 
-    hyprutils
-    hyprlock
-    hyprpolkitagent
-    hyprcursor 
-    hypridle 
-    hyprutils
-    hyprlock
-    hyprpolkitagent
-    hyprpaper
-    hyprshot
-    hyprcursor
-    hyprland
-    hyprlang
-
+     fzf
 
       #waybar  # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))

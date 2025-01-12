@@ -57,7 +57,7 @@
 	    canTouchEfiVariables = true;
   	  };
 
-    loader.timeout = 1;    
+    loader.timeout = 15;    
   			
     # Bootloader GRUB
     #loader.grub = {

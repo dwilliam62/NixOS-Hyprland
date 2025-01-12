@@ -16,7 +16,7 @@
     ps:
       with ps; [
         requests
-        pyquery # needed for hyprland-dots Weather script
+        pyquery # needed foruhyprland-dots Weather script
       ]
   );
 in {
@@ -67,7 +67,7 @@ in {
       canTouchEfiVariables = true;
     };
 
-    loader.timeout = 1;
+    loader.timeout = 15;
 
     # Bootloader GRUB
     #loader.grub = {
@@ -205,34 +205,6 @@ in {
 
          fzf
          re2
-        # Hyprland related
-        mesa
-        glaze
-        aquamarine
-        imagemagick
-        waypaper
-        wf-recorder
-        nwg-drawer
-        nwg-dock-hyprland
-        nwg-launchers
-        nwg-panel
-        nwg-bar
-        nwg-displays
-        nwg-wrapper
-        nwg-look
-        nwg-menu
-        gpu-screen-recorder
-        gpu-screen-recorder-gtk
-        hyprcursor 
-        hypridle 
-        hyprutils
-        hyprlock
-        hyprpolkitagent
-        hyprpaper
-        hyprshot
-        hyprcursor
-        hyprland
-        hyprlang
 
       #waybar  # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
