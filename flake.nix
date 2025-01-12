@@ -9,15 +9,15 @@
     wallust.url = "git+https://codeberg.org/explosion-mental/wallust";
     ghostty.url = "github:ghostty-org/ghostty";
     envycontrol.url = "github:bayasdev/envycontrol";
-        #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
-        #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+    #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
   outputs = 
   inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
-      host = "explorer";
+      host = "p520-jakos";
       username = "dwilliams";
 
       unstable = import nixpkgs-unstable {
