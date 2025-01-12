@@ -9,6 +9,8 @@
     wallust.url = "git+https://codeberg.org/explosion-mental/wallust";
     ghostty.url = "github:ghostty-org/ghostty";
     envycontrol.url = "github:bayasdev/envycontrol";
+    wfetch.url = "github:iynaix/wfetch";
+    focal.url = "github:iynaix/focal";
     #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };

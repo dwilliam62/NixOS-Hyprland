@@ -119,6 +119,8 @@
     (inputs.ghostty.packages.${pkgs.system}.default)
     (inputs.envycontrol.packages.${pkgs.system}.default)
     (inputs.hyprland-qtutils.packages.${pkgs.system}.default)
+    (inputs.wfetch.packages.${pkgs.system}.default)
+    (inputs.focal.packages.${pkgs.system}.default)
 
     # Utils
     arandr
@@ -137,7 +139,9 @@
     iotop
     ipfetch
     lsd
+    microfetch
     neofetch
+    pfetch
     ncdu
     ncftp
     figlet

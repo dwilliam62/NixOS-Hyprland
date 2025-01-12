@@ -1,6 +1,9 @@
 
 1-12-25
   - Updated flake
+  - Added microfetch
+  - Added pfetch
+  - Focal screen/video capture rofi menu
 1-10-25
   - Updated flake
   - Updated prometheus config after rebuild
