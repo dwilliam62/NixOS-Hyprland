@@ -1,4 +1,7 @@
 
+1-13-25
+  - Updated flake
+  - Added evil-helix and supporting language servers
 1-12-25
   - Updated flake
   - Added microfetch

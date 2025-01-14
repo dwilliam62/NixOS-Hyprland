@@ -176,9 +176,13 @@
     powertop
 
     # Development related
+    bash-language-server
     clang
     clang-tools
     dig
+    docker-compose-language-service
+    dockerfile-language-server-nodejs
+    evil-helix
     gcc
     git
     github-desktop
@@ -186,6 +190,7 @@
     luarocks
     luajitPackages.lua-lsp
     lua-language-server
+    marksman
     meld
     meson
     nixpkgs-fmt
@@ -194,9 +199,13 @@
     nix-tree
     nodejs_22
     nh
+    nil
     nix-ld
+    taplo
     vscode-fhs
+    vscode-langservers-extracted
     w3m
+    yaml-language-server
     zig
 
     # Internet
