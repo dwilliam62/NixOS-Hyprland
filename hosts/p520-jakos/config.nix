@@ -34,7 +34,7 @@ in {
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    kernelPackages = pkgs.linuxPackages_6_12; # Kernel 6.12  6.13 fails to build v42loopback and cpupower
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
@@ -45,8 +45,8 @@ in {
     ];
 
     # This is for OBS Virtual Cam Support
-    kernelModules = ["v4l2loopback"];
-    extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
+      kernelModules = ["v4l2loopback"];
+       extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
 
     initrd = {
       availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
