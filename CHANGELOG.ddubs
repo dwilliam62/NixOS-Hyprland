@@ -1,4 +1,7 @@
 
+1-23-25
+ - Fixed packages.nix to get current hyprland builds
+ 
 1-22-25
   - Updated flake ( 6.13 doesn't build v4l2loopback and cpupower won't build)
 1-20-25

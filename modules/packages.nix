@@ -251,7 +251,7 @@
     # Hyprland related
     mesa
     glaze
-    aquamarine
+        #aquamarine
     imagemagick
     waypaper
     wf-recorder
@@ -266,17 +266,17 @@
     nwg-menu
     gpu-screen-recorder
     gpu-screen-recorder-gtk
-    hyprcursor 
-    hypridle 
-    hyprutils
-    hyprlock
-    hyprpolkitagent
-    hyprpaper
-    hyprshot
-    hyprcursor
-    hyprland
-    hyprlang
-    xdg-desktop-portal-hyprland
+        #hyprcursor 
+      hypridle 
+      hyprutils
+      hyprlock
+      hyprpolkitagent
+      hyprpaper
+     hyprshot
+     hyprcursor
+        #    hyprland
+     hyprlang
+     xdg-desktop-portal-hyprland
 
     # Editor
     neovide
