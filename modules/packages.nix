@@ -42,7 +42,6 @@
         # version = "0.45.0";
         #  }))
 
-
     cava
     clang
     cpufrequtils
@@ -117,7 +116,7 @@
 
 
     (inputs.ghostty.packages.${pkgs.system}.default)
-    (inputs.envycontrol.packages.${pkgs.system}.default)
+        #(inputs.envycontrol.packages.${pkgs.system}.default)
     (inputs.hyprland-qtutils.packages.${pkgs.system}.default)
     (inputs.wfetch.packages.${pkgs.system}.default)
     (inputs.focal.packages.${pkgs.system}.default)
@@ -138,6 +137,8 @@
     hyfetch
     iotop
     ipfetch
+    kando
+    gnomeExtensions.kando-integration
     lsd
     microfetch
     neofetch
@@ -167,8 +168,8 @@
     cpu-x
     gsmartcontrol
     smartmontools
-    light
-    lm_sensors
+        #    light
+        #    lm_sensors
     pfetch
     mission-center
     stacer
@@ -181,11 +182,10 @@
     clang-tools
     dig
     docker-compose-language-service
-    dockerfile-language-server-nodejs
     evil-helix
     gcc
     git
-    github-desktop
+        #    github-desktop
     lazygit
     luarocks
     luajitPackages.lua-lsp
@@ -209,7 +209,6 @@
     zig
 
     # Internet
-    discord-canary
     vesktop
     wtfis
     discord-canary
@@ -222,8 +221,8 @@
 
     # Video
      vlc
-    jellyfin-media-player
-    handbrake
+     jellyfin-media-player
+     handbrake
 
     # Terminals
     #warp-terminal
