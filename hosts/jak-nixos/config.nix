@@ -24,7 +24,8 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
+    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
     	"systemd.mask=systemd-vconsole-setup.service"
@@ -182,6 +183,19 @@
   environment.systemPackages = (with pkgs; [
   # System Packages
             lxappearance
+
+    
+    #  override for aquamarine 
+           (aquamarine.overrideAttrs (oldAttrs: {
+          inherit (oldAttrs) pname;
+         version = "0.4.5";
+         }))
+
+   #   override for hyprland 
+               (hyprland.overrideAttrs (oldAttrs: {
+        inherit (oldAttrs) pname;
+         version = "0.45.0";
+          }))
  
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))

@@ -8,6 +8,7 @@
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
     wallust.url = "git+https://codeberg.org/explosion-mental/wallust";
     ghostty.url = "github:ghostty-org/ghostty";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
         #envycontrol.url = "github:bayasdev/envycontrol";
     wfetch.url = "github:iynaix/wfetch";
     focal.url = "github:iynaix/focal";
@@ -16,10 +17,10 @@
   };
 
   outputs = 
-  inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
+  inputs@{ self, nixpkgs, chaotic, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
-      host = "p520-jakos";
+      host = "jak-nixos";
       username = "dwilliams";
 
       unstable = import nixpkgs-unstable {
@@ -48,6 +49,9 @@
     };
     modules = [
       ./hosts/${host}/config.nix
+      chaotic.nixosModules.nyx-cache
+      chaotic.nixosModules.nyx-overlay
+      chaotic.nixosModules.nyx-registry
         #inputs.distro-grub-themes.nixosModules.${system}.default
         ];
       };
