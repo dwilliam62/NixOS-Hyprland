@@ -185,7 +185,8 @@
     evil-helix
     gcc
     git
-        #    github-desktop
+    gitnuro
+    github-desktop
     lazygit
     luarocks
     luajitPackages.lua-lsp
