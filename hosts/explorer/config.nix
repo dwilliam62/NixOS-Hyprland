@@ -27,7 +27,8 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    kernelPackages = pkgs.linuxPackages_6_12; # Forcing 6.13 Kernel 6.13 won't build cpupower fails
+    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
     #kernelPackages = pkgs.linuxPackages_6_11; # Kernel
 
     kernelParams = [
@@ -158,7 +159,7 @@
 	  waybar.enable = true;
 	  hyprlock.enable = true;
 	  firefox.enable = false;
-      river.enable = true;
+      river.enable = false;
 	  git.enable = true;
       nm-applet.indicator = true;
       neovim.enable = true;
@@ -181,7 +182,7 @@
     #  dedicatedServer.openFirewall = true;
     #};
     
-    xwayland.enable = true;
+    #xwayland.enable = true;
 
     dconf.enable = true;
     seahorse.enable = true;

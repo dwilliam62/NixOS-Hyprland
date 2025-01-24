@@ -1,4 +1,7 @@
 
+1-24-25
+  - Update flake 
+  - Set explorer kernel to 6.12 until 6.13 builds
 1-23-25
  - Fixed packages.nix to get current hyprland builds
  - Updated flake got error about hyprlang (??) 
