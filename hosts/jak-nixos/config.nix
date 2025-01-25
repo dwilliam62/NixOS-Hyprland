@@ -24,7 +24,7 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos; # Kernel
+    kernelPackages = pkgs.linuxPackages_cachyos-rc; # Kernel
     #kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
@@ -36,8 +36,8 @@
  	  ];
 
     # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+        #    kernelModules = [ "v4l2loopback" ];
+        #    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     
     initrd = { 
       availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];

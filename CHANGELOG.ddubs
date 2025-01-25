@@ -6,6 +6,7 @@
    - Added chaotic-nyx to flake input 
    - Added cachy kernel to jak-nixos vm
    - Updated explorer to cachy kernel and current HL
+   - Updated jak-nixos-vm to 6.13-RC7 cachy kernel
 1-23-25
  - Fixed packages.nix to get current hyprland builds
  - Updated flake got error about hyprlang (??) 
