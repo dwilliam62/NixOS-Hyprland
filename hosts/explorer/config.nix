@@ -27,9 +27,9 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_12; # Forcing 6.13 Kernel 6.13 won't build cpupower fails
-    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    kernelPackages = pkgs.linuxPackages_cachyos; # 
     #kernelPackages = pkgs.linuxPackages_6_11; # Kernel
+    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
@@ -78,6 +78,7 @@
     # Bootloader GRUB theme, configure below
 
     ## -end of BOOTLOADERS----- ##
+
   
     # Make /tmp a tmpfs
     tmp = {
