@@ -27,8 +27,8 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos; # 
-    #kernelPackages = pkgs.linuxPackages_6_11; # Kernel
+    #kernelPackages = pkgs.linuxPackages_cachyos; # 
+    kernelPackages = pkgs.linuxPackages_6_12; # Kernel
     #kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [

@@ -1,4 +1,7 @@
 
+1-26-25
+  - Update flake 
+  - explorer NVIDIA updated to 565 drivers 
 1-24-25
   - Update flake 
   - Set explorer kernel to 6.12 until 6.13 builds
