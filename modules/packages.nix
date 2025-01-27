@@ -267,7 +267,6 @@
     nwg-menu
     gpu-screen-recorder
     gpu-screen-recorder-gtk
-        #hyprcursor 
       hypridle 
       hyprutils
       hyprlock
