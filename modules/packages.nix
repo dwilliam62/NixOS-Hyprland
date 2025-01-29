@@ -129,6 +129,8 @@
     bat
     bottom
     cmatrix
+    pipes
+    pipes-rs
     dua
     glances
     gotop
