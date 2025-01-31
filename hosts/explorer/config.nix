@@ -237,27 +237,21 @@
 
   # Services to start
   services = {
-      displayManager.defaultSession = "none+bspwm";  
+      displayManager.defaultSession = "hyprland";  
     xserver = {
       enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       }; 
-       displayManager.lightdm.greeters = {
-        slick.enable = false;
-        gtk.enable = false;
-       }; 
       desktopManager.cinnamon.enable=true;
       windowManager.bspwm.enable=true;
-      displayManager.gdm.enable = true;
-      displayManager.gdm.wayland = true;
     };
     
      displayManager.sddm = {
-      enable = false;
+      enable = true;
       theme = "elarun";
-      wayland.enable = false;
+      wayland.enable = true;
       extraPackages = with pkgs; [
           sddm 
           kdePackages.sddm
@@ -265,6 +259,7 @@
           where-is-my-sddm-theme
       ];
     };
+
 
     smartd = {
       enable = true;

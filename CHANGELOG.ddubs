@@ -2,6 +2,7 @@
 1-30-25
   - Updated flake 
   - Kernel updated 6.12.11
+  - Moved back to SDDM removed lightdm/gdm from explorer
 1-28-25
   - Updated flake 
   - Explorer at current HL builds 
