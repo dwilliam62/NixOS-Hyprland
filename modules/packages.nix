@@ -313,6 +313,7 @@
 
   # FONTS
   fonts.packages = with pkgs; [
+    nerdfonts
     noto-fonts
     fira-code
     noto-fonts-cjk-sans
