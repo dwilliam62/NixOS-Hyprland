@@ -217,6 +217,7 @@
     discord-canary
     distrobox
     freeoffice
+    varia
 
     # Virtuaizaiton
     virt-viewer
