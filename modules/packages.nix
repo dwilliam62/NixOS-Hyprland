@@ -285,6 +285,9 @@
     neovide
     zed-editor
     lunarvim
+    emacs-nox
+    shellcheck
+    multimarkdown
 
     # River
      mako
