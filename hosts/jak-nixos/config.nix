@@ -139,7 +139,7 @@
   	  };
 
 	xwayland.enable = true;
-
+    zsh.ohMyZsh.enable = true;  
 	waybar.enable = true;
 	hyprlock.enable = true;
 	firefox.enable = false;

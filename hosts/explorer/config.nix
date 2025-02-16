@@ -164,6 +164,8 @@
 	  git.enable = true;
       nm-applet.indicator = true;
       neovim.enable = true;
+      zsh.ohMyZsh.enable = true;
+
 
 	  thunar.enable = true;
 	  thunar.plugins = with pkgs.xfce; [
