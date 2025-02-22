@@ -253,6 +253,7 @@
     polkit_gnome
 
     # Hyprland related
+    bc  # for rofi menus
     mesa
     glaze
         #aquamarine
