@@ -231,7 +231,7 @@
 
   # Services to start
   services = {
-    displayManager.defaultSession = "none+bspwm";
+    displayManager.defaultSession = "hyprland";
     xserver = {
       enable = true;
       xkb = {
