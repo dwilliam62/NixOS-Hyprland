@@ -1,4 +1,9 @@
 
+2-26-25
+  - Updated flake 
+  - Sorted programs in packages.nix
+  - Removed gitdesktop, freeoffice and foot as no longer needed
+  - Removed fish shell and plugins not going to use it
 2-22-25
   - Updated flake 
   - Set default to hyprland on jak-nixos system

@@ -129,10 +129,10 @@
     bat
     bottom
     cmatrix
-    pipes
-    pipes-rs
     dua
+    figlet
     glances
+    gnomeExtensions.kando-integration
     gotop
     gping
     htop
@@ -140,28 +140,28 @@
     iotop
     ipfetch
     kando
-    gnomeExtensions.kando-integration
+    lolcat
     lsd
     microfetch
     neofetch
+    oh-my-posh
     pfetch
     ncdu
     ncftp
-    figlet
     okular
     ouch
     pika-backup
+    pipes
+    pipes-rs
     ripgrep
     socat
+    starship
     tldr
     ugrep
     unrar
     #v4l-utils
     #obs-studio
     zoxide
-    starship
-    lolcat
-
 
     # Hardware related
     brightnessctl
@@ -170,8 +170,8 @@
     cpu-x
     gsmartcontrol
     smartmontools
-        #    light
-        #    lm_sensors
+    light
+    lm_sensors
     pfetch
     mission-center
     stacer
@@ -188,7 +188,6 @@
     gcc
     git
     gitnuro
-    github-desktop
     lazygit
     luarocks
     luajitPackages.lua-lsp
@@ -216,7 +215,7 @@
     wtfis
     discord-canary
     distrobox
-    freeoffice
+    #freeoffice
     varia
 
     # Virtuaizaiton
@@ -231,35 +230,44 @@
     # Terminals
     #warp-terminal
     alacritty
-    foot
+    #foot
     kitty
     putty 
     ptyxis
+    remmina
     tmux
     wezterm
-    remmina
 
     # bspwm
-    sxhkd
-    tilix
     flameshot
+    nomacs
+    tilix
     picom
     polybar
-    variety
-    volumeicon
+    sxhkd
+    polkit_gnome
     xclip
     yad
-    nomacs
-    polkit_gnome
+    variety
+    volumeicon
 
     # Hyprland related
+    aquamarine
     bc  # for rofi menus
-    mesa
     glaze
-        #aquamarine
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
+    hypridle 
+    hyprutils
+    hyprlock
+    hyprpolkitagent
+    hyprpaper
+    hyprland
+    hyprlang
+    hyprshot
+    hyprcursor
     imagemagick
-    waypaper
-    wf-recorder
+    mesa
     nwg-drawer
     nwg-dock-hyprland
     nwg-launchers
@@ -269,44 +277,22 @@
     nwg-wrapper
     nwg-look
     nwg-menu
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-      hypridle 
-      hyprutils
-      hyprlock
-      hyprpolkitagent
-      hyprpaper
-     hyprshot
-     hyprcursor
-        #    hyprland
-     hyprlang
-     xdg-desktop-portal-hyprland
+    waypaper
+    wf-recorder
+    xdg-desktop-portal-hyprland
 
     # Editor
-    neovide
-    zed-editor
-    lunarvim
     emacs-nox
-    shellcheck
+    lunarvim
     multimarkdown
+    neovide
+    shellcheck
+    zed-editor
 
     # River
      mako
      wofi
      dmenu
-
-    # fish shell and plugins
-     #fish
-     #fishPlugins.done
-     #fishPlugins.fzf
-     #fishPlugins.forgit
-     #fishPlugins.hydro
-     #fishPlugins.bass
-     #fzf
-     #fishPlugins.grc
-     #grc
-    #  End fish packages
-    
 
     # Wayfire related
     dmenu
