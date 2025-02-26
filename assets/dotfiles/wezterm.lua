@@ -1,8 +1,8 @@
 
 local config = {}
-config.enable_wayland = false
+config.enable_wayland = true
 config.font_size = 10
-config.front_end = "WebGpu"
+-- config.front_end = "WebGpu"
 -- config.color_scheme = 'AdventureTime'
 -- config.color_scheme = 'Advark Blue'
 config.color_scheme = 'Dracula'

@@ -57,4 +57,4 @@ keybind = alt+s>z=toggle_split_zoom
 keybind = alt+s>e=equalize_splits
 
 # other
-copy-on-select = clipboard
+#copy-on-select = clipboard
