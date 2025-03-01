@@ -1,4 +1,6 @@
 
+2-27-25
+  - Cleaned up jak-nixos config.nix file trying to config cursor
 2-26-25
   - Updated flake 
   - Sorted programs in packages.nix

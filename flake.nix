@@ -1,18 +1,15 @@
 {
-  description = "ddubs' Hyprland Flake";
+  description = "ddubs Hyprland Flake";
       
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable"; #Unstable
     hyprland.url = "github:hyprwm/Hyprland"; #Hyprland Development
-    #hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
     wallust.url = "git+https://codeberg.org/explosion-mental/wallust";
     ghostty.url = "github:ghostty-org/ghostty";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-        #envycontrol.url = "github:bayasdev/envycontrol";
     wfetch.url = "github:iynaix/wfetch";
     focal.url = "github:iynaix/focal";
-    #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 

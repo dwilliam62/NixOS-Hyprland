@@ -49,7 +49,6 @@
     #  "vm.max_map_count" = 2147483642;
     #};
 
-    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
     loader.systemd-boot.enable = true;
   
@@ -58,25 +57,7 @@
 	    canTouchEfiVariables = true;
   	  };
 
-    loader.timeout = 15;    
-  			
-    # Bootloader GRUB
-    #loader.grub = {
-	    #enable = true;
-	    #  devices = [ "nodev" ];
-	    #  efiSupport = true;
-      #  gfxmodeBios = "auto";
-	    #memtest86.enable = true;
-	    #extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #configurationName = "${host}";
-  	  #	};
-
-    # Bootloader GRUB theme  
-    #loader.grub = rec {
-    #  theme = inputs.distro-grub-themes.packages.${system}.nixos-grub-theme;
-    #  splashImage = "${theme}/splash_image.jpg";
-      #};
-    ## -end of BOOTLOADERS----- ##
+    loader.timeout = 10;    
   
     # Make /tmp a tmpfs
     tmp = {
@@ -134,8 +115,8 @@
   programs = {
 	  hyprland = {
       enable = true;
-		  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-		  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
+            # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
+            # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
   	  };
 
 	xwayland.enable = true;
@@ -183,19 +164,18 @@
   environment.systemPackages = (with pkgs; [
   # System Packages
             lxappearance
-
     
     #  override for aquamarine 
-           (aquamarine.overrideAttrs (oldAttrs: {
-          inherit (oldAttrs) pname;
-         version = "0.4.5";
-         }))
+        #           (aquamarine.overrideAttrs (oldAttrs: {
+        #  inherit (oldAttrs) pname;
+        # version = "0.4.5";
+        # }))
 
    #   override for hyprland 
-               (hyprland.overrideAttrs (oldAttrs: {
-        inherit (oldAttrs) pname;
-         version = "0.45.0";
-          }))
+        #       (hyprland.overrideAttrs (oldAttrs: {
+        #  inherit (oldAttrs) pname;
+        #  version = "0.45.0";
+        #  }))
  
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
@@ -229,6 +209,12 @@
     ];
   };
 
+  # Set the cursor theme for GDM, X11, and Wayland sessions
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Original-DodgerBlue";  # Set your desired cursor theme here
+    XCURSOR_SIZE = "24";  # Optional: Set the cursor size
+  };
+
   # Services to start
   services = {
     displayManager.defaultSession = "hyprland";
@@ -241,8 +227,11 @@
         desktopManager.cinnamon.enable=true;
         windowManager.awesome.enable=false;
         windowManager.bspwm.enable=true;
-        displayManager.gdm.enable = true;
-        displayManager.gdm.wayland = true;
+        # Enable GDM
+           displayManager.gdm = {
+             enable = true;
+             wayland = true;  # Enable Wayland if needed
+           };
 
     };
     
