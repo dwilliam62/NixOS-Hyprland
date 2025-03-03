@@ -17,7 +17,7 @@
   inputs@{ self, nixpkgs, chaotic, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
-      host = "jak-nixos";
+      host = "explorer";
       username = "dwilliams";
 
       unstable = import nixpkgs-unstable {
