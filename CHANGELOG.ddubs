@@ -1,4 +1,12 @@
 
+4-25-17 
+- Updated to unstable 
+- Stable was forcing webgtkkit to build (10000+ lines)
+- Cleaned up flake.nix 
+- Updated fonts in package.nix for new format in unstable 
+- Updated yazi 
+- Updated Hyprland 
+
 3-1725 
  - Updated flake
 3-3-25 

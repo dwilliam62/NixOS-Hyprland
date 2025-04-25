@@ -24,7 +24,7 @@
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages; # Kernel
+    kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
     	"systemd.mask=systemd-vconsole-setup.service"
@@ -182,24 +182,6 @@
   environment.systemPackages = (with pkgs; [
   # System Packages
 
-    # Currently AQ 0.5.0 and HL 0.45.1+ dont run in VM
-    #  Blackscreen
-
-    #  override for aquamarine 
-        #           (aquamarine.overrideAttrs (oldAttrs: {
-        #  inherit (oldAttrs) pname;
-        # version = "0.4.5";
-        # }))
-
-   #   override for hyprland 
-        #       (hyprland.overrideAttrs (oldAttrs: {
-        #inherit (oldAttrs) pname;
-        # version = "0.45.0";
-        #  }))
-
-
-
-    #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
 	  python-packages
@@ -257,7 +239,7 @@
       theme = "elarun";
       wayland.enable = true;
       extraPackages = with pkgs; [
-          sddm 
+                #sddm 
           kdePackages.sddm
           libsForQt5.qt5.qtgraphicaleffects
           where-is-my-sddm-theme

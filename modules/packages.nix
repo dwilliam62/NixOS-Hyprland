@@ -6,41 +6,12 @@
 }: {
   environment.systemPackages = with pkgs; [
  
-    # plugins
-
-    #  pkgs.hyprlandPlugins.hyprtrails
-    #  pkgs.hyprlandPlugins.hyprexpo
-
-
- ## From systemPackages.nix
- # System Packages
-
- #  Overrides
-
  # Hyprland Stuff
     #  override for AGS to keep it at v1
        (ags.overrideAttrs (oldAttrs: {
         inherit (oldAttrs) pname;
         version = "1.8.2";
       }))
-
-    #  override for Yazi to keep it at v3.3
-      (yazi.overrideAttrs (oldAttrs: {
-        inherit (oldAttrs) pname;
-        version = "0.3.3";
-      }))
-
-    #  override for aquamarine 
-        #   (aquamarine.overrideAttrs (oldAttrs: {
-        #  inherit (oldAttrs) pname;
-        # version = "0.4.5";
-        # }))
-
-   #   override for hyprland 
-        #       (hyprland.overrideAttrs (oldAttrs: {
-        #inherit (oldAttrs) pname;
-        # version = "0.45.0";
-        #  }))
 
     cava
     clang
@@ -60,11 +31,7 @@
     wget
     xdg-user-dirs
     xdg-utils
-   
-
-
- #version 2.0 not backward compatible with v1
-    #ags 
+    yazi
     arandr
     #btop-rocm
     (btop.override { 
@@ -148,8 +115,6 @@
     pfetch
     ncdu
     ncftp
-    okular
-    ouch
     pika-backup
     pipes
     pipes-rs
@@ -185,7 +150,6 @@
     dig
     docker-compose-language-service
     evil-helix
-    gcc
     git
     gitnuro
     lazygit
@@ -193,11 +157,6 @@
     luajitPackages.lua-lsp
     lua-language-server
     marksman
-    meld
-    meson
-    nixpkgs-fmt
-    nixd
-    nixfmt-rfc-style
     nix-tree
     nodejs_22
     nh
@@ -211,7 +170,6 @@
     zig
 
     # Internet
-    vesktop
     wtfis
     discord-canary
     distrobox
@@ -225,11 +183,11 @@
     # Video
      vlc
      jellyfin-media-player
-     handbrake
+        # handbrake
 
     # Terminals
     #warp-terminal
-    alacritty
+        #alacritty
     #foot
     kitty
     putty 
@@ -255,8 +213,6 @@
     aquamarine
     bc  # for rofi menus
     glaze
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
     hypridle 
     hyprutils
     hyprlock
@@ -282,12 +238,9 @@
     xdg-desktop-portal-hyprland
 
     # Editor
-    emacs-nox
     lunarvim
     multimarkdown
     neovide
-    shellcheck
-    zed-editor
 
     # River
      mako
@@ -302,17 +255,33 @@
 
   ];
 
-  # FONTS
-  fonts.packages = with pkgs; [
-    nerdfonts
-    noto-fonts
-    fira-code
-    noto-fonts-cjk-sans
-    jetbrains-mono
-    font-awesome
-    terminus_font
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+ fonts = {
+    packages = with pkgs; [
+      dejavu_fonts
+      fira-code
+      fira-code-symbols
+      font-awesome
+      hackgen-nf-font
+      ibm-plex
+      inter
+      jetbrains-mono
+      material-icons
+      maple-mono.NF
+      minecraftia
+      nerd-fonts.im-writing
+      nerd-fonts.blex-mono
+      noto-fonts
+      noto-fonts-emoji
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-monochrome-emoji
+      powerline-fonts
+      roboto
+      roboto-mono
+      symbola
+      terminus_font
+    ];
+  };
 
   # Added per VIMjoyner vidoe on setting up nixd
   nix.nixPath = ["nixpkgs = ${inputs.nixpkgs}"];

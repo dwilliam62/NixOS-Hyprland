@@ -2,8 +2,7 @@
   description = "ddubs Hyprland Flake";
       
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable"; #Unstable
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland"; #Hyprland Development
     wallust.url = "git+https://codeberg.org/explosion-mental/wallust";
     ghostty.url = "github:ghostty-org/ghostty";
@@ -14,18 +13,11 @@
   };
 
   outputs = 
-  inputs@{ self, nixpkgs, chaotic, nixpkgs-unstable, ... }:
+  inputs@{ self, nixpkgs, chaotic, ... }:
     let
       system = "x86_64-linux";
-      host = "explorer";
+      host = "jakos-vm";
       username = "dwilliams";
-
-      unstable = import nixpkgs-unstable {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
 
       pkgs = import nixpkgs {
         inherit system;
@@ -42,7 +34,6 @@
       inherit inputs;
       inherit username;
       inherit host;
-      inherit unstable;
     };
     modules = [
       ./hosts/${host}/config.nix
