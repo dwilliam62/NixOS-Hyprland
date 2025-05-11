@@ -4,7 +4,10 @@
   gitEmail = "don.e.Williams@gmail.com";
 
   # Hyprland Settings
-  extraMonitorSettings = "";
+  extraMonitorSettings = "
+  monitor=HDMI-A-1,1920x1080@75,auto,1
+  monitor=eDP-1,disable
+  ";
 
   # Waybar Settings
   clock24h = true;

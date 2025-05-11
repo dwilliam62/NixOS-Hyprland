@@ -1,5 +1,10 @@
+5-11-25
+- Updated xps15 host info
+- Updated display mgr default session syntax
+- Updated hardware.pulseaudio to services.pulseaudio
+- Need to do the other hosts 
 
-4-25-17 
+4-25-25 
 - Updated to unstable 
 - Stable was forcing webgtkkit to build (10000+ lines)
 - Cleaned up flake.nix 
@@ -7,7 +12,7 @@
 - Updated yazi 
 - Updated Hyprland 
 
-3-1725 
+3-17-25 
  - Updated flake
 3-3-25 
  - Updated flake
