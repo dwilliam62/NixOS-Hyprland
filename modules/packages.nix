@@ -7,12 +7,6 @@
   environment.systemPackages = with pkgs; [
  
  # Hyprland Stuff
-    #  override for AGS to keep it at v1
-       (ags.overrideAttrs (oldAttrs: {
-        inherit (oldAttrs) pname;
-        version = "1.8.2";
-      }))
-
     cava
     clang
     cpufrequtils
@@ -83,6 +77,7 @@
 
 
     (inputs.ghostty.packages.${pkgs.system}.default)
+    (inputs.ags.packages.${pkgs.system}.default)
         #(inputs.envycontrol.packages.${pkgs.system}.default)
         #(inputs.hyprland-qtutils.packages.${pkgs.system}.default)
     (inputs.wfetch.packages.${pkgs.system}.default)
