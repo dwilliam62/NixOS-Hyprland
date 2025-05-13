@@ -9,6 +9,7 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     wfetch.url = "github:iynaix/wfetch";
     focal.url = "github:iynaix/focal";
+    gs.url = "github:aylur/ags/v1"; # aylurs-gtk-shell-v1
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
@@ -16,6 +17,7 @@
     self,
     nixpkgs,
     chaotic,
+    ags,
     ...
   }: let
     system = "x86_64-linux";
