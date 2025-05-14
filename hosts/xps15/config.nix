@@ -381,10 +381,8 @@ in {
 
   # Virtualization / Containers
   virtualisation.libvirtd.enable = true;
-  virtualisation.podman = {
+  virtualisation.docker = {
     enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
   };
 
   # OpenGL
