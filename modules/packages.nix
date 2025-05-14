@@ -7,7 +7,14 @@
   environment.systemPackages = with pkgs; [
  
  # Hyprland Stuff
-    arandr
+    appimage-run
+    atop
+    bat
+    bottom
+    cmatrix
+    dua
+    figlet
+    google-chrome
     bc
     brightnessctl
     (btop.override { 
@@ -35,39 +42,40 @@
     jq
     gnumake
     grim
-    gtk-engine-murrine # for gtk themes
-    gnome-system-monitor
+        #gtk-engine-murrine # for gtk themes
+        #gnome-system-monitor
     inxi
     imagemagick
+    gcc
     git
     glib # for gsettings to work
     killall
-    kdePackages.qt6ct
-    kdePackages.qtwayland
-    kdePackages.qtstyleplugin-kvantum #kvantum
+        #kdePackages.qt6ct
+        #kdePackages.qtwayland
+        # kdePackages.qtstyleplugin-kvantum #kvantum
     lazydocker
     libappindicator
     libnotify
     loupe
-    libsForQt5.qtstyleplugin-kvantum # kvantum
-    libsForQt5.qt5ct
+        #libsForQt5.qtstyleplugin-kvantum # kvantum
+        #libsForQt5.qt5ct
     (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
     openssl # required by Rainbow borders
     pciutils
     nethogs
     networkmanagerapplet
     nitrogen
-    nvtopPackages.full
+        #nvtopPackages.full
     pamixer
     pavucontrol
     playerctl
     polkit_gnome
     pyprland
     rofi-wayland
-    qt6ct
-    qt6.qtwayland
-    qt6Packages.qtstyleplugin-kvantum # kvantum
-    gsettings-qt
+        #qt6ct
+        #qt6.qtwayland
+        #qt6Packages.qtstyleplugin-kvantum # kvantum
+        #gsettings-qt
     rofi-wayland
     slurp
     swappy
@@ -99,17 +107,8 @@
     (inputs.focal.packages.${pkgs.system}.default)
 
     # Utils
-    appimage-run
-    atop
-    #atuin
-    bat
-    bottom
-    cmatrix
-    dua
-    figlet
-    google-chrome
     glances
-    gnomeExtensions.kando-integration
+        #gnomeExtensions.kando-integration
     gotop
     gping
     htop
@@ -125,7 +124,7 @@
     pfetch
     ncdu
     ncftp
-    pika-backup
+        #pika-backup
     pipes
     pipes-rs
     ripgrep
@@ -182,7 +181,7 @@
     wtfis
     discord-canary
     distrobox
-    varia
+        #varia
 
     # Virtuaizaiton
     virt-viewer
@@ -201,24 +200,12 @@
     tmux
     wezterm
 
-    # bspwm
-    flameshot
-    nomacs
-    tilix
-    picom
-    polybar
-    sxhkd
-    xclip
-    yad
-    variety
-    volumeicon
 
     # Hyprland related
-    bc  # for rofi menus
     hyprpolkitagent
     hyprlang
-    hyprshot
-    hyprcursor
+        #hyprshot
+        #hyprcursor
     mesa
     nwg-drawer
     nwg-dock-hyprland

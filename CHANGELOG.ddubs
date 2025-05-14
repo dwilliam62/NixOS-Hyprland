@@ -1,14 +1,22 @@
-5-11-25
-- Updated xps15 host info
-- Updated display mgr default session syntax
-- Updated hardware.pulseaudio to services.pulseaudio
-- Need to do the other hosts 
+
+5-14-25
+- got build to finsih finally 
+- Added back some needed packages, gcc, make, etc
+- Hyprland is at 0.49 
+
+5-13-25
 - Added URL for AGSv1 to get v1.9.0 
 - override stopped working 
 - Sync'd w/Jak repo
 - Created new brand `Dev-2` for my changes 
 - Added packages-fonts.nix for local host packages for xps15
 - Changed to docker 
+
+5-11-25
+- Updated xps15 host info
+- Updated display mgr default session syntax
+- Updated hardware.pulseaudio to services.pulseaudio
+- Need to do the other hosts 
 
 4-25-25 
 - Updated to unstable 

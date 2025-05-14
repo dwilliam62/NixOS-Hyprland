@@ -21,7 +21,7 @@
     ...
   }: let
     system = "x86_64-linux";
-    host = "xps15";
+    host = "NixOS-Hyprland";
     username = "dwilliams";
 
     pkgs = import nixpkgs {
