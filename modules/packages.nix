@@ -7,63 +7,67 @@
   environment.systemPackages = with pkgs; [
  
  # Hyprland Stuff
-    #  override for AGS to keep it at v1
-        #  (ags.overrideAttrs (oldAttrs: {
-        #   inherit (oldAttrs) pname;
-        #  version = "1.9.0";
-        # }))
-
-    cava
-    clang
-    cpufrequtils
-    duf
-    eza
-    fastfetch
-    ffmpeg
-    glib # for gsettings to work
-    gsettings-qt
-    killall
-    libappindicator
-    libnotify
-    (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
-    openssl # required by Rainbow borders
-    pciutils
-    wget
-    xdg-user-dirs
-    xdg-utils
-    yazi
     arandr
-    #btop-rocm
+    bc
+    brightnessctl
     (btop.override { 
             cudaSupport = true; 
             rocmSupport = true;
         })
-    cmake
+    cava
     cargo
+    clang
+    cmake
     cliphist
+    cpufrequtils
+    curl
+    duf
+    dysk
     dunst
     eog
+    eza
+    fastfetch
+    findutils
+    ffmpeg
     fd
     feh
     file-roller
-    grim
-    gnumake
-    gtk-engine-murrine # for gtk themes
-    inxi
     jq
+    gnumake
+    grim
+    gtk-engine-murrine # for gtk themes
+    gnome-system-monitor
+    inxi
+    imagemagick
+    git
+    glib # for gsettings to work
+    killall
+    kdePackages.qt6ct
+    kdePackages.qtwayland
+    kdePackages.qtstyleplugin-kvantum #kvantum
+    lazydocker
+    libappindicator
+    libnotify
+    loupe
     libsForQt5.qtstyleplugin-kvantum # kvantum
     libsForQt5.qt5ct
+    (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
+    openssl # required by Rainbow borders
+    pciutils
     nethogs
     networkmanagerapplet
     nitrogen
-    nwg-look 
+    nvtopPackages.full
     pamixer
     pavucontrol
     playerctl
+    polkit_gnome
     pyprland
+    rofi-wayland
     qt6ct
     qt6.qtwayland
     qt6Packages.qtstyleplugin-kvantum # kvantum
+    gsettings-qt
     rofi-wayland
     slurp
     swappy
@@ -75,7 +79,14 @@
     wl-clipboard
     wlr-randr
     wlogout
+    wget
+    xdg-user-dirs
+    xdg-utils
+    wlogout
+    xarchiver
     yad
+    yad
+    yazi
     yt-dlp
 
 
@@ -84,13 +95,10 @@
 
     (inputs.ghostty.packages.${pkgs.system}.default)
     (inputs.ags.packages.${pkgs.system}.default)
-        #(inputs.envycontrol.packages.${pkgs.system}.default)
-        #(inputs.hyprland-qtutils.packages.${pkgs.system}.default)
     (inputs.wfetch.packages.${pkgs.system}.default)
     (inputs.focal.packages.${pkgs.system}.default)
 
     # Utils
-    arandr
     appimage-run
     atop
     #atuin
@@ -127,11 +135,10 @@
     ugrep
     unrar
     #v4l-utils
-    #obs-studio
+    obs-studio
     zoxide
 
     # Hardware related
-    brightnessctl
     cpufetch
     cpuid
     cpu-x
@@ -175,7 +182,6 @@
     wtfis
     discord-canary
     distrobox
-    #freeoffice
     varia
 
     # Virtuaizaiton
@@ -188,9 +194,6 @@
         # handbrake
 
     # Terminals
-    #warp-terminal
-        #alacritty
-    #foot
     kitty
     putty 
     ptyxis
@@ -205,7 +208,6 @@
     picom
     polybar
     sxhkd
-    polkit_gnome
     xclip
     yad
     variety
@@ -217,7 +219,6 @@
     hyprlang
     hyprshot
     hyprcursor
-    imagemagick
     mesa
     nwg-drawer
     nwg-dock-hyprland
@@ -236,18 +237,6 @@
     lunarvim
     multimarkdown
     neovide
-
-    # River
-        #  mako
-        # wofi
-        # dmenu
-
-    # Wayfire related
-        # dmenu
-        #wf-config
-        #wofi
-        # mako
-
   ];
 
  fonts = {
@@ -275,6 +264,7 @@
       roboto-mono
       symbola
       terminus_font
+      victor-mono
     ];
   };
 

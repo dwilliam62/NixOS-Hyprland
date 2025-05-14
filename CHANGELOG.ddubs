@@ -7,6 +7,7 @@
 - override stopped working 
 - Sync'd w/Jak repo
 - Created new brand `Dev-2` for my changes 
+- Added packages-fonts.nix for local host packages for xps15
 
 4-25-25 
 - Updated to unstable 
