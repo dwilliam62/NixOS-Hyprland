@@ -87,14 +87,17 @@ in {
   };
 
   # Extra Module Options
-  drivers.amdgpu.enable = false;
-  drivers.nvidia.enable = false;
-  drivers.nvidia-prime = {
-    enable = false;
-    intelBusID = "PCI:1:0:0";
-    nvidiaBusID = "PCI:0:2:0";
+  drivers = {
+        amdgpu.enable = false;
+        nvidia.enable = false;
+            nvidia-prime = {
+             enable = false;
+                 intelBusID = "PCI:1:0:0";
+                  nvidiaBusID = "PCI:0:2:0";
+            };
+        intel.enable = true;
   };
-  drivers.intel.enable = true;
+
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
 
@@ -326,24 +329,27 @@ in {
   services.pulseaudio.enable = false;
 
   # Security / Polkit
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (
-        subject.isInGroup("users")
-          && (
-            action.id == "org.freedesktop.login1.reboot" ||
-            action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
-            action.id == "org.freedesktop.login1.power-off" ||
-            action.id == "org.freedesktop.login1.power-off-multiple-sessions"
-          )
-        )
-      {
-        return polkit.Result.YES;
-      }
-    })
-  '';
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+     polkit.extraConfig = ''
+           polkit.addRule(function(action, subject) {
+             if (
+               subject.isInGroup("users")
+                 && (
+                 action.id == "org.freedesktop.login1.reboot" ||
+                 action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
+                 action.id == "org.freedesktop.login1.power-off" ||
+                 action.id == "org.freedesktop.login1.power-off-multiple-sessions"
+                 )
+             )
+             {
+             return polkit.Result.YES;
+              }
+          })
+        '';
+  };
+
   security.pam.services.swaylock = {
     text = ''
       auth include login
@@ -386,6 +392,7 @@ in {
         sudo-rs.wheelNeedsPassword = false;
     };
 
+    # security.sudo.wheelNeedsPassword = false;
 
   security.sudo = {
     enable = false;

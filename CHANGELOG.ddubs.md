@@ -1,15 +1,21 @@
+## 🗒️ Changelog
 
-5-15-25
+<H3> ✨ Standalne NixOS ** </H3>
+
+#### 🛠️ Most recent changes
+
+### 5-15-25
  - Added menu to waybar rofi and nwg-drawer
  - Created unified `config.rasi` file with fonts and catppuccin color 
- - Switched over to sudo-rs
+ - Switched over to `sudo-rs`
+ - Starting to reformat `config.nix` to standard formating
 
-5-14-25
+### 5-14-25
 - got build to finsih finally 
 - Added back some needed packages, gcc, make, etc
 - Hyprland is at 0.49 
 
-5-13-25
+### 5-13-25
 - Added URL for AGSv1 to get v1.9.0 
 - override stopped working 
 - Sync'd w/Jak repo
@@ -17,13 +23,13 @@
 - Added packages-fonts.nix for local host packages for xps15
 - Changed to docker 
 
-5-11-25
+### 5-11-25
 - Updated xps15 host info
 - Updated display mgr default session syntax
 - Updated hardware.pulseaudio to services.pulseaudio
 - Need to do the other hosts 
 
-4-25-25 
+### 4-25-25 
 - Updated to unstable 
 - Stable was forcing webgtkkit to build (10000+ lines)
 - Cleaned up flake.nix 
@@ -31,61 +37,59 @@
 - Updated yazi 
 - Updated Hyprland 
 
-3-17-25 
+### 3-17-25 
  - Updated flake
-3-3-25 
+### 3-3-25 
  - Updated flake
-2-27-25
+### 2-27-25
   - Cleaned up jak-nixos config.nix file trying to config cursor
-2-26-25
+#### 2-26-25
   - Updated flake 
   - Sorted programs in packages.nix
   - Removed gitdesktop, freeoffice and foot as no longer needed
   - Removed fish shell and plugins not going to use it
-2-22-25
+### 2-23-25
   - Updated flake 
-  - Set default to hyprland on jak-nixos system
-2-22-25
+### 2-22-25
   - Updated flake 
   - Added bc util needed for rofi menus w/JAK dots
-2-15-25
+### 2-15-25
   - Updated flake 
-2-14-25
+### 2-14-25
+  - Updated flake
+### 2-11-25
   - Updated flake 
-2-11-25
-  - Updated flake 
-2-9-25
-  - Updated flake 
-2-8-25
+### 2-9-25
+  - Updated flake
+ ### 2-8-25
   - Updated flake 
   - Added emacs-nox multimarkdown shellcheck
-2-3-25
+## 2-3-25
   - Updated flake 
   - Add varia download util
-2-2-25
+### 2-2-25
   - Updated flake 
-2-1-25
+### 2-1-25
   - Updated flake 
   - Added focal video capture
   - Added wfetch
-1-31-25
+### 1-31-25
   - Updated flake 
-1-30-25
+### 1-30-25
   - Updated flake 
   - Kernel updated 6.12.11
   - Moved back to SDDM removed lightdm/gdm from explorer
-1-28-25
+### 1-28-25
   - Updated flake 
   - Explorer at current HL builds 
   - Added pipes.sh and pipes-rs
-1-27-25
+### 1-27-25
   - Updated flake 
   - Explorer updated to HL 0.47
-1-26-25
-  - Update flake 
+### 1-26-25
   - Update flake 
   - explorer NVIDIA updated to 565 drivers 
-1-24-25
+### 1-24-25
   - Update flake 
   - Set explorer kernel to 6.12 until 6.13 builds
    - Added git-desktop and gitnuru
@@ -93,54 +97,54 @@
    - Added cachy kernel to jak-nixos vm
    - Updated explorer to cachy kernel and current HL
    - Updated jak-nixos-vm to 6.13-RC7 cachy kernel
-1-23-25
+### 1-23-25
  - Fixed packages.nix to get current hyprland builds
  - Updated flake got error about hyprlang (??) 
-1-22-25
+### 1-22-25
   - Updated flake ( 6.13 doesn't build v4l2loopback and cpupower won't build)
-1-20-25
+### 1-20-25
   - Updated flake (was hoping for 6.13)
-1-19-25
+### 1-19-25
   - Updated flake
-1-16-25
+### 1-16-25
   - Updated flake
   - Updated explorer
-1-15-25
+### 1-15-25
   - Updated flake
-1-14-25
+### 1-14-25
   - Updated flake
-  - Updated Prometheus
-1-13-25
+  - Updated Prometheus 
+### 1-13-25
   - Updated flake
   - Added evil-helix and supporting language servers
-1-12-25
+### 1-12-25
   - Updated flake
   - Added microfetch
   - Added pfetch
   - Focal screen/video capture rofi menu
   - Moved packages for hyprland back to modules.nix 
      Can't get unstable packages to install
-1-10-25
+### 1-10-25
   - Updated flake
   - Updated prometheus config after rebuild
   - Disabled sleep and suspend in explorer config.nix file
-1-8-25
+### 1-8-25
   - Updated flake
   - Small clean up in explorer config.nix 
-1-7-25
+### 1-7-25
   - Updated flake
   - Added packages for prometheus config
-1-6-25
+### 1-6-25
   - Dumped NVF neovim config flake.nix 
   - Updated flake
-1-5-25
+### 1-5-25
   - Updated flake
   - Added basic river config
   - update to ghostty
-1-4-25
+### 1-4-25
   - Updated flake
-  - Added ixas host - 4k dell laptop 
-1-3-25
+  - Added ixas host - 4k dell laptop  
+### 1-3-25
   - Updated flake
   - Added modified flake which allows for unstable pkgs with unstable.PKGNAME
   - P520 hyprland crashes on unstable but NVIDIA doesn't  
@@ -150,7 +154,7 @@
   - Small cleanup on flake.nix commented out GRUB entries
   - p520 won't start X environments reverted to SDDM 
   - Disabled X environments for now 
-1-2-25
+### 1-2-25
   - Updated flake
   - deleted configfile references for BSPWM and renabled
   - Added lightdm to explorer X11 sessions start but Hyprland doesn't
@@ -160,31 +164,31 @@
   - New kernel 6.12.8
   - Added sample unstable pkgs overlay to assets/dotfiles
      Allows you to add individual unstable pkgs 
-1-1-25
+### 1-1-25
  - Updated flake
  - Added handbrake to explorer host
  - Moved handbrake to modules/pacakages.nix after testing
-12-31-24
+### 12-31-24
  - Updated flake
  - Commented out uneeded apps in modules/packages.nix
  - Added new ghostty config to assets/dotfiles dir
-12-29-24
+### 12-29-24
  - Updated flake
-12-29-24
+### 12-29-24
  - Updated flake
  - Updated explorer 
  - default session syntax changed fixed in explorer
     Need to do for the other hosts 
  - Moved evolution to p520 only 
  - Updated jak-nixos displaymgr setting 
-12-28-24
+### 12-28-24
  - Updated flake
  - ghostty 1.0.1 update
  - Added envycontrol for hybrid graphics laptops
  - Added flake input for hyprland-qtutils 
-12-27-24
+### 12-27-24
  - Updated flake
-12-26-24
+### 12-26-24
  - Enabled bspwm on prometheus
  - Enabled bspwm/cinnmon on xps15
  - Updated Flake
@@ -193,14 +197,14 @@
  - Added initial ghostty config file to dotfilesS
  - Removed btop-rocm 
  - Added override to enable both NVIDIA and AMD
-12-25-24
+### 12-25-24
  - updated flake
  - Enable bspwm on explorer host
  - Added aswsome to jakos vm and explorer
  - Got bspwm working finally removed builtin options to specify config files 
    bspwm will source .config/bspwm/bspwmrc by default 
  - Removing awesomeWM 
-12-24-24
+### 12-24-24
  - Updated jak-nixos vm to 6.12.l6 
  - Added laucher submap to UserKeybinds copied to assets/dotfiles/hypr/UserConfigs
  - cleaning up old packages from modules/packages.nix
@@ -209,21 +213,21 @@
  - Added bspwm to jak-nixos vm - black screen
  - Added cinnamon to jak-nos vm works fine
  - Added cinnamon to explorer system
-12-23-24 
+### 12-23-24 
   - Update flake
   - disabled podman/virt on explorer
   - remvoed overried for hyprland/AQ for jak-nixos VM
-12-21-24 
+### 12-21-24 
   - Update flake
   - Added evolution to manage emails
   - Adwaita icon theme removed 
-12-20-24 
+### 12-20-24 
   - Added neovide and mission center back in 
   - made override for yazi at 0.3.3 for now 
-12-19-24 
+### 12-19-24 
   - Updated flake
   - Added waybar modules to assets/dotfiles/waybar
-12-18-24 
+### 12-18-24 
   - Updated flake
   - Trying input change to get updated aquamarine for VMs.
     -  hyprland = {
@@ -233,18 +237,18 @@
        };
      # Didn't work 
   - Update kernel on explorer to latest now that nvidia builds on 6.12
-12-16-24 
+### 12-16-24 
   - UPDATE: Build issue resolved unpinned HL/AQ 0.46 builds
   - Updated flake
   - hl 0.46 released won't build 
   - Pinned HL/AQ to 0.45.2/AQ 0.4.4
   - Saving as working config for now. 
   - Added FEH and Hyprpaper will try to config w/waypaper
-12-15-24 
+### 12-15-24 
   - Updated flake 
   - Removed BSPWM,etc  Would not start black screen
   - Removed Tilix never used it 
-12-15-24 
+### 12-15-24 
   - Updated flake 
   - Added X11 and BSPWM to p520 config 
 12-14-24 
