@@ -196,17 +196,6 @@ in {
       python-packages
     ];
 
-  # FONTS
-  fonts.packages = with pkgs; [
-    # Moved to system.pacakages.nix
-    #noto-fonts
-    # fira-code
-    # noto-fonts-cjk-sans
-    # jetbrains-mono
-    # font-awesome
-    #  terminus_font
-    # (nerdfonts.override {fonts = ["JetBrainsMono"];})
-  ];
 
   # Extra Portal Configuration
   xdg.portal = {
@@ -392,10 +381,15 @@ in {
 
   console.keyMap = "${keyboardLayout}";
 
-  security.sudo.wheelNeedsPassword = false;
+  security =  {
+        sudo-rs.enable = true;
+        sudo-rs.wheelNeedsPassword = false;
+    };
+
 
   security.sudo = {
-    enable = true;
+    enable = false;
+    sudo.wheelNeedsPassword = false;
     extraRules = [
       {
         users = ["dwilliams"];

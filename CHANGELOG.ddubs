@@ -2,6 +2,7 @@
 5-15-25
  - Added menu to waybar rofi and nwg-drawer
  - Created unified `config.rasi` file with fonts and catppuccin color 
+ - Switched over to sudo-rs
 
 5-14-25
 - got build to finsih finally 
