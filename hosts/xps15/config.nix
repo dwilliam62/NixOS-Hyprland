@@ -102,25 +102,27 @@ in {
   local.hardware-clock.enable = false;
 
   # networking
-  networking.networkmanager.enable = true;
-  networking.hostName = "${host}";
-  networking.timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
-  networking.extraHosts = ''
-    192.168.40.11         nas
-    192.168.40.10         docker
-    192.168.40.60         pbs2
-    192.168.40.11         ds1817
-    192.168.40.11         ds1817-server
-    192.168.40.221        pve2
-    192.168.40.9          pve3
-    192.168.40.4          pbs
-    192.168.40.60         pbs
-    192.168.40.5          dellprinter
-    192.168.40.1          router
-    192.168.40.1          gateway
-    1.1.1.1               dns1
-    8.8.4.4               dns2
-  '';
+  networking = {
+        enable = true;
+        hostName = "${host}";
+        timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
+            extraHosts = ''
+                192.168.40.11         nas
+                192.168.40.10         docker
+                192.168.40.60         pbs2
+                192.168.40.11         ds1817
+                192.168.40.11         ds1817-server
+                192.168.40.221        pve2
+                192.168.40.9          pve3
+                192.168.40.4          pbs
+                192.168.40.60         pbs
+                192.168.40.5          dellprinter
+                192.168.40.1          router
+                192.168.40.1          gateway
+                1.1.1.1               dns1
+                8.8.4.4               dns2
+              '';
+   };
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -148,12 +150,10 @@ in {
     };
 
     xwayland.enable = true;
-
     waybar.enable = true;
     hyprlock.enable = true;
     firefox.enable = false;
     git.enable = true;
-
     thunar.enable = true;
     thunar.plugins = with pkgs.xfce; [
       exo
@@ -162,7 +162,6 @@ in {
       thunar-volman
       tumbler
     ];
-
     neovim.enable = true;
     dconf.enable = true;
     seahorse.enable = true;
@@ -314,19 +313,19 @@ in {
     enable = true;
     extraBackends = [pkgs.sane-airscan];
     disabledDefaultBackends = ["escl"];
-  };
-
   # Extra Logitech Support
-  hardware.logitech.wireless.enable = false;
-  hardware.logitech.wireless.enableGraphical = false;
+    wireless.enable = false;
+    logitech.wireless.enableGraphical = false;
+    # Bluetooth Support
+    bluetooth.enable = true;
+    bluetooth.powerOnBoot = true;
+   };
 
-  # Bluetooth Support
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  services ={ 
+        blueman.enable = true;
+        # Enable sound with pipewire.
+        pulseaudio.enable = false;
+    };
 
   # Security / Polkit
   security = {
@@ -348,13 +347,13 @@ in {
               }
           })
         '';
+    pam.services.swaylock = {
+            text = ''
+              auth include login
+             '';
+        };
   };
 
-  security.pam.services.swaylock = {
-    text = ''
-      auth include login
-    '';
-  };
 
   # Cachix, Optimization settings and garbage collection automation
   nix = {
@@ -375,10 +374,12 @@ in {
   };
 
   # Virtualization / Containers
-  virtualisation.libvirtd.enable = true;
-  virtualisation.docker = {
-    enable = true;
-  };
+  virtualisation = {
+        libvirtd.enable = true;
+        docker = {
+          enable = true;
+         };
+   };
 
   # OpenGL
   hardware.graphics = {
@@ -387,12 +388,11 @@ in {
 
   console.keyMap = "${keyboardLayout}";
 
+    # Changed to sudo-rs
   security =  {
         sudo-rs.enable = true;
         sudo-rs.wheelNeedsPassword = false;
     };
-
-    # security.sudo.wheelNeedsPassword = false;
 
   security.sudo = {
     enable = false;
@@ -416,11 +416,5 @@ in {
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05"; # DO NOT CHANGE!?
 }
