@@ -1,6 +1,7 @@
 
 5-15-25
  - Added menu to waybar rofi and nwg-drawer
+ - Created unified `config.rasi` file with fonts and catppuccin color 
 
 5-14-25
 - got build to finsih finally 
