@@ -327,6 +327,34 @@ in {
         pulseaudio.enable = false;
     };
 
+  # Security / Polkit
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+     polkit.extraConfig = ''
+           polkit.addRule(function(action, subject) {
+             if (
+               subject.isInGroup("users")
+                 && (
+                 action.id == "org.freedesktop.login1.reboot" ||
+                 action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
+                 action.id == "org.freedesktop.login1.power-off" ||
+                 action.id == "org.freedesktop.login1.power-off-multiple-sessions"
+                 )
+             )
+             {
+             return polkit.Result.YES;
+              }
+          })
+        '';
+    pam.services.swaylock = {
+            text = ''
+              auth include login
+             '';
+        };
+  };
+
+
   # Cachix, Optimization settings and garbage collection automation
   nix = {
     settings = {
@@ -359,6 +387,28 @@ in {
   };
 
   console.keyMap = "${keyboardLayout}";
+
+    # Changed to sudo-rs
+  security =  {
+        sudo-rs.enable = true;
+        sudo-rs.wheelNeedsPassword = false;
+    };
+
+  security.sudo = {
+    enable = false;
+    sudo.wheelNeedsPassword = false;
+    extraRules = [
+      {
+        users = ["dwilliams"];
+        commands = [
+          {
+            command = "ALL";
+            options = ["NOPASSWD"];
+          }
+        ];
+      }
+    ];
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

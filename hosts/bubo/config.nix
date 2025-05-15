@@ -22,6 +22,7 @@
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
     ../../modules/packages.nix
+    ../../modules/security.nix
   ];
 
   # BOOT related stuff
@@ -199,18 +200,6 @@
 	  python-packages
   ];
 
-  # FONTS
-  fonts.packages = with pkgs; [
-        # Moved to system.packages.nix
-        #noto-fonts
-        # fira-code
-        #noto-fonts-cjk-sans
-        #   jetbrains-mono
-        #font-awesome
-        # terminus_font
-        #(nerdfonts.override {fonts = ["JetBrainsMono"];})
- 	];
-
   # Extra Portal Configuration
   xdg.portal = {
     enable = true;
@@ -383,31 +372,6 @@
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
 
-  # Security / Polkit
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (
-        subject.isInGroup("users")
-          && (
-            action.id == "org.freedesktop.login1.reboot" ||
-            action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
-            action.id == "org.freedesktop.login1.power-off" ||
-            action.id == "org.freedesktop.login1.power-off-multiple-sessions"
-          )
-        )
-      {
-        return polkit.Result.YES;
-      }
-    })
-  '';
-  security.pam.services.swaylock = {
-    text = ''
-      auth include login
-    '';
-  };
-
   # Cachix, Optimization settings and garbage collection automation
   nix = {
     settings = {
@@ -457,23 +421,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
 
-   security.sudo.wheelNeedsPassword = false;
-
-
- security.sudo = { 
-   enable = true;
-   extraRules = [ 
-    {
-       users = [ "dwilliams" ];
-       commands = [
-         {
-           command = "ALL";
-           options = [ "NOPASSWD" ];
-         }
-        ];
-     }
-   ];
-  };
 
   system.stateVersion = "24.05"; # Did you read the comment?
 }
