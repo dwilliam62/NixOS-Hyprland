@@ -1,4 +1,7 @@
 
+5-15-25
+ - Added menu to waybar rofi and nwg-drawer
+
 5-14-25
 - got build to finsih finally 
 - Added back some needed packages, gcc, make, etc
