@@ -30,6 +30,7 @@ in {
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
     ../../modules/packages.nix
+    ../../modules/security.nix
   ];
 
   # BOOT related stuff
@@ -341,36 +342,6 @@ in {
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-  # Security / Polkit
-  security = {
-    sudo-rs = {
-            enable = true;
-            wheelNeedsPassword = false;
-        };
-    rtkit.enable = true;
-        polkit.enable = true;
-         polkit.extraConfig = ''
-                polkit.addRule(function(action, subject) {
-                  if (
-                    subject.isInGroup("users")
-                      && (
-                        action.id == "org.freedesktop.login1.reboot" ||
-                        action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
-                        action.id == "org.freedesktop.login1.power-off" ||
-                        action.id == "org.freedesktop.login1.power-off-multiple-sessions"
-                      )
-                    )
-                  {
-                    return polkit.Result.YES;
-                  }
-                })
-              '';
-  pam.services.swaylock = {
-    text = ''
-      auth include login
-    '';
-  };
-};
 
   # Cachix, Optimization settings and garbage collection automation
   nix = {
@@ -389,9 +360,6 @@ in {
       options = "--delete-older-than 7d";
     };
   };
-
-
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

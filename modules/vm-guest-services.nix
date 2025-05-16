@@ -11,8 +11,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.qemuGuest.enable = true;
-    services.spice-vdagentd.enable = true;
-    services.spice-webdavd.enable = true;
+    services = {
+        qemuGuest.enable = true;
+        spice-vdagentd.enable = true;
+        spice-webdavd.enable = true;
+    };
   };
 }
