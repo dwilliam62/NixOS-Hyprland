@@ -217,9 +217,30 @@ in {
     ];
   };
 
+  console.keyMap = "${keyboardLayout}";
+
+  # Extra Logitech Support
+  hardware = {
+    #OpemGL
+    graphics.enable = true;
+    logitech.wireless.enable = false;
+    logitech.wireless.enableGraphical = false;
+    # Bluetooth Support
+        bluetooth.enable = false;
+        bluetooth.powerOnBoot = false;
+    sane = {
+       enable = false;
+        extraBackends = [pkgs.sane-airscan];
+        disabledDefaultBackends = ["escl"];
+        };
+    };
+
+
   # Services to start
   services.displayManager.defaultSession = "hyprland";
   services = {
+        blueman.enable = false;
+        pulseaudio.enable = false;
     xserver = {
       enable = true;
       xkb = {
@@ -306,36 +327,26 @@ in {
     nfs.server.enable = true;
   };
 
+  # Virtualization / Containers
+  virtualisation = {
+        libvirtd.enable = true;
+        docker = {
+          enable = true;
+         };
+  };
+
   systemd.services.flatpak-repo = {
     path = [pkgs.flatpak];
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
-  hardware.sane = {
-    enable = false;
-    extraBackends = [pkgs.sane-airscan];
-    disabledDefaultBackends = ["escl"];
-  };
-
-  # Extra Logitech Support
-  hardware = {
-    logitech.wireless.enable = false;
-    logitech.wireless.enableGraphical = false;
-    # Bluetooth Support
-            # bluetooth.enable = false;
-            #bluetooth.powerOnBoot = false; 
-    };
-
-  # Bluetooth Support
-  hardware.bluetooth.enable = false;
-  hardware.bluetooth.powerOnBoot = false;
-  services.blueman.enable = false;
-  services.pulseaudio.enable = false;
-
   # Security / Polkit
   security = {
+    sudo-rs = {
+            enable = true;
+            wheelNeedsPassword = false;
+        };
     rtkit.enable = true;
         polkit.enable = true;
          polkit.extraConfig = ''
@@ -379,25 +390,8 @@ in {
     };
   };
 
-  # Virtualization / Containers
-  virtualisation = {
-        libvirtd.enable = true;
-        docker = {
-          enable = true;
-         };
-  };
 
-  # OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
 
-  console.keyMap = "${keyboardLayout}";
-
-  security = {
-        sudo-rs.enable = true;
-        sudo-rs.wheelNeedsPassword = false;
-    };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

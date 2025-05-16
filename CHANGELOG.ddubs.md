@@ -4,6 +4,11 @@
 
 #### 🛠️ Most recent changes
 
+### 5-17-25
+ - Major cleanup of `config.nix` moving common items together 
+ - Services, hardware, etc 
+ - Reformatting per NIX spec vs. line over line
+
 ### 5-15-25
  - Added menu to waybar rofi and nwg-drawer
  - Created unified `config.rasi` file with fonts and catppuccin color 
