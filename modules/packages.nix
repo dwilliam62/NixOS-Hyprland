@@ -40,15 +40,15 @@
     feh
     file-roller
     jq
+    gcc
+    git
+    glib # for gsettings to work
     gnumake
     grim
         #gtk-engine-murrine # for gtk themes
         #gnome-system-monitor
     inxi
     imagemagick
-    gcc
-    git
-    glib # for gsettings to work
     killall
         #kdePackages.qt6ct
         #kdePackages.qtwayland
@@ -71,7 +71,6 @@
     playerctl
     polkit_gnome
     pyprland
-    rofi-wayland
         #qt6ct
         #qt6.qtwayland
         #qt6Packages.qtstyleplugin-kvantum # kvantum
@@ -100,7 +99,6 @@
 
  ## My packages 
 
-
     (inputs.ghostty.packages.${pkgs.system}.default)
     (inputs.ags.packages.${pkgs.system}.default)
     (inputs.wfetch.packages.${pkgs.system}.default)
@@ -124,7 +122,7 @@
     pfetch
     ncdu
     ncftp
-        #pika-backup
+    pika-backup
     pipes
     pipes-rs
     ripgrep
@@ -133,7 +131,7 @@
     tldr
     ugrep
     unrar
-    #v4l-utils
+    v4l-utils
     obs-studio
     zoxide
 
@@ -181,7 +179,6 @@
     wtfis
     discord-canary
     distrobox
-        #varia
 
     # Virtuaizaiton
     virt-viewer
@@ -200,12 +197,11 @@
     tmux
     wezterm
 
-
     # Hyprland related
     hyprpolkitagent
     hyprlang
         #hyprshot
-        #hyprcursor
+    hyprcursor
     mesa
     nwg-drawer
     nwg-dock-hyprland
