@@ -10,6 +10,7 @@
  - Reformatting per NIX spec vs. line over line
  - Moved security settings to `modules/security.nix`
  - Copied updated `config.nix` to `jak-nixos` host
+ - Added `wf` and `ff` scripts to `modules/packages.nix`
 
 ### 5-15-25
  - Added menu to waybar rofi and nwg-drawer
@@ -67,7 +68,7 @@
   - Updated flake 
 ### 2-14-25
   - Updated flake
-### 2-11-25
+# 2-11-25
   - Updated flake 
 ### 2-9-25
   - Updated flake
