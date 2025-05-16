@@ -10,6 +10,7 @@
  - Switched over to `sudo-rs`
  - Starting to reformat `config.nix` to standard formating
  - Cleaning up `config.nix` for `NixOS-Hyprland` host others to follow
+ - Added sudo-rs copied updated `config.nix` to `Jak-NixOS`
 
 ### 5-14-25
 - got build to finsih finally 
