@@ -11,6 +11,7 @@
  - Starting to reformat `config.nix` to standard formating
  - Cleaning up `config.nix` for `NixOS-Hyprland` host others to follow
  - Added sudo-rs copied updated `config.nix` to `Jak-NixOS`
+ - Added `packages-fonts.nix` to `jak-nixos` host
 
 ### 5-14-25
 - got build to finsih finally 
