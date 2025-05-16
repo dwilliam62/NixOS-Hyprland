@@ -9,6 +9,7 @@
  - Created unified `config.rasi` file with fonts and catppuccin color 
  - Switched over to `sudo-rs`
  - Starting to reformat `config.nix` to standard formating
+ - Cleaning up `config.nix` for `NixOS-Hyprland` host others to follow
 
 ### 5-14-25
 - got build to finsih finally 

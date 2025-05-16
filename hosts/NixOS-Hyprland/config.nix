@@ -87,37 +87,43 @@ in {
   };
 
   # Extra Module Options
-  drivers.amdgpu.enable = false;
-  drivers.nvidia.enable = false;
-  drivers.nvidia-prime = {
-    enable = false;
-    intelBusID = "PCI:1:0:0";
-    nvidiaBusID = "PCI:0:2:0";
-  };
-  drivers.intel.enable = false;
+  drivers ={
+        amdgpu.enable = false;
+        nvidia.enable = false;
+        nvidia-prime = {
+             enable = false;
+             intelBusID = "PCI:1:0:0";
+             nvidiaBusID = "PCI:0:2:0";
+             };
+        intel.enable = false;
+
+};
+
   vm.guest-services.enable = true;
   local.hardware-clock.enable = false;
 
   # networking
-  networking.networkmanager.enable = true;
-  networking.hostName = "${host}";
-  networking.timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
-  networking.extraHosts = ''
-    192.168.40.11         nas
-    192.168.40.10         docker
-    192.168.40.60         pbs2
-    192.168.40.11         ds1817
-    192.168.40.11         ds1817-server
-    192.168.40.221        pve2
-    192.168.40.9          pve3
-    192.168.40.4          pbs
-    192.168.40.60         pbs
-    192.168.40.5          dellprinter
-    192.168.40.1          router
-    192.168.40.1          gateway
-    1.1.1.1               dns1
-    8.8.4.4               dns2
-  '';
+  networking = {
+        networkmanager.enable = true;
+            hostName = "${host}";
+            timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
+            extraHosts = ''
+                192.168.40.11         nas
+                192.168.40.10         docker
+                192.168.40.60         pbs2
+                192.168.40.11         ds1817
+                192.168.40.11         ds1817-server
+                192.168.40.221        pve2
+                192.168.40.9          pve3
+                192.168.40.4          pbs
+                192.168.40.60         pbs
+                192.168.40.5          dellprinter
+                192.168.40.1          router
+                192.168.40.1          gateway
+                1.1.1.1               dns1
+                8.8.4.4               dns2
+              '';
+};
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -147,7 +153,7 @@ in {
     xwayland.enable = true;
 
     waybar.enable = true;
-    hyprlock.enable = true;
+    hyprlock.enable = false;
     firefox.enable = false;
     git.enable = true;
 
@@ -314,41 +320,46 @@ in {
   };
 
   # Extra Logitech Support
-  hardware.logitech.wireless.enable = false;
-  hardware.logitech.wireless.enableGraphical = false;
+  hardware = {
+    logitech.wireless.enable = false;
+    logitech.wireless.enableGraphical = false;
+    # Bluetooth Support
+            # bluetooth.enable = false;
+            #bluetooth.powerOnBoot = false; 
+    };
 
   # Bluetooth Support
   hardware.bluetooth.enable = false;
   hardware.bluetooth.powerOnBoot = false;
   services.blueman.enable = false;
-
-  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
 
   # Security / Polkit
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (
-        subject.isInGroup("users")
-          && (
-            action.id == "org.freedesktop.login1.reboot" ||
-            action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
-            action.id == "org.freedesktop.login1.power-off" ||
-            action.id == "org.freedesktop.login1.power-off-multiple-sessions"
-          )
-        )
-      {
-        return polkit.Result.YES;
-      }
-    })
-  '';
-  security.pam.services.swaylock = {
+  security = {
+    rtkit.enable = true;
+        polkit.enable = true;
+         polkit.extraConfig = ''
+                polkit.addRule(function(action, subject) {
+                  if (
+                    subject.isInGroup("users")
+                      && (
+                        action.id == "org.freedesktop.login1.reboot" ||
+                        action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
+                        action.id == "org.freedesktop.login1.power-off" ||
+                        action.id == "org.freedesktop.login1.power-off-multiple-sessions"
+                      )
+                    )
+                  {
+                    return polkit.Result.YES;
+                  }
+                })
+              '';
+  pam.services.swaylock = {
     text = ''
       auth include login
     '';
   };
+};
 
   # Cachix, Optimization settings and garbage collection automation
   nix = {
@@ -369,9 +380,11 @@ in {
   };
 
   # Virtualization / Containers
-  virtualisation.libvirtd.enable = true;
-  virtualisation.docker = {
-    enable = true;
+  virtualisation = {
+        libvirtd.enable = true;
+        docker = {
+          enable = true;
+         };
   };
 
   # OpenGL
@@ -381,22 +394,10 @@ in {
 
   console.keyMap = "${keyboardLayout}";
 
-  security.sudo.wheelNeedsPassword = false;
-
-  security.sudo = {
-    enable = true;
-    extraRules = [
-      {
-        users = ["dwilliams"];
-        commands = [
-          {
-            command = "ALL";
-            options = ["NOPASSWD"];
-          }
-        ];
-      }
-    ];
-  };
+  security = {
+        sudo-rs.enable = true;
+        sudo-rs.wheelNeedsPassword = false;
+    };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -404,11 +405,5 @@ in {
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Do NOT change this!  
 }
