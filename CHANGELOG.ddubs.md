@@ -4,6 +4,10 @@
 
 #### 🛠️ Most recent changes
 
+### 5-18-25
+ - Updated flake 
+ - Added `security.nix` to xps15
+
 ### 5-17-25
  - Major cleanup of `config.nix` moving common items together 
  - Services, hardware, etc 

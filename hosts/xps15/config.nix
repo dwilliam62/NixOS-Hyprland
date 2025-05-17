@@ -30,6 +30,7 @@ in {
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
     ../../modules/packages.nix
+    ../../modules/security.nix
   ];
 
   # BOOT related stuff
@@ -103,7 +104,7 @@ in {
 
   # networking
   networking = {
-        enable = true;
+        networkmanager.enable = true;
         hostName = "${host}";
         timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
             extraHosts = ''
@@ -309,12 +310,14 @@ in {
     '';
   };
 
-  hardware.sane = {
-    enable = true;
-    extraBackends = [pkgs.sane-airscan];
-    disabledDefaultBackends = ["escl"];
+  hardware = {
+    sane = {
+     enable = true;
+      extraBackends = [pkgs.sane-airscan];
+      disabledDefaultBackends = ["escl"];
+     };
   # Extra Logitech Support
-    wireless.enable = false;
+    logitech.wireless.enable = false;
     logitech.wireless.enableGraphical = false;
     # Bluetooth Support
     bluetooth.enable = true;
