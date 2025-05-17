@@ -10,12 +10,7 @@
     wfetch.url = "github:iynaix/wfetch";
     focal.url = "github:iynaix/focal";
     ags.url = "github:aylur/ags/v1";  #AGS v1
-
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
   outputs = inputs @ {
@@ -23,7 +18,6 @@
     nixpkgs,
     chaotic,
     ags,
-    lix-module,
     ...
   }: let
     system = "x86_64-linux";
@@ -47,7 +41,6 @@
         };
         modules = [
           ./hosts/${host}/config.nix
-          lix-module.nixosModules.default
           chaotic.nixosModules.nyx-cache
           chaotic.nixosModules.nyx-overlay
           chaotic.nixosModules.nyx-registry

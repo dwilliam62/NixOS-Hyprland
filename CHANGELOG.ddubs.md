@@ -7,6 +7,7 @@
 ### 5-18-25
  - Updated flake 
  - Added `security.nix` to xps15
+ - Changed from `nix` to `lix`  So far it's working
 
 ### 5-17-25
  - Major cleanup of `config.nix` moving common items together 
