@@ -8,6 +8,7 @@
  - Updated flake 
  - Added `security.nix` to xps15
  - Changed from `nix` to `lix`  So far it's working
+ - Added `element` app for matrix servers
 
 ### 5-17-25
  - Major cleanup of `config.nix` moving common items together 

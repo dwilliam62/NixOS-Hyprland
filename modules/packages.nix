@@ -60,6 +60,7 @@
     dysk
     dunst
     eog
+    element
     eza
     fastfetch
     findutils

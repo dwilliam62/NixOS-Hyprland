@@ -215,7 +215,7 @@ in {
   };
 
   # Services to start
-  services.displayManager.defaultSession = "hyprland";
+    #services.displayManager.defaultSession = "hyprland";
   services = {
     xserver = {
       enable = true;
