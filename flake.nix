@@ -2,7 +2,7 @@
   description = "ddubs Hyprland Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     hyprland.url = "github:hyprwm/Hyprland"; #Hyprland Development
     wallust.url = "git+https://codeberg.org/explosion-mental/wallust";
     ghostty.url = "github:ghostty-org/ghostty";

@@ -4,6 +4,11 @@
 
 #### 🛠️ Most recent changes
 
+### 5-19-25
+ - Set nixpkgs to 25.05 (stable)
+ - Added `-- --extra-deprecated-features url-literals` to rebuild/update alias
+ - Need to find new format to replace URLs 
+ 
 ### 5-18-25
  - Updated flake 
  - Added `security.nix` to xps15
@@ -33,7 +38,7 @@
 - Hyprland is at 0.49 
 
 ### 5-13-25
-- Added URL for AGSv1 to get v1.9.0 
+-Added URL for AGSv1 to get v1.9.0 
 - override stopped working 
 - Sync'd w/Jak repo
 - Created new brand `Dev-2` for my changes 
