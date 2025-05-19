@@ -110,6 +110,7 @@
     swaynotificationcenter
     swww
     unzip
+    uwsm  # wayland session mgr
     wallust
     wdisplays
     wl-clipboard
