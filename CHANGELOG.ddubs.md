@@ -9,6 +9,7 @@
  - Added `-- --extra-deprecated-features url-literals` to rebuild/update alias
  - Need to find new format to replace URLs 
  - Updated inputs to accomated new format requirement
+ - Updated flake 
  
 ### 5-18-25
  - Updated flake 
