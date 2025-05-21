@@ -90,11 +90,11 @@ in {
   # Extra Module Options
   drivers = {
         amdgpu.enable = false;
-        nvidia.enable = false;
+        nvidia.enable = true;
             nvidia-prime = {
-             enable = false;
-                 intelBusID = "PCI:1:0:0";
-                  nvidiaBusID = "PCI:0:2:0";
+             enable = true;
+                 intelBusID = "PCI:0:2:0";
+                  nvidiaBusID = "PCI:1:0:0";
             };
         intel.enable = true;
   };

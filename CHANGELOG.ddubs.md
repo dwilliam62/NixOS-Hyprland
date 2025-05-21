@@ -4,6 +4,10 @@
 
 #### 🛠️ Most recent changes
 
+### 5-21-25
+- Updated flake 
+- Renabled Hybrid mode for xps15 laptop 
+
 ### 5-19-25
  - Set nixpkgs to 25.05 (stable)
  - Added `-- --extra-deprecated-features url-literals` to rebuild/update alias
