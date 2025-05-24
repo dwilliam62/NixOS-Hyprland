@@ -4,6 +4,10 @@
 
 #### 🛠️ Most recent changes
 
+### 5-23-25
+ - Updated flake 
+ - Added niri 
+
 ### 5-21-25
 - Updated flake 
 - Renabled Hybrid mode for xps15 laptop 

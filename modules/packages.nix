@@ -4,6 +4,15 @@
   unstable,
   ...
 }: {
+
+  programs = {
+        neovim.enable = true;
+        niri = {
+          enable = true;
+          package = pkgs.niri;
+        };
+    };
+
   environment.systemPackages = with pkgs; [
   
     # Your fastfetch script

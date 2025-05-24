@@ -88,6 +88,7 @@
         };
         modules = [
           ./hosts/${host}/config.nix
+          ./modules/niri.nix
           lix-module.nixosModules.default
           chaotic.nixosModules.nyx-cache
           chaotic.nixosModules.nyx-overlay
