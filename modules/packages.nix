@@ -7,10 +7,16 @@
 
   programs = {
         neovim.enable = true;
+        xwayland.enable = true;
         niri = {
           enable = true;
           package = pkgs.niri;
         };
+    };
+
+    services.xserver = {
+        enable = true;
+        displayManager.startx.enable = true; 
     };
 
   environment.systemPackages = with pkgs; [
@@ -42,6 +48,10 @@
       esac
     '')
 
+  ### Xorg Stuff ###
+    xorg.xinit
+    xorg.xinput
+    xorg.xauth
 
  # Hyprland Stuff
     appimage-run

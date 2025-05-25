@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Terminate already running instances
+killall -q swaybg
+
+# Wait until the processes have been shut down
+while pgrep -x swaybg >/dev/null; do sleep 1; done
+
+default_wallpaper="/usr/share/backgrounds/arco/arco-wallpaper.jpg"
+
+swaybg -m fill -i $default_wallpaper &
+notify-send "$default_wallpaper" &

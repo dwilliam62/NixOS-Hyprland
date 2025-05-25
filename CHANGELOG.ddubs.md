@@ -4,6 +4,11 @@
 
 #### 🛠️ Most recent changes
 
+### 5-24-25
+- Updated flake 
+- Updated niri config files/scripts
+- Saved niri config to assets 
+
 ### 5-23-25
  - Updated flake 
  - Added niri 
