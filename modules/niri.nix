@@ -9,6 +9,7 @@
     variety
     micro
     foot
+    flameshot
   ];
 
 }

@@ -334,9 +334,9 @@ binds {
     Mod+D { spawn "~/.config/niri/scripts/fullmenut"; }
     Mod+Shift+D { spawn "~/.config/niri/scripts/menut"; }
     Mod+Ctrl+Print { spawn "flameshot" "gui";}
-    Mod+Shift+X {spawn "arcolinux-powermenu";}
+    Mod+Shift+X {spawn "pkill niri";}
 
-    Mod+X { spawn "archlinux-logout";}
+    Mod+X { spawn "pkill niri";}
 
     Mod+Shift+Return { spawn "thunar"; }
 
@@ -356,32 +356,30 @@ binds {
 
     Ctrl+Shift+Escape { spawn "xfce4-taskmanager";}
 
-    Ctrl+Alt+B  { spawn "brave";}
-    Ctrl+Alt+Delete { spawn "archlinux-logout"; }
+    Ctrl+Alt+B  { spawn "google-chrome-stable";}
+    Ctrl+Alt+Delete { spawn "pkill niri"; }
     Ctrl+Alt+E { spawn "archlinux-tweak-tool";}
     Ctrl+Alt+End { spawn "dex" "--term" "alacritty" "/usr/share/applications/btop.desktop";}
-    Ctrl+Alt+F { spawn "firefox";}
-    ctrl+Alt+G { spawn "chromium" "-no-default-browser-check";}
+    Ctrl+Alt+F { spawn "google-chrome-stable";}
+    ctrl+Alt+G { spawn "google-chrome-stable" "-no-default-browser-check";}
     ctrl+Alt+H { spawn "arcolinux-app-glade";}
-    Ctrl+Alt+K { spawn "archlinux-logout";}
-    Ctrl+Alt+L { spawn "archlinux-logout";}
-    Ctrl+Alt+P { spawn "pamac-manager"; }
+    Ctrl+Alt+K { spawn "pkill niri";}
+    Ctrl+Alt+L { spawn "pkill niri";}
     Ctrl+Alt+S { spawn "spotify"; }
     Ctrl+Alt+Return { spawn "alacritty"; }
     Ctrl+Alt+T { spawn "alacritty"; }
     Ctrl+Alt+U { spawn "pavucontrol";}
     Ctrl+Alt+V { spawn "vivaldi-stable";}
-    Ctrl+Alt+W { spawn "arcolinux-welcome-app";}
 
      
     // Function keys
-    Mod+F1 { spawn "vivaldi-stable";}
+    Mod+F1 { spawn "google-chrome-stable";}
     Mod+F2 { spawn "code";}
-    Mod+F3 { spawn "inkscape";}
-    Mod+F4 { spawn "gimp";}
-    Mod+F5 { spawn "meld";}
+    Mod+F3 { spawn "neovide";}
+    Mod+F4 { spawn "thunar";}
+    Mod+F5 { spawn "discordcanary";}
     Mod+F6 { spawn "vlc" "--video-on-top";}
-    Mod+F7 { spawn "virtualbox";}
+    Mod+F7 { spawn "virt-manager";}
     Mod+F8 { spawn "thunar";}
     Mod+F9 { spawn "lollypop";}
     Mod+F10 { spawn "spotify";}
