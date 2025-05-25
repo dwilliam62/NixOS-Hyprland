@@ -7,6 +7,7 @@
     dunst
     polkit_gnome
     variety
+    micro
   ];
 
 }
