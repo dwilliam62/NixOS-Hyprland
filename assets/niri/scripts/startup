@@ -6,6 +6,8 @@
 
 xwayland-satellite >/dev/null 2>/dev/null & 
 
+waypaper --restore &
+
 SCRIPTSDIR=$HOME/.config/niri/scripts
 
 # Kill already running process

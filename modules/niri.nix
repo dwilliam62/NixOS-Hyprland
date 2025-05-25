@@ -8,6 +8,7 @@
     polkit_gnome
     variety
     micro
+    foot
   ];
 
 }
