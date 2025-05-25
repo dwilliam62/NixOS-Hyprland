@@ -6,6 +6,7 @@
     xwayland-satellite
     dunst
     polkit_gnome
+    variety
   ];
 
 }
