@@ -15,5 +15,6 @@ killall -q waybar
 while pgrep -x waybar >/dev/null; do sleep 1; done
 
 if [[ ! $(pidof waybar) ]]; then
-	waybar --bar main-bar --log-level error --config ${CONFIG} --style ${STYLE}
+	waybar --bar main-bar --log-level error --config $HOME/.config/niri/waybar-alt-2/config.ini --style $HOME/.config/niri/waybar-alt-2/style.css 
+	#waybar --bar main-bar --log-level error --config ${CONFIG} --style ${STYLE}
 fi

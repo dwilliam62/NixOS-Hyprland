@@ -4,7 +4,7 @@
 #type "var" in a terminal to change settings - example
 #variety &
 
-xwayland-satellite & 
+xwayland-satellite >/dev/null 2>/dev/null & 
 
 SCRIPTSDIR=$HOME/.config/niri/scripts
 
