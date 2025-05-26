@@ -340,10 +340,6 @@ binds {
 
     Mod+Shift+Return { spawn "thunar"; }
 
-    Alt+N { spawn "variety" "-n";}
-    Alt+P { spawn "variety" "-p";}
-    Alt+F { spawn "variety" "-f";}
-    Alt+T { spawn "variety" "-t";}
 
     Alt+W { spawn "~/.config/niri/scripts/statusbar" ;}
 
@@ -351,26 +347,16 @@ binds {
     Alt+Shift+P { spawn "~/.config/niri/scripts/varietyp";}
     Alt+Shift+U { spawn "~/.config/niri/scripts/varietyu";}
 
-    Alt+Left { spawn "variety" "-p";}
-    Alt+Right { spawn "variety" "-n";}
-    Alt+Up { spawn "variety" "--toggle-pause";}
-    Alt+Down { spawn "variety" "--resume";}
-
-    Ctrl+Shift+Escape { spawn "xfce4-taskmanager";}
 
     Ctrl+Alt+B  { spawn "google-chrome-stable";}
     Ctrl+Alt+Delete { spawn "pkill niri"; }
-    Ctrl+Alt+E { spawn "archlinux-tweak-tool";}
-    Ctrl+Alt+End { spawn "dex" "--term" "alacritty" "/usr/share/applications/btop.desktop";}
+    Ctrl+Alt+T { spawn "dex" "--term" "alacritty" "/usr/share/applications/btop.desktop";}
     Ctrl+Alt+F { spawn "google-chrome-stable";}
     ctrl+Alt+G { spawn "google-chrome-stable" "-no-default-browser-check";}
     Ctrl+Alt+K { spawn "pkill niri";}
     Ctrl+Alt+L { spawn "pkill niri";}
-    Ctrl+Alt+S { spawn "spotify"; }
     Ctrl+Alt+Return { spawn "alacritty"; }
-    Ctrl+Alt+T { spawn "alacritty"; }
-    Ctrl+Alt+U { spawn "pavucontrol";}
-    Ctrl+Alt+V { spawn "vivaldi-stable";}
+    Ctrl+Alt+V { spawn "pavucontrol";}
 
      
     // Function keys
@@ -593,10 +579,10 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
+    Ctrl+Shift+S { screenshot; }
     Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
-    Mod+Shift+S  { spawn "~/.local/bin/screenshottin"; }
+    Alt+Shift+S { screenshot-window; }
+    // Alt+Shift+S  { spawn "~/.local/bin/screenshottin"; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
