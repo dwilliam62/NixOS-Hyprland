@@ -8,6 +8,7 @@
 - Updated flake 
 - Added flameshot keybind 
 - Added screenshottin script 
+- Created script `start-polkit-agent` for Niri 
 
 ### 5-24-25
 - Updated flake 

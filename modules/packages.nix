@@ -20,6 +20,11 @@
     };
 
   environment.systemPackages = with pkgs; [
+
+    # Start gnome polkit needed for niri
+     (writeShellScriptBin "start-polkit-agent" ''
+      ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
+    '')
   
     # Your fastfetch script
     (pkgs.writeShellScriptBin "ff" ''
@@ -118,7 +123,10 @@
     pamixer
     pavucontrol
     playerctl
+        #polkit
     polkit_gnome
+        #kdePackages.polkit-kde-agent-1
+    hyprpolkitagent
     pyprland
         #qt6ct
         #qt6.qtwayland
