@@ -229,8 +229,7 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "~/.config/niri/scripts/startup"
-spawn-at-startup "/usr/bin/xwayland-satellite"
-spawn-at-startup "xwayland"
+spawn-at-startup "xwayland-satellite"
 
 environment {
     DISPLAY ":1"
@@ -328,12 +327,12 @@ binds {
     Mod+S { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T { spawn "alacritty"; }
-    Mod+Return { spawn "alacritty"; }
+    Mod+T { spawn "ghostty"; }
+    Mod+Return { spawn "kitty"; }
 
     Mod+D { spawn "~/.config/niri/scripts/fullmenut"; }
     Mod+Shift+D { spawn "~/.config/niri/scripts/menut"; }
-    Mod+Ctrl+Print { spawn "flameshot" "gui";}
+    Mod+Alt+F { spawn "flameshot" "gui";}
     Mod+Shift+X {spawn "pkill niri";}
 
     Mod+X { spawn "pkill niri";}
@@ -362,7 +361,6 @@ binds {
     Ctrl+Alt+End { spawn "dex" "--term" "alacritty" "/usr/share/applications/btop.desktop";}
     Ctrl+Alt+F { spawn "google-chrome-stable";}
     ctrl+Alt+G { spawn "google-chrome-stable" "-no-default-browser-check";}
-    ctrl+Alt+H { spawn "arcolinux-app-glade";}
     Ctrl+Alt+K { spawn "pkill niri";}
     Ctrl+Alt+L { spawn "pkill niri";}
     Ctrl+Alt+S { spawn "spotify"; }
@@ -531,15 +529,15 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
@@ -595,6 +593,7 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
+    Mod+Shift+S  { spawn "~/.local/bin/screenshottin"; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }

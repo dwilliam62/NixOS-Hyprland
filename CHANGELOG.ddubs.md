@@ -6,6 +6,8 @@
 
 ### 5-27-25
 - Updated flake 
+- Added flameshot keybind 
+- Added screenshottin script 
 
 ### 5-24-25
 - Updated flake 

@@ -93,7 +93,8 @@
     glib # for gsettings to work
     gnumake
     grim
-        #gtk-engine-murrine # for gtk themes
+    grimblast
+    gtk-engine-murrine # for gtk themes
         #gnome-system-monitor
     inxi
     imagemagick
