@@ -229,6 +229,7 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "~/.config/niri/scripts/startup"
+spawn-at-startup "~/.config/niri/scripts/statusbar"
 spawn-at-startup "xwayland-satellite"
 
 environment {
@@ -343,6 +344,8 @@ binds {
     Alt+P { spawn "variety" "-p";}
     Alt+F { spawn "variety" "-f";}
     Alt+T { spawn "variety" "-t";}
+
+    Alt+W { spawn "~/.config/niri/scripts/statusbar" ;}
 
     Alt+Shift+N { spawn "~/.config/niri/scripts/varietyn";}
     Alt+Shift+P { spawn "~/.config/niri/scripts/varietyp";}
