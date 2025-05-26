@@ -10,6 +10,7 @@
 - Added screenshottin script 
 - Created script `start-polkit-agent` for Niri 
 - Added polkit config for WLR for Niri
+- Added `theme.nix` to attempt to theme all apps to dark mode
 
 ### 5-24-25
 - Updated flake 
