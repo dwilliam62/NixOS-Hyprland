@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-CONFIG="$HOME/.config/niri/waybar/config.ini"
-STYLE="$HOME/.config/niri/waybar/style.css"
+CONFIG="$HOME/.config/niri/waybar-alt-2/config.ini"
+STYLE="$HOME/.config/niri/waybar-alt-2/style.css"
 
 # Create new css files and make your own style
 # Here is a mono look - then change the colors
@@ -10,6 +10,7 @@ STYLE="$HOME/.config/niri/waybar/style.css"
 
 # Terminate already running bar instances
 killall -q waybar
+pkill waybar
 
 # Wait until the processes have been shut down
 while pgrep -x waybar >/dev/null; do sleep 1; done
