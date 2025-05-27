@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+#wallpaper fetcher and wallpaper rotator
+#type "var" in a terminal to change settings - example
+#variety &
+
+xwayland-satellite >/dev/null 2>/dev/null & 
+
+waypaper --restore &
+
+SCRIPTSDIR=$HOME/.config/niri/scripts
+
+# Kill already running process
+_ps=(waybar mako)
+for _prs in "${_ps[@]}"; do
+	if [[ $(pidof ${_prs}) ]]; then
+		killall -9 ${_prs}
+	fi
+done
+
+# default wallpaper
+#${SCRIPTSDIR}/setdefaultwallpaper &
+
+# polkit agent
+#polkit-gnome-authentication-agent-1 &
+
+# Apply themes
+# ${SCRIPTSDIR}/gtkthemes &
+${SCRIPTSDIR}/gtkthemes-manual &
+
+# Launch notification daemon (mako)
+${SCRIPTSDIR}/notifications &
+
+# Launch statusbar (waybar)
+${SCRIPTSDIR}/statusbar &
+
+# Launch swayidle
+#${SCRIPTSDIR}/niri-swayidle &
+#${SCRIPTSDIR}/niri-poweroff &
+
+#insync start &
+#dropbox &
+#telegram-desktop &
+#discord &
+nm-applet --indicator &
