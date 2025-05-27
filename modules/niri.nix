@@ -10,6 +10,7 @@
     micro
     foot
     flameshot
+    mako
   ];
 
 }

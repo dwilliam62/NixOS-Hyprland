@@ -238,7 +238,7 @@ in {
 
 
   # Services to start
-  services.displayManager.defaultSession = "hyprland";
+    #  services.displayManager.defaultSession = "hyprland";
   services = {
         blueman.enable = false;
         pulseaudio.enable = false;
