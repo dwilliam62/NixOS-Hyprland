@@ -4,6 +4,11 @@
 
 #### 🛠️ Most recent changes
 
+### 5-29-25
+- Updated flake 
+- Added shellcheck and shfmt 
+- Disabled NVIDIA on XPS15 Fails to build 
+
 ### 5-27-25
 - Updated flake 
 - Added flameshot keybind 

@@ -226,6 +226,8 @@
     nh
     nil
     nix-ld
+    shellcheck
+    shfmt
     taplo
     vscode-fhs
     vscode-langservers-extracted

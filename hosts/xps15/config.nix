@@ -46,8 +46,10 @@ in {
     ];
 
     # This is for OBS Virtual Cam Support
-    kernelModules = ["v4l2loopback"];
-    extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
+    kernelModules = [""];
+    #kernelModules = ["v4l2loopback"];
+    #extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
+       
 
     initrd = {
       availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
@@ -90,7 +92,7 @@ in {
   # Extra Module Options
   drivers = {
         amdgpu.enable = false;
-        nvidia.enable = true;
+        nvidia.enable = false;
             nvidia-prime = {
              enable = true;
                  intelBusID = "PCI:0:2:0";
