@@ -8,6 +8,8 @@
 - Updated flake 
 - Added shellcheck and shfmt 
 - Disabled NVIDIA on XPS15 Fails to build 
+- Pinned kernel to 6.14 to resolve NVIDIA and v4l2loopback errors 
+
 
 ### 5-27-25
 - Updated flake 

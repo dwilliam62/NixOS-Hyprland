@@ -35,7 +35,8 @@ in {
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    kernelPackages = pkgs.linuxPackages_6_14; # Kernel
+    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
@@ -46,9 +47,9 @@ in {
     ];
 
     # This is for OBS Virtual Cam Support
-    kernelModules = [""];
-    #kernelModules = ["v4l2loopback"];
-    #extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
+        #kernelModules = [""];
+    kernelModules = ["v4l2loopback"];
+    extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
        
 
     initrd = {
@@ -92,7 +93,7 @@ in {
   # Extra Module Options
   drivers = {
         amdgpu.enable = false;
-        nvidia.enable = false;
+        nvidia.enable = true;
             nvidia-prime = {
              enable = true;
                  intelBusID = "PCI:0:2:0";
