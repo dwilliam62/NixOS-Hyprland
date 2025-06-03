@@ -36,6 +36,7 @@ in {
 
   # BOOT related stuff
   boot = {
+    # 6.15 isn't building with NVIDIA 6/3/25
     kernelPackages = pkgs.linuxPackages_6_14; # Kernel
     #kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
@@ -158,7 +159,6 @@ in {
     waybar.enable = true;
     hyprlock.enable = true;
     firefox.enable = false;
-    git.enable = true;
     thunar.enable = true;
     thunar.plugins = with pkgs.xfce; [
       exo
@@ -167,7 +167,6 @@ in {
       thunar-volman
       tumbler
     ];
-    neovim.enable = true;
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -214,7 +213,7 @@ in {
         layout = "${keyboardLayout}";
         variant = "";
       };
-      desktopManager.cinnamon.enable = true;
+      desktopManager.cinnamon.enable = false;
       windowManager.bspwm.enable = true;
     };
 
@@ -242,7 +241,7 @@ in {
     };
 
     printing = {
-      enable = false;
+      enable = true;
       drivers = [
         # pkgs.hplipWithPlugin
       ];

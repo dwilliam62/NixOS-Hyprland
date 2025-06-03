@@ -6,8 +6,12 @@
 }: {
 
   programs = {
-        neovim.enable = true;
+       neovim = {
+          enable = true;
+          defaultEditor = true;
+       };
         xwayland.enable = true;
+        git.enable = true;
         niri = {
           enable = true;
           package = pkgs.niri;
