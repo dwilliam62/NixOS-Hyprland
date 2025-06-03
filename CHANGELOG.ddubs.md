@@ -15,6 +15,7 @@
 - Created `portals.nix` to centralize portals
 - Small cleanup and forgot add portals to module imports
 - Updated `hosts/default/config.nix`  
+- Disabled cinnamon 
 
 ### 5-30-25
 - Updated flake 
