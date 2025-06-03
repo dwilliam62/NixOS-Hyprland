@@ -16,6 +16,7 @@
 - Small cleanup and forgot add portals to module imports
 - Updated `hosts/default/config.nix`  
 - Disabled cinnamon 
+- Added hyprpanel input and overlay
 
 ### 5-30-25
 - Updated flake 

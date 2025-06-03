@@ -51,7 +51,14 @@
     ref = "v1";
   };
 
-  lix-module = {
+   hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+        #hyperpanel = {
+        #type = "github";
+        #owner = "Jas-SinghFSU";
+        #repo = "HyprPanel";
+        # };
+
+    lix-module = {
     type = "tarball";
     url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
     inputs.nixpkgs.follows = "nixpkgs";
@@ -64,6 +71,7 @@
     nixpkgs,
     chaotic,
     ags,
+    hyprpanel,
     lix-module,
     ...
   }: let
@@ -87,6 +95,11 @@
           inherit host;
         };
         modules = [
+         {
+          nixpkgs.overlays = [
+              inputs.hyprpanel.overlay
+             ];
+          }
           ./hosts/${host}/config.nix
           ./modules/services.nix
           ./modules/portals.nix

@@ -63,6 +63,7 @@
     xorg.xauth
 
  # Hyprland Stuff
+    hyprpanel
     appimage-run
     atop
     bat
