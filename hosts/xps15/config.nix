@@ -31,12 +31,13 @@ in {
     ../../modules/local-hardware-clock.nix
     ../../modules/packages.nix
     ../../modules/security.nix
+    ../../modules/portals.nix
   ];
 
   # BOOT related stuff
   boot = {
-    #kernelPackages = pkgs.linuxPackages_6_14; # Kernel
-    kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    kernelPackages = pkgs.linuxPackages_6_14; # Kernel
+    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"

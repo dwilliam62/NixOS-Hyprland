@@ -96,7 +96,6 @@
           chaotic.nixosModules.nyx-cache
           chaotic.nixosModules.nyx-overlay
           chaotic.nixosModules.nyx-registry
-          #inputs.distro-grub-themes.nixosModules.${system}.default
         ];
       };
     };
