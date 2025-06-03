@@ -17,6 +17,7 @@
 - Updated `hosts/default/config.nix`  
 - Disabled cinnamon 
 - Added hyprpanel input and overlay
+- Added my hyprpanel config and Paridah's to assets/hyprpanel 
 
 ### 5-30-25
 - Updated flake 
