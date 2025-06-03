@@ -64,6 +64,7 @@
 
  # Hyprland Stuff
     hyprpanel
+    matugen #for Hyprpanel
     appimage-run
     atop
     bat
