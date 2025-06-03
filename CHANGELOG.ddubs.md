@@ -4,6 +4,16 @@
 
 #### 🛠️ Most recent changes
 
+
+#### 6-3-25
+
+- Updated flake 
+- Created `services.nix` for common services 
+- Removed them from `config.nix` for ease of maint/updates
+- Kept host specific features like printing, scanning, HW 
+- Configured SSH to block root logins 
+- Created `portals.nix` to centralize portals
+
 ### 5-30-25
 - Updated flake 
 - Pinned kernel to 6.14 jak-nixos v4l2loopback won't build 

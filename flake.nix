@@ -68,7 +68,7 @@
     ...
   }: let
     system = "x86_64-linux";
-    host = "jak-nixos";
+    host = "xps15";
     username = "dwilliams";
 
     pkgs = import nixpkgs {
@@ -88,6 +88,8 @@
         };
         modules = [
           ./hosts/${host}/config.nix
+          ./modules/services.nix
+          ./modules/portals.nix
           ./modules/niri.nix
           ./modules/theme.nix
           lix-module.nixosModules.default

@@ -35,8 +35,8 @@ in {
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_14; # Kernel
-    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    #kernelPackages = pkgs.linuxPackages_6_14; # Kernel
+    kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
@@ -203,31 +203,6 @@ in {
     ];
 
 
-  # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-wlr  
-      #pkgs.xdg-desktop-portal
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-wlr
-    ];
-  };
-
-# Prioritize the wlroots portal for your desktop
-xdg.portal.config = {
-  Niri = {
-    default = [ "wlr" "gtk" ];  # Prioritize wlr, fallback to gtk
-    "org.freedesktop.impl.portal.FileChooser" = [ "wlr" ];  # Specifically for file dialogs
-  };
-  common = {
-    default = [ "wlr" "gtk" ];
-  };
-};
 
   # Services to start
     #services.displayManager.defaultSession = "hyprland";
@@ -260,29 +235,10 @@ xdg.portal.config = {
       };
     };
 
-    displayManager.sddm = {
-      enable = false;
-      theme = "elarun";
-      wayland.enable = true;
-      extraPackages = with pkgs; [
-        sddm
-        kdePackages.sddm
-        libsForQt5.qt5.qtgraphicaleffects
-        where-is-my-sddm-theme
-      ];
-    };
-
     smartd = {
       enable = true;
       autodetect = true;
     };
-
-    envfs.enable = true;
-    libinput.enable = true;
-    fstrim.enable = true;
-    gvfs.enable = true;
-    openssh.enable = true;
-    flatpak.enable = true;
 
     printing = {
       enable = false;
@@ -291,8 +247,7 @@ xdg.portal.config = {
       ];
     };
 
-    gnome.gnome-keyring.enable = true;
-
+   
     avahi = {
       enable = true;
       nssmdns4 = true;
@@ -314,17 +269,9 @@ xdg.portal.config = {
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    rpcbind.enable = true;
-    nfs.server.enable = true;
   };
 
-  systemd.services.flatpak-repo = {
-    path = [pkgs.flatpak];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
+  
   hardware = {
     sane = {
      enable = true;
@@ -344,24 +291,6 @@ xdg.portal.config = {
         # Enable sound with pipewire.
         pulseaudio.enable = false;
     };
-
-  # Cachix, Optimization settings and garbage collection automation
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-  };
 
   # Virtualization / Containers
   virtualisation = {
