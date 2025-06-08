@@ -1,0 +1,22 @@
+@define-color bg-hover #1b2b34;
+@define-color lbg #1b2b34;
+@define-color bg #1b2b34;
+@define-color blue #6699CC;
+@define-color sky #6699CC;
+@define-color red #F99157;
+@define-color pink #F99157;
+@define-color lavender #C594C5;
+@define-color rosewater #C594C5;
+@define-color flamingo #C594C5;
+@define-color fg #D8DEE9;
+@define-color green #5FB3B3;
+@define-color active-green #5FB3B3;
+@define-color dark-fg #65737E;
+@define-color peach #FAC863;
+@define-color border @lavender;
+@define-color gray2 #EC5F67;
+@define-color black4 #1B3B34;
+@define-color black3 #1B3B34;
+@define-color maroon #F99157;
+@define-color yellow #99C794;
+

@@ -11,6 +11,7 @@
 - Set Kernel to latest 
 - Removed `git.nix` doesn't work
 - Changed to starship prompt
+- Added sample waybars and rofi menus to assests dir
 
 #### 6-3-25
 
