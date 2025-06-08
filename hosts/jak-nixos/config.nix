@@ -207,21 +207,6 @@ in {
       python-packages
     ];
 
-
-  # Extra Portal Configuration
-        #xdg.portal = {
-        #    enable = true;
-        # wlr.enable = false;
-        #extraPortals = [
-        # pkgs.xdg-desktop-portal-gtk
-      #pkgs.xdg-desktop-portal
-        # ];
-    #configPackages = [
-    #   pkgs.xdg-desktop-portal-gtk
-        #   pkgs.xdg-desktop-portal
-        #];
-    #};
-
   console.keyMap = "${keyboardLayout}";
 
   # Extra Logitech Support

@@ -28,8 +28,8 @@
   # BOOT related stuff
   boot = {
     #kernelPackages = pkgs.linuxPackages_cachyos; # 
-    kernelPackages = pkgs.linuxPackages_6_12; # Kernel
-    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
+    #kernelPackages = pkgs.linuxPackages_6_12; # Kernel
+    kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
@@ -64,19 +64,6 @@
 
     loader.timeout = 15;    
   			
-    # Bootloader GRUB
-    #loader.grub = {
-	    #enable = true;
-	    #  devices = [ "nodev" ];
-	    #  efiSupport = true;
-      #  gfxmodeBios = "auto";
-	    #  memtest86.enable = true;
-	    #  extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #  configurationName = "${host}";
-  	  #	 };
-
-    # Bootloader GRUB theme, configure below
-
     ## -end of BOOTLOADERS----- ##
 
   
@@ -156,14 +143,16 @@
   	  xwayland.enable = true;
       };
 
-	
 	  waybar.enable = true;
 	  hyprlock.enable = true;
 	  firefox.enable = false;
       river.enable = false;
 	  git.enable = true;
       nm-applet.indicator = true;
-      neovim.enable = true;
+      neovim = {
+        enable = true;
+        defaultEditor = true;
+        };
       zsh.ohMyZsh.enable = true;
 
 
@@ -224,29 +213,15 @@
         #(nerdfonts.override {fonts = ["JetBrainsMono"];})
  	];
 
-  # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-  };
-
   # Services to start
   services = {
-      displayManager.defaultSession = "hyprland";  
     xserver = {
       enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
       }; 
-      desktopManager.cinnamon.enable=true;
+      desktopManager.cinnamon.enable=false;
       windowManager.bspwm.enable=true;
     };
     

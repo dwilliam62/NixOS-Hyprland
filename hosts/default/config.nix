@@ -156,6 +156,10 @@ in {
     };
 
     xwayland.enable = true;
+    neovim = {
+        enable = true;
+        defaultEditor = true;
+        };
     waybar.enable = true;
     hyprlock.enable = true;
     firefox.enable = false;

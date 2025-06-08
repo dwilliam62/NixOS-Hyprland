@@ -62,19 +62,6 @@
 
     loader.timeout = 1;    
   			
-    # Bootloader GRUB
-    #loader.grub = {
-	    #enable = true;
-	    #  devices = [ "nodev" ];
-	    #  efiSupport = true;
-      #  gfxmodeBios = "auto";
-	    #  memtest86.enable = true;
-	    #  extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #  configurationName = "${host}";
-  	  #	 };
-
-    # Bootloader GRUB theme, configure below
-
     ## -end of BOOTLOADERS----- ##
   
     # Make /tmp a tmpfs
@@ -95,12 +82,6 @@
     
     plymouth.enable = false;
   };
-
-  # GRUB Bootloader theme. Of course you need to enable GRUB above.. duh!
-  #distro-grub-themes = {
-  #  enable = true;
-  #  theme = "nixos";
-  #};
 
 
   # Extra Module Options
@@ -154,7 +135,10 @@
 	  firefox.enable = false;
 	  git.enable = true;
     nm-applet.indicator = true;
-    neovim.enable = true;
+    neovim ={
+        enable = true;
+        defaultEditor = true;
+        };
 
 	  thunar.enable = true;
 	  thunar.plugins = with pkgs.xfce; [
@@ -199,19 +183,6 @@
   ]) ++ [
 	  python-packages
   ];
-
-  # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-  };
 
   # Services to start
   services = {
