@@ -284,7 +284,6 @@
     nwg-menu
     waypaper
     wf-recorder
-    xdg-desktop-portal-hyprland
 
     # Editor
     lunarvim

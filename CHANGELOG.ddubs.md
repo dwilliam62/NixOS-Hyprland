@@ -12,6 +12,7 @@
 - Removed `git.nix` doesn't work
 - Changed to starship prompt
 - Added sample waybars and rofi menus to assests dir
+- Disabled cinnamon DE (Wasn't using it)
 
 #### 6-3-25
 
