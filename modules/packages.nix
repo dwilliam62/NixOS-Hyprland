@@ -6,6 +6,7 @@
 }: {
 
   programs = {
+        git.enable = true;
        tmux.enable = true;
        neovim = {
           enable = true;
