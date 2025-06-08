@@ -105,6 +105,7 @@
           ./modules/portals.nix
           ./modules/niri.nix
           ./modules/theme.nix
+          ./modules/doas.nix
           lix-module.nixosModules.default
           chaotic.nixosModules.nyx-cache
           chaotic.nixosModules.nyx-overlay

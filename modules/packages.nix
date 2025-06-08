@@ -6,12 +6,12 @@
 }: {
 
   programs = {
+       tmux.enable = true;
        neovim = {
           enable = true;
           defaultEditor = true;
        };
         xwayland.enable = true;
-        git.enable = true;
         niri = {
           enable = true;
           package = pkgs.niri;
@@ -263,7 +263,7 @@
     putty 
     ptyxis
     remmina
-    tmux
+        #tmux
     wezterm
 
     # Hyprland related
