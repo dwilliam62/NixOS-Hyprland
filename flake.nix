@@ -106,6 +106,7 @@
           ./modules/niri.nix
           ./modules/theme.nix
           ./modules/doas.nix
+          ./modules/starship.nix
           lix-module.nixosModules.default
           chaotic.nixosModules.nyx-cache
           chaotic.nixosModules.nyx-overlay

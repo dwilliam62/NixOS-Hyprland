@@ -9,6 +9,8 @@
 - Cleaned up config files dups in host and modules 
 - Set neovim as default editor 
 - Set Kernel to latest 
+- Added `git.nix` to configure git and set git aliases
+- Changed to starship prompt
 
 #### 6-3-25
 
