@@ -4,6 +4,11 @@
 
 #### 🛠️ Most recent changes
 
+#### 6-8-25
+- Updated flake 
+- Cleaned up config files dups in host and modules 
+- Set neovim as default editor 
+- Set Kernel to latest 
 
 #### 6-3-25
 

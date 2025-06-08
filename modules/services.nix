@@ -16,7 +16,6 @@
       ports = [22];
     };
 
-    blueman.enable = true; # Bluetooth Support
     tumbler.enable = true; # Image/video preview
     gnome.gnome-keyring.enable = true;
 
@@ -25,11 +24,6 @@
        # NFS 
     rpcbind.enable = true;
     nfs.server.enable = true;
-
-    smartd = {
-      enable = true;
-      autodetect = true;
-    };
 
     pipewire = {
       enable = true;

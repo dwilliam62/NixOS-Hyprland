@@ -169,6 +169,9 @@
     (inputs.focal.packages.${pkgs.system}.default)
 
     # Utils
+    caligula  #burn ISOs at cli FAST
+    astroterm  #constilations at CLI 
+
     glances
         #gnomeExtensions.kando-integration
     gotop
@@ -181,14 +184,14 @@
     lolcat
     lsd
     microfetch
-    neofetch
     oh-my-posh
-    pfetch
-    ncdu
-    ncftp
+    pastel
     pika-backup
     pipes
     pipes-rs
+    pfetch
+    ncdu
+    ncftp
     ripgrep
     socat
     starship
@@ -207,11 +210,11 @@
     smartmontools
     light
     lm_sensors
-    pfetch
     mission-center
-    stacer
+    neofetch
     pfetch
     powertop
+    stacer
 
     # Development related
     bash-language-server

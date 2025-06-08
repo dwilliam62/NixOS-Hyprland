@@ -35,8 +35,8 @@ in {
 
   # BOOT related stuff
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_14; # Kernel
-    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
+        #kernelPackages = pkgs.linuxPackages_6_14; # Kernel
+    kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
@@ -168,7 +168,10 @@ in {
       tumbler
     ];
 
-    neovim.enable = true;
+    neovim = {
+       enable = true;
+       defaultEditor = true;
+    };
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -206,18 +209,18 @@ in {
 
 
   # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
+        #xdg.portal = {
+        #    enable = true;
+        # wlr.enable = false;
+        #extraPortals = [
+        # pkgs.xdg-desktop-portal-gtk
       #pkgs.xdg-desktop-portal
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-  };
+        # ];
+    #configPackages = [
+    #   pkgs.xdg-desktop-portal-gtk
+        #   pkgs.xdg-desktop-portal
+        #];
+    #};
 
   console.keyMap = "${keyboardLayout}";
 
