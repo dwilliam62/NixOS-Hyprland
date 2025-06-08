@@ -147,6 +147,7 @@ in {
   programs = {
     hyprland = {
       enable = true;
+      withUWSM = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
     };

@@ -13,6 +13,7 @@
 - Changed to starship prompt
 - Added sample waybars and rofi menus to assests dir
 - Disabled cinnamon DE (Wasn't using it)
+- Added uswm to config.  
 
 #### 6-3-25
 
