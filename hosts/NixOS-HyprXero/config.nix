@@ -147,6 +147,7 @@ in {
   programs = {
     hyprland = {
       enable = true;
+      withUWSM = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
     };
@@ -167,7 +168,10 @@ in {
       tumbler
     ];
 
-    neovim.enable = true;
+    neovim = {
+       enable = true;
+       defaultEditor = true;
+    };
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -202,21 +206,6 @@ in {
     ++ [
       python-packages
     ];
-
-
-  # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      #pkgs.xdg-desktop-portal
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-  };
 
   console.keyMap = "${keyboardLayout}";
 
