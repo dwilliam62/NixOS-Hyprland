@@ -4,6 +4,9 @@
 
 #### 🛠️ Most recent changes
 
+#### 6-10-25
+- Updated flake 
+
 #### 6-8-25
 - Updated flake 
 - Cleaned up config files dups in host and modules 
