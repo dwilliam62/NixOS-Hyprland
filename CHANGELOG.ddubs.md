@@ -6,6 +6,8 @@
 
 #### 6-10-25
 - Updated flake 
+- Disabled cinnamon on `jak-nixos`
+- Enabled `uwsm` on `jak-nixos`
 
 #### 6-8-25
 - Updated flake 

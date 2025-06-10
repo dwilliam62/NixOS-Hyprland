@@ -147,6 +147,7 @@ in {
 
   programs = {
     hyprland = {
+      withUWSM = true;
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
@@ -237,7 +238,7 @@ in {
         layout = "${keyboardLayout}";
         variant = "";
       };
-      desktopManager.cinnamon.enable = true;
+      desktopManager.cinnamon.enable = false;
       windowManager.bspwm.enable = true;
     };
 
