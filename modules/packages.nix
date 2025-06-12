@@ -50,8 +50,6 @@
      nh os switch -H {$hostname} flake.nix
     '')
 
-    '')
-
 
     # start Niri script
     (pkgs.writeShellScriptBin "niri.startup" ''
