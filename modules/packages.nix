@@ -38,14 +38,12 @@
 
     # Update flkake script
     (pkgs.writeShellScriptBin "fupdate" ''
-    export NH_HOME = "~/NixOS-Hyprland"
     cd ~/NixOS-Hyprland
      nh os switch -u -H {$hostname} flake.nix
     '')
 
     # Rebuild flkake script
     (pkgs.writeShellScriptBin "frebuild" ''
-    export NH_HOME = "~/NixOS-Hyprland"
     cd ~/NixOS-Hyprland
      nh os switch -H {$hostname} flake.nix
     '')
