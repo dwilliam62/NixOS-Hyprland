@@ -36,6 +36,23 @@
       fastfetch -c ~/.config/fastfetch/fastfetch-system-times.config.jsonc
     '')
 
+    # Update flkake script
+    (pkgs.writeShellScriptBin "fupdate" ''
+    export NH_HOME = "~/NixOS-Hyprland"
+    cd ~/NixOS-Hyprland
+     nh os switch -u -H {$hostname} flake.nix
+    '')
+
+    # Rebuild flkake script
+    (pkgs.writeShellScriptBin "frebuild" ''
+    export NH_HOME = "~/NixOS-Hyprland"
+    cd ~/NixOS-Hyprland
+     nh os switch -H {$hostname} flake.nix
+    '')
+
+    '')
+
+
     # start Niri script
     (pkgs.writeShellScriptBin "niri.startup" ''
 
@@ -51,27 +68,16 @@
 
            ~/.config/niri/scripts/statusbar &
 
-            # default wallpaper
-            #${SCRIPTSDIR}/setdefaultwallpaper &
-
-            # polkit agent
-            #polkit-gnome-authentication-agent-1 &
-
             # Apply themes
-            # ${SCRIPTSDIR}/gtkthemes &
-            ${SCRIPTSDIR}/gtkthemes-manual &
+            ~/.config/niri/scripts/gtkthemes-manual &
 
             # Launch notification daemon (mako)
-            ${SCRIPTSDIR}/notifications &
+            ~/.config/niri/scripts/notifications &
 
             # Launch statusbar (waybar)
-            ${SCRIPTSDIR}/statusbar &
+            ~/.config/niri/scripts/statusbar &
 
-            # Launch swayidle
-            #${SCRIPTSDIR}/niri-swayidle &
-            #${SCRIPTSDIR}/niri-poweroff &
-
-           nm-applet --indicator &
+             nm-applet --indicator &
 
     '')
 
