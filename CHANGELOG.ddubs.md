@@ -4,6 +4,9 @@
 
 #### 🛠️ Most recent changes
 
+#### 6-12-25
+- Added `asus` host 
+
 #### 6-10-25
 - Updated flake 
 - Disabled cinnamon on `jak-nixos`
