@@ -6,6 +6,8 @@
 
 #### 6-12-25
 - Added `asus` host 
+- Added updated `yazi` cfg 
+- Added `niri-startup` script to get `niri` autostart working
 
 #### 6-10-25
 - Updated flake 

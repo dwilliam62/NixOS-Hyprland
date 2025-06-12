@@ -36,6 +36,46 @@
       fastfetch -c ~/.config/fastfetch/fastfetch-system-times.config.jsonc
     '')
 
+    # start Niri script
+    (pkgs.writeShellScriptBin "niri.startup" ''
+
+        #variety &
+        xwayland-satellite >/dev/null 2>/dev/null & 
+        waypaper --restore &
+        SCRIPTSDIR=$HOME/.config/niri/scripts
+
+        # Kill already running process
+        pkill waybar
+        pkill mako 
+        sleep 0.5 
+
+           ~/.config/niri/scripts/statusbar &
+
+            # default wallpaper
+            #${SCRIPTSDIR}/setdefaultwallpaper &
+
+            # polkit agent
+            #polkit-gnome-authentication-agent-1 &
+
+            # Apply themes
+            # ${SCRIPTSDIR}/gtkthemes &
+            ${SCRIPTSDIR}/gtkthemes-manual &
+
+            # Launch notification daemon (mako)
+            ${SCRIPTSDIR}/notifications &
+
+            # Launch statusbar (waybar)
+            ${SCRIPTSDIR}/statusbar &
+
+            # Launch swayidle
+            #${SCRIPTSDIR}/niri-swayidle &
+            #${SCRIPTSDIR}/niri-poweroff &
+
+           nm-applet --indicator &
+
+    '')
+
+
     # Your Wfetch Randomizer script
     (pkgs.writeShellScriptBin "wf" ''
       # Wfetch Randomizer
