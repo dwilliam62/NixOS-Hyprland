@@ -62,12 +62,10 @@
         waypaper --restore &
         SCRIPTSDIR=$HOME/.config/niri/scripts
 
-        # Kill already running process
-        pkill waybar
-        pkill mako 
         sleep 0.5 
+        waybar &
 
-           ~/.config/niri/scripts/statusbar &
+         #  ~/.config/niri/scripts/statusbar &
 
             # Apply themes
             ~/.config/niri/scripts/gtkthemes-manual &
