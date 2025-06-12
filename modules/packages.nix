@@ -50,6 +50,11 @@
      nh os switch -H {$hostname} flake.nix
     '')
 
+    # clean up old generations 
+     (writeShellScriptBin "ncg" 
+     ''
+        nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot
+    '')
 
     # start Niri script
     (pkgs.writeShellScriptBin "niri.startup" ''
