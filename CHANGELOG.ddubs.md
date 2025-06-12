@@ -9,6 +9,7 @@
 - Added updated `yazi` cfg 
 - Added `niri-startup` script to get `niri` autostart working
 - Added `ncg` script to clean out old generations
+- Added cfg file for `btop` to `assets` directory 
 
 #### 6-10-25
 - Updated flake 
