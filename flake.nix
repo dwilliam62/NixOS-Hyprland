@@ -76,7 +76,7 @@
     ...
   }: let
     system = "x86_64-linux";
-    host = "asus";
+    host = "NixOS-HyprXero";
     username = "dwilliams";
 
     pkgs = import nixpkgs {
