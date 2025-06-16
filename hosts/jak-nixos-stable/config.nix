@@ -167,7 +167,10 @@ in {
       tumbler
     ];
 
-    neovim.enable = true;
+    neovim = {
+       enable = true;
+       defaultEditor = true;
+    };
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -204,20 +207,6 @@ in {
     ];
 
 
-  # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      #pkgs.xdg-desktop-portal
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-  };
-
   console.keyMap = "${keyboardLayout}";
 
   # Extra Logitech Support
@@ -238,7 +227,6 @@ in {
 
 
   # Services to start
-  services.displayManager.defaultSession = "hyprland";
   services = {
         blueman.enable = false;
         pulseaudio.enable = false;
@@ -248,7 +236,7 @@ in {
         layout = "${keyboardLayout}";
         variant = "";
       };
-      desktopManager.cinnamon.enable = true;
+      desktopManager.cinnamon.enable = false;
       windowManager.bspwm.enable = true;
     };
 

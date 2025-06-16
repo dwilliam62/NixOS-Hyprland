@@ -76,7 +76,7 @@
     ...
   }: let
     system = "x86_64-linux";
-    host = "NixOS-Hyprland";
+    host = "jak-nixos-stable";
     username = "dwilliams";
 
     pkgs = import nixpkgs {
