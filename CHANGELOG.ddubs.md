@@ -4,6 +4,9 @@
 
 #### 🛠️ Most recent changes
 
+#### 6-17-25
+- Updated flake 
+
 #### 6-12-25
 - Added `asus` host 
 - Added updated `yazi` cfg 
