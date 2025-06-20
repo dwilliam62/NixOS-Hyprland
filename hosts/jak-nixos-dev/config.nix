@@ -19,6 +19,7 @@
     ../../modules/nvidia-prime-drivers.nix
     ../../modules/intel-drivers.nix
     ../../modules/packages.nix
+    ../../modules/portals.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
   ];
