@@ -6,8 +6,28 @@
 }: {
 
   programs = {
-        git.enable = true;
+     hyprland = {
+      enable = true;
+      withUWSM = true;
+     	  #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
+		    #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; #xdph-git
+     	  
+        portalPackage = pkgs.xdg-desktop-portal-hyprland; # xdph none git
+  	  xwayland.enable = true;
+    };
+	waybar.enable = true;
+	hyprlock.enable = true;
+    dconf.enable = true;
+    seahorse.enable = true;
+    fuse.userAllowOther = true;
+    mtr.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+       git.enable = true;
        tmux.enable = true;
+       nm-applet.indicator = true;
        neovim = {
           enable = true;
           defaultEditor = true;
@@ -23,6 +43,9 @@
         enable = true;
         displayManager.startx.enable = true; 
     };
+
+
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
 
@@ -109,11 +132,15 @@
     xorg.xauth
 
  # Hyprland Stuff
+    hypridle
+    hyprpolkitagent
+    pyprland
+    uwsm
     hyprpanel
     matugen #for Hyprpanel
+
+    
     appimage-run
-    atop
-    bat
     bottom
     cmatrix
     dua
@@ -121,6 +148,7 @@
     google-chrome
     bc
     brightnessctl
+    btrfs-progs
     (btop.override { 
             cudaSupport = true; 
             rocmSupport = true;
@@ -145,12 +173,14 @@
     feh
     file-roller
     jq
+    killall  
     gcc
     git
     glib # for gsettings to work
     gnumake
     grim
     grimblast
+    gsettings-qt
     gtk-engine-murrine # for gtk themes
         #gnome-system-monitor
     inxi
@@ -168,6 +198,7 @@
     (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
     openssl # required by Rainbow borders
     pciutils
+    neohtop
     nethogs
     networkmanagerapplet
     nitrogen
@@ -178,8 +209,6 @@
         #polkit
     polkit_gnome
         #kdePackages.polkit-kde-agent-1
-    hyprpolkitagent
-    pyprland
         #qt6ct
         #qt6.qtwayland
         #qt6Packages.qtstyleplugin-kvantum # kvantum
@@ -205,6 +234,7 @@
     yad
     yazi
     yt-dlp
+    
 
 
  ## My packages 
@@ -217,7 +247,8 @@
     # Utils
     caligula  #burn ISOs at cli FAST
     astroterm  #constilations at CLI 
-
+    atop
+    gdu
     glances
         #gnomeExtensions.kando-integration
     gotop

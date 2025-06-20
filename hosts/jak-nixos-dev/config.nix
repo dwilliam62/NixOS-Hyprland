@@ -60,18 +60,6 @@
 
     loader.timeout = 10;    
   			
-    # Bootloader GRUB
-    #loader.grub = {
-	    #enable = true;
-	    #  devices = [ "nodev" ];
-	    #  efiSupport = true;
-      #  gfxmodeBios = "auto";
-	    #  memtest86.enable = true;
-	    #  extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #  configurationName = "${host}";
-  	  #	 };
-
-    # Bootloader GRUB theme, configure below
 
     ## -end of BOOTLOADERS----- ##
   
@@ -146,7 +134,7 @@
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";

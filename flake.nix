@@ -105,6 +105,7 @@
           ./modules/portals.nix
           ./modules/niri.nix
           ./modules/theme.nix
+          ./modules/packages.nix
           ./modules/doas.nix
           ./modules/starship.nix
           lix-module.nixosModules.default
