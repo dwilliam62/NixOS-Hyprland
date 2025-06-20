@@ -60,14 +60,14 @@ in {
     #};
 
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
-
-    loader.efi = {
-      #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
-      canTouchEfiVariables = true;
+    loader = {
+        systemd-boot.enable = true;
+        efi = {
+           #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
+           canTouchEfiVariables = true;
+        };
+        timeout = 15;
     };
-
-    loader.timeout = 15;
 
     # Make /tmp a tmpfs
     tmp = {

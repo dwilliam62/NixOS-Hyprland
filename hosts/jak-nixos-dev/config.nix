@@ -18,6 +18,7 @@
     ../../modules/nvidia-drivers.nix
     ../../modules/nvidia-prime-drivers.nix
     ../../modules/intel-drivers.nix
+    ../../modules/packages.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
   ];
@@ -51,16 +52,14 @@
 
     ## BOOT LOADERS: NOTE USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
-  
-    loader.efi = {
-	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
-	    canTouchEfiVariables = true;
-  	  };
-
-    loader.timeout = 10;    
-  			
-
+    loader = {
+        systemd-boot.enable = true; 
+      efi = {
+	       #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
+	       canTouchEfiVariables = true;
+  	       };
+       timeout = 10;    
+     };
     ## -end of BOOTLOADERS----- ##
   
     # Make /tmp a tmpfs
