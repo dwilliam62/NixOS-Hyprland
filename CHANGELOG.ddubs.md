@@ -4,6 +4,13 @@
 
 #### 🛠️ Most recent changes
 
+#### 6-20-25
+- Updated flake 
+- `modules/packages.nix` Wasn't being imported 
+- Begam migrating `hosts/hostname/packages-fonts.nix` to `packages.nix`
+- Started with `jak-nixos-dev`
+- Added `nwg-hello` going to try to enable it withy `greetd`
+
 #### 6-17-25
 - Updated flake 
 

@@ -350,6 +350,7 @@
     hyprcursor
     mesa
     nwg-drawer
+    nwg-hello
     nwg-dock-hyprland
     nwg-launchers
     nwg-panel
