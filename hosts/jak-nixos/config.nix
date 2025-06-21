@@ -27,7 +27,6 @@ in {
 
   # BOOT related stuff
   boot = {
-        #kernelPackages = pkgs.linuxPackages_6_14; # Kernel
     kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
@@ -53,14 +52,14 @@ in {
     #};
 
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
-
-    loader.efi = {
-      #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
-      canTouchEfiVariables = true;
+    loader = {
+        systemd-boot.enable = true;
+        efi = {
+           #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
+           canTouchEfiVariables = true;
+        };
+        timeout = 15;
     };
-
-    loader.timeout = 15;
 
     # Make /tmp a tmpfs
     tmp = {
@@ -137,6 +136,16 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
+  programs = {
+    hyprland = {
+      enable = true;
+        withUWSM = true;
+            #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
+            #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
+    };
+
+    xwayland.enable = true;
+
     firefox.enable = false;
     git.enable = true;
 
@@ -149,6 +158,11 @@ in {
       tumbler
     ];
 
+    neovim = {
+       enable = true;
+       defaultEditor = true;
+    };
+        
     virt-manager.enable = false;
 
     #steam = {
@@ -158,6 +172,7 @@ in {
     #  dedicatedServer.openFirewall = true;
     #};
   };
+
 
   users = {
     mutableUsers = true;
@@ -173,6 +188,7 @@ in {
     ++ [
       python-packages
     ];
+
 
   console.keyMap = "${keyboardLayout}";
 
@@ -194,7 +210,6 @@ in {
 
 
   # Services to start
-    #  services.displayManager.defaultSession = "hyprland";
   services = {
         blueman.enable = false;
         pulseaudio.enable = false;
