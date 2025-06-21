@@ -29,6 +29,8 @@ in {
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
+    ../../modules/doas.nix
+    ../../modules/portalls.nix
     ../../modules/packages.nix
     ../../modules/security.nix
   ];
@@ -60,14 +62,14 @@ in {
     #};
 
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
-
-    loader.efi = {
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
       #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
       canTouchEfiVariables = true;
+      };
+        timeout = 15;
     };
-
-    loader.timeout = 15;
 
     # Make /tmp a tmpfs
     tmp = {
@@ -144,20 +146,7 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
-  programs = {
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
-    };
-
-    xwayland.enable = true;
-
-    waybar.enable = true;
-    hyprlock.enable = false;
     firefox.enable = false;
-    git.enable = true;
 
     thunar.enable = true;
     thunar.plugins = with pkgs.xfce; [
@@ -168,15 +157,6 @@ in {
       tumbler
     ];
 
-    neovim.enable = true;
-    dconf.enable = true;
-    seahorse.enable = true;
-    fuse.userAllowOther = true;
-    mtr.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
     virt-manager.enable = false;
 
     #steam = {

@@ -20,6 +20,9 @@
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
     ../../modules/packages.nix
+    ../../modules/doas.nix
+    ../../modules/portals.nix
+    ../../modules/security.nix
   ];
 
   # BOOT related stuff
@@ -50,31 +53,15 @@
 
     ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
-  
-    loader.efi = {
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
 	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
 	    canTouchEfiVariables = true;
   	  };
-
-    loader.timeout = 15;    
+        timeout = 15;    
+     };
   			
-    # Bootloader GRUB
-    #loader.grub = {
-	    #enable = true;
-	    #  devices = [ "nodev" ];
-	    #  efiSupport = true;
-      #  gfxmodeBios = "auto";
-	    #memtest86.enable = true;
-	    #extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #configurationName = "${host}";
-  	  #	};
-
-    # Bootloader GRUB theme  
-    #loader.grub = rec {
-    #  theme = inputs.distro-grub-themes.packages.${system}.nixos-grub-theme;
-    #  splashImage = "${theme}/splash_image.jpg";
-      #};
     ## -end of BOOTLOADERS----- ##
   
     # Make /tmp a tmpfs
@@ -130,19 +117,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  programs = {
-	  hyprland = {
-      enable = true;
-		  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-		  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
-  	  };
-
-	xwayland.enable = true;
-    zsh.ohMyZsh.enable = true;  
-	waybar.enable = true;
-	hyprlock.enable = true;
-	firefox.enable = true;
-	git.enable = true;
+	firefox.enable = false;
 
 	thunar.enable = true;
 	thunar.plugins = with pkgs.xfce; [
@@ -153,15 +128,6 @@
 		tumbler
   	];
 
-    neovim.enable = true; 	
-    dconf.enable = true;
-    seahorse.enable = true;
-    fuse.userAllowOther = true;
-    mtr.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
     virt-manager.enable = false;
     
     #steam = {
@@ -199,24 +165,12 @@
         #  (nerdfonts.override {fonts = ["JetBrainsMono"];})
  	];
 
-    # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      #pkgs.xdg-desktop-portal
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
   };
 
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
@@ -224,7 +178,7 @@
     };
     
     greetd = {
-      enable = false;
+      enable = true;
       vt = 3;
       settings = {
         default_session = {
@@ -235,7 +189,7 @@
     };
 
      displayManager.sddm = {
-      enable = true;
+      enable = false;
       theme = "elarun";
       wayland.enable = true;
       extraPackages = with pkgs; [
