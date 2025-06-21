@@ -36,9 +36,8 @@ in {
 
   # BOOT related stuff
   boot = {
-    # 6.15 isn't building with NVIDIA 6/3/25
-    kernelPackages = pkgs.linuxPackages_6_14; # Kernel
-    #kernelPackages = pkgs.linuxPackages_latest; # Kernel
+        #kernelPackages = pkgs.linuxPackages_6_14; # Kernel
+    kernelPackages = pkgs.linuxPackages_latest; # Kernel
 
     kernelParams = [
       "systemd.mask=systemd-vconsole-setup.service"
@@ -65,14 +64,14 @@ in {
     #};
 
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
-
-    loader.efi = {
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
       #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
       canTouchEfiVariables = true;
-    };
-
-    loader.timeout = 15;
+      };
+      timeout = 15;
+     };
 
     # Make /tmp a tmpfs
     tmp = {
@@ -94,10 +93,10 @@ in {
 
   # Extra Module Options
   drivers = {
-        amdgpu.enable = false;
+        amdgpu.enable = true;
         nvidia.enable = true;
             nvidia-prime = {
-             enable = true;
+             enable = false;
                  intelBusID = "PCI:0:2:0";
                   nvidiaBusID = "PCI:1:0:0";
             };
@@ -114,19 +113,6 @@ in {
         timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
             extraHosts = ''
                 192.168.40.11         nas
-                192.168.40.10         docker
-                192.168.40.60         pbs2
-                192.168.40.11         ds1817
-                192.168.40.11         ds1817-server
-                192.168.40.221        pve2
-                192.168.40.9          pve3
-                192.168.40.4          pbs
-                192.168.40.60         pbs
-                192.168.40.5          dellprinter
-                192.168.40.1          router
-                192.168.40.1          gateway
-                1.1.1.1               dns1
-                8.8.4.4               dns2
               '';
    };
 
@@ -148,20 +134,10 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
-  programs = {
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
-    };
-
-    xwayland.enable = true;
     neovim = {
         enable = true;
         defaultEditor = true;
         };
-    waybar.enable = true;
-    hyprlock.enable = true;
     firefox.enable = false;
     thunar.enable = true;
     thunar.plugins = with pkgs.xfce; [
@@ -171,25 +147,18 @@ in {
       thunar-volman
       tumbler
     ];
-    dconf.enable = true;
-    seahorse.enable = true;
-    fuse.userAllowOther = true;
-    mtr.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
+
     virt-manager.enable = false;
 
-    #steam = {
-    #  enable = true;
-    #  gamescopeSession.enable = true;
-    #  remotePlay.openFirewall = true;
-    #  dedicatedServer.openFirewall = true;
-    #};
+    steam = {
+      enable = false;
+      gamescopeSession.enable = false;
+      remotePlay.openFirewall = false;
+      dedicatedServer.openFirewall = false;
+    };
+
   };
 
-  nixpkgs.config.allowUnfree = true;
 
   users = {
     mutableUsers = true;
@@ -205,7 +174,6 @@ in {
     ++ [
       python-packages
     ];
-
 
 
   # Services to start
@@ -283,11 +251,15 @@ in {
       disabledDefaultBackends = ["escl"];
      };
   # Extra Logitech Support
-    logitech.wireless.enable = false;
-    logitech.wireless.enableGraphical = false;
+    logitech = {
+        wireless.enable = false;
+        wireless.enableGraphical = false;
+    };
     # Bluetooth Support
-    bluetooth.enable = true;
-    bluetooth.powerOnBoot = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
    };
 
   services ={ 

@@ -30,6 +30,7 @@ in {
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
     ../../modules/packages.nix
+    ../../modules/portals.nix
     ../../modules/security.nix
   ];
 
@@ -60,14 +61,14 @@ in {
     #};
 
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
-
-    loader.efi = {
+    loader= {
+      systemd-boot.enable = true;
+      efi = {
       #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
       canTouchEfiVariables = true;
+      };
+      timeout = 15;
     };
-
-    loader.timeout = 15;
 
     # Make /tmp a tmpfs
     tmp = {
@@ -89,7 +90,7 @@ in {
 
   # Extra Module Options
   drivers ={
-        amdgpu.enable = false;
+        amdgpu.enable = true;
         nvidia.enable = false;
         nvidia-prime = {
              enable = false;
@@ -168,7 +169,10 @@ in {
       tumbler
     ];
 
-    neovim.enable = true;
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
