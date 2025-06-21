@@ -101,13 +101,14 @@
              ];
           }
           ./hosts/${host}/config.nix
-          ./modules/services.nix
-          ./modules/portals.nix
-          ./modules/niri.nix
-          ./modules/theme.nix
-          ./modules/packages.nix
           ./modules/doas.nix
+          ./modules/niri.nix
+          ./modules/portals.nix
+          ./modules/packages.nix
+          ./modules/services.nix
+          ./modules/security.nix
           ./modules/starship.nix
+          ./modules/theme.nix
           lix-module.nixosModules.default
           chaotic.nixosModules.nyx-cache
           chaotic.nixosModules.nyx-overlay
