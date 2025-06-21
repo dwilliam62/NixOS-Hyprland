@@ -102,6 +102,7 @@
           }
           ./hosts/${host}/config.nix
           ./modules/doas.nix
+          ./modules/local-hardware-clock.nix
           ./modules/niri.nix
           ./modules/portals.nix
           ./modules/packages.nix

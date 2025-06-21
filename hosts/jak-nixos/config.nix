@@ -28,11 +28,6 @@ in {
     ../../modules/nvidia-prime-drivers.nix
     ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
-    ../../modules/local-hardware-clock.nix
-    ../../modules/doas.nix
-    ../../modules/portals.nix
-    ../../modules/packages.nix
-    ../../modules/security.nix
   ];
 
   # BOOT related stuff

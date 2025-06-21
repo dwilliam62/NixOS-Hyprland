@@ -19,11 +19,6 @@
     ../../modules/nvidia-prime-drivers.nix
     ../../modules/intel-drivers.nix
     ../../modules/packages.nix
-    ../../modules/doas.nix
-    ../../modules/security.nix
-    ../../modules/portals.nix
-    ../../modules/vm-guest-services.nix
-    ../../modules/local-hardware-clock.nix
   ];
 
   # BOOT related stuff
