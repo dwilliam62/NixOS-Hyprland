@@ -10,6 +10,7 @@
 - Begam migrating `hosts/hostname/packages-fonts.nix` to `packages.nix`
 - Started with `jak-nixos-dev`
 - Added `nwg-hello` going to try to enable it withy `greetd`
+- Updated to unstable  Need `yazi` and other pkgs
 
 #### 6-17-25
 - Updated flake 

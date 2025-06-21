@@ -5,7 +5,7 @@
     type = "github";
     owner = "NixOS";
     repo = "nixpkgs";
-    ref = "nixos-25.05";
+    ref = "nixos-unstable";
   };
 
   hyprland = {
