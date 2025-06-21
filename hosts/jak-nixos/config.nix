@@ -137,18 +137,6 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
-  programs = {
-    hyprland = {
-      withUWSM = true;
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
-    };
-
-    xwayland.enable = true;
-
-    waybar.enable = true;
-    hyprlock.enable = false;
     firefox.enable = false;
     git.enable = true;
 
@@ -161,18 +149,6 @@ in {
       tumbler
     ];
 
-    neovim = {
-       enable = true;
-       defaultEditor = true;
-    };
-    dconf.enable = true;
-    seahorse.enable = true;
-    fuse.userAllowOther = true;
-    mtr.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
     virt-manager.enable = false;
 
     #steam = {
@@ -182,8 +158,6 @@ in {
     #  dedicatedServer.openFirewall = true;
     #};
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   users = {
     mutableUsers = true;
