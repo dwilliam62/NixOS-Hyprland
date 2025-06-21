@@ -110,6 +110,11 @@
           ./modules/security.nix
           ./modules/starship.nix
           ./modules/theme.nix
+          ./modules/amd-drivers.nix
+          ./modules/nvidia-drivers.nix
+          ./modules/nvidia-prime-drivers.nix
+          ./modules/intel-drivers.nix
+          ./modules/vm-guest-services.nix
           lix-module.nixosModules.default
           chaotic.nixosModules.nyx-cache
           chaotic.nixosModules.nyx-overlay
