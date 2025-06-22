@@ -135,9 +135,8 @@ in {
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
+   programs = { 
     firefox.enable = false;
-
     thunar.enable = true;
     thunar.plugins = with pkgs.xfce; [
       exo

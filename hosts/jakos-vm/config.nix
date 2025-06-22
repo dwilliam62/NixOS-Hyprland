@@ -108,10 +108,10 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+   programs = {
 	firefox.enable = false;
-
 	thunar.enable = true;
-	thunar.plugins = with pkgs.xfce; [
+	 thunar.plugins = with pkgs.xfce; [
 		exo
 		mousepad
 		thunar-archive-plugin

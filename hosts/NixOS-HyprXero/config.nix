@@ -89,8 +89,7 @@ in {
              nvidiaBusID = "PCI:0:2:0";
              };
         intel.enable = false;
-
-};
+  };
 
   vm.guest-services.enable = true;
   local.hardware-clock.enable = false;
@@ -136,17 +135,17 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
-    firefox.enable = false;
-    git.enable = true;
-
-    thunar.enable = true;
-    thunar.plugins = with pkgs.xfce; [
-      exo
-      mousepad
-      thunar-archive-plugin
-      thunar-volman
-      tumbler
-    ];
+   programs = {
+      firefox.enable = false;
+      git.enable = true;
+      thunar.enable = true;
+      thunar.plugins = with pkgs.xfce; [
+         exo
+        mousepad
+         thunar-archive-plugin
+        thunar-volman
+        tumbler
+        ];
 
     virt-manager.enable = false;
 
@@ -156,7 +155,7 @@ in {
     #  remotePlay.openFirewall = true;
     #  dedicatedServer.openFirewall = true;
     #};
-  };
+    }; 
 
   nixpkgs.config.allowUnfree = true;
 
