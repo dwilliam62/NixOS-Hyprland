@@ -48,33 +48,16 @@
     #  "vm.max_map_count" = 2147483642;
     #};
 
-    ## BOOT LOADERS: NOT USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
-  
-    loader.efi = {
-	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
-	    canTouchEfiVariables = true;
+    loader = { 
+      systemd-boot.enable = true;
+      efi = {
+	  #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
+	  canTouchEfiVariables = true;
   	  };
-
-    loader.timeout = 15;    
+    timeout = 15;    
+    };
   			
-    # Bootloader GRUB
-    #loader.grub = {
-	    #enable = true;
-	    #  devices = [ "nodev" ];
-	    #  efiSupport = true;
-      #  gfxmodeBios = "auto";
-	    #memtest86.enable = true;
-	    #extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #configurationName = "${host}";
-  	  #	};
-
-    # Bootloader GRUB theme  
-    #loader.grub = rec {
-    #  theme = inputs.distro-grub-themes.packages.${system}.nixos-grub-theme;
-    #  splashImage = "${theme}/splash_image.jpg";
-      #};
     ## -end of BOOTLOADERS----- ##
   
     # Make /tmp a tmpfs
@@ -92,26 +75,30 @@
       mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
       magicOrExtension = ''\x7fELF....AI\x02'';
       };
-    plymouth.enable = true;
+    plymouth.enable = false;
   };
 
   # Extra Module Options
-  drivers.amdgpu.enable = false;
-  drivers.nvidia.enable = false;
-  drivers.nvidia-prime = {
-    enable = false;
-    intelBusID = "";
-    nvidiaBusID = "";
+  drivers = {
+    amdgpu.enable = false;
+     nvidia.enable = false;
+    nvidia-prime = {
+        enable = false;
+        intelBusID = "";
+        nvidiaBusID = "";
+    };
+    intel.enable = false;
   };
-  drivers.intel.enable = false;
+
   vm.guest-services.enable = true;
   local.hardware-clock.enable = false;
 
   # networking
-  networking.networkmanager.enable = true;
-  networking.hostName = "${host}";
-  networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
-
+  networking ={ 
+        networkmanager.enable = true;
+        hostName = "${host}";
+        timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
+  };
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -133,8 +120,9 @@
   programs = {
 	  hyprland = {
       enable = true;
-		  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-		  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
+        withUWSM=true;
+            # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
+            #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
   	  };
 
 	xwayland.enable = true;
@@ -153,7 +141,10 @@
 		tumbler
   	];
 
-    neovim.enable = true; 	
+    neovim = {
+        enable = true; 	
+        defaultEditor = true;
+        };
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -186,32 +177,6 @@
   ]) ++ [
 	  python-packages
   ];
-
-  # FONTS
-  fonts.packages = with pkgs; [
-        # Moved to system.packages.nix
-    #noto-fonts
-    #fira-code
-    #noto-fonts-cjk-sans
-        #jetbrains-mono
-        #font-awesome
-        #  terminus_font
-        #  (nerdfonts.override {fonts = ["JetBrainsMono"];})
- 	];
-
-    # Extra Portal Configuration
-  xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      #pkgs.xdg-desktop-portal
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-  };
 
   # Services to start
   services = {
@@ -307,40 +272,40 @@
   #};
 
   # Extra Logitech Support
-  hardware.logitech.wireless.enable = false;
-  hardware.logitech.wireless.enableGraphical = false;
-
-  # Bluetooth Support
-  hardware.bluetooth.enable = false;
-  hardware.bluetooth.powerOnBoot = false;
-  services.blueman.enable = false;
-
+  hardware = {
+    logitech = {
+        wireless.enable = false;
+        wireless.enableGraphical = false;
+        };
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+    pulseaudio.enable = false;
+   };
 
   # Security / Polkit
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (
-        subject.isInGroup("users")
-          && (
-            action.id == "org.freedesktop.login1.reboot" ||
-            action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
-            action.id == "org.freedesktop.login1.power-off" ||
-            action.id == "org.freedesktop.login1.power-off-multiple-sessions"
-          )
-        )
-      {
-        return polkit.Result.YES;
-      }
-    })
-  '';
-  security.pam.services.swaylock = {
-    text = ''
-      auth include login
-    '';
+  security = {
+        rtkit.enable = true;
+        polkit.enable = true;
+        polkit.extraConfig = ''
+            polkit.addRule(function(action, subject) {
+              if (
+                subject.isInGroup("users")
+                  && (
+                    action.id == "org.freedesktop.login1.reboot" ||
+                    action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
+                    action.id == "org.freedesktop.login1.power-off" ||
+                    action.id == "org.freedesktop.login1.power-off-multiple-sessions"
+                  )
+                )
+              {
+                return polkit.Result.YES;
+              }
+            })
+          '';
+        pam.services.swaylock = {
+              text = ''
+              auth include login
+        '';
+        };
   };
 
   # Cachix, Optimization settings and garbage collection automation
@@ -362,12 +327,14 @@
   };
 
   # Virtualization / Containers
-  virtualisation.libvirtd.enable = true;
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
-  };
+  virtualisation ={ 
+        libvirtd.enable = true;
+        podman = {
+          enable = true;
+          dockerCompat = true;
+          defaultNetwork.settings.dns_enabled = true;
+        };
+   };
 
   # OpenGL
   hardware.graphics = {
@@ -376,11 +343,9 @@
 
   console.keyMap = "${keyboardLayout}";
 
-   security.sudo.wheelNeedsPassword = false;
-
-
    security.sudo = { 
    enable = true;
+    wheelNeedsPassword = false;
    extraRules = [ 
     {
        users = [ "dwilliams" ];
@@ -401,11 +366,5 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }

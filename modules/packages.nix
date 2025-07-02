@@ -64,6 +64,7 @@
     swaynotificationcenter
     swww
     unzip
+    uwsm
     wallust
     wdisplays
     wl-clipboard

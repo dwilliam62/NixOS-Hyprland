@@ -1,3 +1,8 @@
+7-2-25
+- Updated flake
+- Updated `jakos-vm` to current configs 
+- Added / enabled UWSM 
+
 5-11-25
 - Updated xps15 host info
 - Updated display mgr default session syntax
