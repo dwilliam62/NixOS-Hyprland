@@ -76,7 +76,7 @@
     ...
   }: let
     system = "x86_64-linux";
-    host = "jak-nixos";
+    host = "NixOS-HyprXero";
     username = "dwilliams";
 
     pkgs = import nixpkgs {
@@ -95,13 +95,7 @@
           inherit host;
         };
         modules = [
-         {
-          nixpkgs.overlays = [
-              inputs.hyprpanel.overlay
-             ];
-          }
           ./hosts/${host}/config.nix
-          ./modules/doas.nix
           ./modules/local-hardware-clock.nix
           ./modules/niri.nix
           ./modules/portals.nix
