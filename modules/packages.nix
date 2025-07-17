@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   inputs,
   unstable,
   ...
@@ -78,8 +79,13 @@
 
  ## My packages 
 
-
+        #(inputs.quickshell.packages.${pkgs.system}.default.overrideAttrs (oldAttrs: {
+        #   buildInputs = oldAttrs.buildInputs ++ [ pkgs.qt6.qtdeclarative ];
+        # }))
+    
+    qt6.qtdeclarative
     inputs.quickshell.packages.${pkgs.system}.default
+
     inputs.ghostty.packages.${pkgs.system}.default
     inputs.ags.packages.${pkgs.system}.default
         #(inputs.envycontrol.packages.${pkgs.system}.default)
