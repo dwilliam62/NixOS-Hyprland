@@ -1,6 +1,6 @@
 {
   security = {
-     doas.enable = true;
+     doas.enable = false;
      doas.extraRules = [
       {
           users = ["dwilliams"]; # Replace with your username

@@ -33,19 +33,6 @@
     };
   #};
 
-   displayManager.sddm = {
-      enable = false;
-      theme = "elarun";
-      wayland.enable = true;
-      extraPackages = with pkgs; [
-        sddm
-        kdePackages.sddm
-        libsForQt5.qt5.qtgraphicaleffects
-        where-is-my-sddm-theme
-      ];
-    };
-
-
   };
      systemd.services.flatpak-repo = {
     path = [pkgs.flatpak];

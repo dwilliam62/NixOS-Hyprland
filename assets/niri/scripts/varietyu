@@ -1,4 +1,0 @@
-#!/env/bin/env bash
-
-WALLPAPER=$(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)
-wal -i $WALLPAPER && ~/.config/niri/scripts/statusbar &

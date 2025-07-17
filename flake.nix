@@ -25,12 +25,12 @@
     repo = "ghostty";
   };
 
-  chaotic = {
-    type = "github";
-    owner = "chaotic-cx";
-    repo = "nyx";
-    ref = "nyxpkgs-unstable";
-  };
+        #  chaotic = {
+        #   type = "github";
+        #  owner = "chaotic-cx";
+        # repo = "nyx";
+        # ref = "nyxpkgs-unstable";
+        #  };
 
   wfetch = {
     type = "github";
@@ -38,11 +38,11 @@
     repo = "wfetch";
   };
 
-  focal = {
-    type = "github";
-    owner = "iynaix";
-    repo = "focal";
-  };
+        # focal = {
+        #  type = "github";
+        #  owner = "iynaix";
+        # repo = "focal";
+        #  };
 
   ags = {
     type = "github";
@@ -58,25 +58,28 @@
         #repo = "HyprPanel";
         # };
 
-    lix-module = {
-    type = "tarball";
-    url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
+    quickshell = {
+        url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        #lix-module = {
+        #type = "tarball";
+        # url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+        #inputs.nixpkgs.follows = "nixpkgs";
+        #  };
 };
 
 
   outputs = inputs @ {
     self,
     nixpkgs,
-    chaotic,
     ags,
     hyprpanel,
-    lix-module,
     ...
   }: let
     system = "x86_64-linux";
-    host = "NixOS-HyprXero";
+    host = "jakos-vm";
     username = "dwilliams";
 
     pkgs = import nixpkgs {
@@ -97,7 +100,6 @@
         modules = [
           ./hosts/${host}/config.nix
           ./modules/local-hardware-clock.nix
-          ./modules/niri.nix
           ./modules/portals.nix
           ./modules/packages.nix
           ./modules/services.nix
@@ -109,10 +111,6 @@
           ./modules/nvidia-prime-drivers.nix
           ./modules/intel-drivers.nix
           ./modules/vm-guest-services.nix
-          lix-module.nixosModules.default
-          chaotic.nixosModules.nyx-cache
-          chaotic.nixosModules.nyx-overlay
-          chaotic.nixosModules.nyx-registry
         ];
       };
     };

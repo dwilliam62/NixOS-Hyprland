@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-alacritty -e micro ~/.config/niri/cheatsheet.md

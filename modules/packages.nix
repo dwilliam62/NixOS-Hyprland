@@ -8,7 +8,7 @@
   programs = {
      hyprland = {
       enable = true;
-      withUWSM = true;
+      withUWSM = false;
      	  #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
 		    #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; #xdph-git
      	  
@@ -34,15 +34,11 @@
           defaultEditor = true;
        };
         xwayland.enable = true;
-        niri = {
-          enable = true;
-          package = pkgs.niri;
-        };
     };
 
     services.xserver = {
-        enable = true;
-        displayManager.startx.enable = true; 
+        enable = false;
+        displayManager.startx.enable = false; 
     };
 
 
@@ -50,11 +46,6 @@
 
   environment.systemPackages = with pkgs; [
 
-    # Start gnome polkit needed for niri
-     (writeShellScriptBin "start-polkit-agent" ''
-      ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
-    '')
-  
     # Your fastfetch script
     (pkgs.writeShellScriptBin "ff" ''
       fastfetch -c ~/.config/fastfetch/fastfetch-system-times.config.jsonc
@@ -77,33 +68,6 @@
      ''
         nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot
     '')
-
-    # start Niri script
-    (pkgs.writeShellScriptBin "niri.startup" ''
-
-        #variety &
-        xwayland-satellite >/dev/null 2>/dev/null & 
-        waypaper --restore &
-        SCRIPTSDIR=$HOME/.config/niri/scripts
-
-        sleep 0.5 
-        waybar &
-
-         #  ~/.config/niri/scripts/statusbar &
-
-            # Apply themes
-            ~/.config/niri/scripts/gtkthemes-manual &
-
-            # Launch notification daemon (mako)
-            ~/.config/niri/scripts/notifications &
-
-            # Launch statusbar (waybar)
-            ~/.config/niri/scripts/statusbar &
-
-             nm-applet --indicator &
-
-    '')
-
 
     # Your Wfetch Randomizer script
     (pkgs.writeShellScriptBin "wf" ''
@@ -128,9 +92,9 @@
     '')
 
   ### Xorg Stuff ###
-    xorg.xinit
-    xorg.xinput
-    xorg.xauth
+        #  xorg.xinit
+        #  xorg.xinput
+        #  xorg.xauth
 
  # Hyprland Stuff
     hypridle
@@ -148,8 +112,8 @@
     figlet
     google-chrome
     bc
-    brightnessctl
-    btrfs-progs
+        #brightnessctl
+        # btrfs-progs
     (btop.override { 
             cudaSupport = true; 
             rocmSupport = true;
@@ -163,13 +127,13 @@
     curl
     duf
     dysk
-    dunst
+        #dunst
     eog
-    element
+        #element
     eza
     fastfetch
     findutils
-    ffmpeg
+        #ffmpeg
     fd
     feh
     file-roller
@@ -188,13 +152,13 @@
     imagemagick
     killall
         #kdePackages.qt6ct
-        #kdePackages.qtwayland
-        # kdePackages.qtstyleplugin-kvantum #kvantum
+        # kdePackages.qtwayland
+        #  kdePackages.qtstyleplugin-kvantum #kvantum
     lazydocker
     libappindicator
     libnotify
-    loupe
-        #libsForQt5.qtstyleplugin-kvantum # kvantum
+        #loupe
+        # libsForQt5.qtstyleplugin-kvantum # kvantum
         #libsForQt5.qt5ct
     (mpv.override { scripts = [ mpvScripts.mpris ]; }) # with tray
     openssl # required by Rainbow borders
@@ -202,18 +166,18 @@
     neohtop
     nethogs
     networkmanagerapplet
-    nitrogen
+        #nitrogen
         #nvtopPackages.full
     pamixer
     pavucontrol
     playerctl
         #polkit
-    polkit_gnome
-        #kdePackages.polkit-kde-agent-1
-        #qt6ct
+        # polkit_gnome
+   kdePackages.polkit-kde-agent-1
+        # qt6ct
         #qt6.qtwayland
         #qt6Packages.qtstyleplugin-kvantum # kvantum
-        #gsettings-qt
+        # gsettings-qt
     rofi-wayland
     slurp
     swappy
@@ -230,9 +194,8 @@
     xdg-user-dirs
     xdg-utils
     wlogout
-    xarchiver
-    yad
-    yad
+        #xarchiver
+        #yad
     yazi
     yt-dlp
     
@@ -240,10 +203,10 @@
 
  ## My packages 
 
+    (inputs.quickshell.packages.${pkgs.system}.default)
     (inputs.ghostty.packages.${pkgs.system}.default)
     (inputs.ags.packages.${pkgs.system}.default)
     (inputs.wfetch.packages.${pkgs.system}.default)
-    (inputs.focal.packages.${pkgs.system}.default)
 
     # Utils
     caligula  #burn ISOs at cli FAST
@@ -251,20 +214,18 @@
     atop
     gdu
     glances
-        #gnomeExtensions.kando-integration
     gotop
     gping
     htop
     hyfetch
     iotop
     ipfetch
-    kando
     lolcat
     lsd
     microfetch
     oh-my-posh
-    pastel
-    pika-backup
+        #pastel
+        #pika-backup
     pipes
     pipes-rs
     pfetch
@@ -277,22 +238,22 @@
     ugrep
     unrar
     v4l-utils
-    obs-studio
+        #obs-studio
     zoxide
 
     # Hardware related
     cpufetch
     cpuid
     cpu-x
-    gsmartcontrol
-    smartmontools
-    light
+        #gsmartcontrol
+        #smartmontools
+        #light
     lm_sensors
-    mission-center
+        #mission-center
     neofetch
     pfetch
-    powertop
-    stacer
+        #powertop
+        #stacer
 
     # Development related
     bash-language-server
@@ -332,14 +293,14 @@
     libvirt
 
     # Video
-     vlc
+        #$vlc
      jellyfin-media-player
         # handbrake
 
     # Terminals
     kitty
-    putty 
-    ptyxis
+        #putty 
+        #ptyxis
     remmina
         #tmux
     wezterm
@@ -351,22 +312,22 @@
     hyprcursor
     mesa
     nwg-drawer
-    nwg-hello
+        #nwg-hello
     nwg-dock-hyprland
     nwg-launchers
     nwg-panel
-    nwg-bar
+        #nwg-bar
     nwg-displays
-    nwg-wrapper
+        #nwg-wrapper
     nwg-look
-    nwg-menu
+        #nwg-menu
     waypaper
-    wf-recorder
+    #wf-recorder
 
     # Editor
     lunarvim
     multimarkdown
-    neovide
+        #neovide
   ];
 
  fonts = {
@@ -392,7 +353,7 @@
       powerline-fonts
       roboto
       roboto-mono
-      symbola
+            #symbola
       terminus_font
       victor-mono
     ];

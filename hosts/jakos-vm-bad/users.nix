@@ -29,10 +29,7 @@ in
   }; 
   
   environment.shells = with pkgs; [ zsh ];
-  environment.systemPackages = with pkgs; [ 
-  fzf
-  nvtopPackages.full
-  ]; 
+  environment.systemPackages = with pkgs; [ fzf ]; 
     
   programs = {
   # Zsh configuration
