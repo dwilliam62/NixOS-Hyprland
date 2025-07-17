@@ -100,7 +100,7 @@
     hypridle
     hyprpolkitagent
     pyprland
-    uwsm
+        #uwsm
     hyprpanel
     matugen #for Hyprpanel
 
@@ -133,7 +133,7 @@
     eza
     fastfetch
     findutils
-        #ffmpeg
+    ffmpeg
     fd
     feh
     file-roller
@@ -293,14 +293,14 @@
     libvirt
 
     # Video
-        #$vlc
+        #vlc
      jellyfin-media-player
         # handbrake
 
     # Terminals
     kitty
         #putty 
-        #ptyxis
+    ptyxis
     remmina
         #tmux
     wezterm

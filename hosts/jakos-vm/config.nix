@@ -245,7 +245,6 @@ in {
       ];
     };
 
-    gnome.gnome-keyring.enable = true;
 
     avahi = {
       enable = false;
