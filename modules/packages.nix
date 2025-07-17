@@ -47,6 +47,8 @@
     jq
     libsForQt5.qtstyleplugin-kvantum # kvantum
     libsForQt5.qt5ct
+    libsForQt5.qt5.qtgraphicaleffects
+    kdePackages.qt5compat
     nethogs
     networkmanagerapplet
     nitrogen
@@ -77,12 +79,13 @@
  ## My packages 
 
 
-    (inputs.ghostty.packages.${pkgs.system}.default)
-    (inputs.ags.packages.${pkgs.system}.default)
+    inputs.quickshell.packages.${pkgs.system}.default
+    inputs.ghostty.packages.${pkgs.system}.default
+    inputs.ags.packages.${pkgs.system}.default
         #(inputs.envycontrol.packages.${pkgs.system}.default)
         #(inputs.hyprland-qtutils.packages.${pkgs.system}.default)
-    (inputs.wfetch.packages.${pkgs.system}.default)
-    (inputs.focal.packages.${pkgs.system}.default)
+    inputs.wfetch.packages.${pkgs.system}.default
+    inputs.focal.packages.${pkgs.system}.default
 
     # Utils
     arandr
@@ -203,7 +206,7 @@
     xclip
     yad
     variety
-    volumeicon
+        #volumeicon
 
     # Hyprland related
     aquamarine
