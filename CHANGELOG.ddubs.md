@@ -4,6 +4,12 @@
 
 #### 🛠️ Most recent changes
 
+
+#### 7-22-25
+- Updated flake 
+- Added `quickshell.nix` to configure quickshell for overview mode 
+- Added quickshell GitHub to inputs
+
 #### 6-20-25
 - Updated flake 
 - `modules/packages.nix` Wasn't being imported 
