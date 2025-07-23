@@ -10,14 +10,21 @@
         pyquery # needed for hyprland-dots Weather script
         ]
     );
+let
+hyprQtSupport = pkgs.symlinkJoin {
+name = "hyprland-qt-style";
+paths = [ inputs.hyprland-qt-style.packages.${pkgs.system}.default ];
+};
 
   in {
 
   environment.systemPackages = (with pkgs; [
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
+    atop
   ]) ++ [
 	  python-packages
   ];
 
+environment.sessionVariables.QML_IMPORT_PATH = "${hyprQtSupport}/lib/qt-6/qml";
   }

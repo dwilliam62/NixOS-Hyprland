@@ -31,12 +31,6 @@
     repo = "wfetch";
   };
 
-     # focal = {
-     #  type = "github";
-     #  owner = "iynaix";
-     # repo = "focal";
-     #  };
-
   ags = {
     type = "github";
     owner = "aylur";
@@ -50,6 +44,10 @@
         url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+    # Support for QT6 apps  
+    hyprland-qt-style.url = "github:hyprwm/hyprland-qt-support";
+
 
 };
 
