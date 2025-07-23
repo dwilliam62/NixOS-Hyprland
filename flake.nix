@@ -25,24 +25,17 @@
     repo = "ghostty";
   };
 
-        #  chaotic = {
-        #   type = "github";
-        #  owner = "chaotic-cx";
-        # repo = "nyx";
-        # ref = "nyxpkgs-unstable";
-        #  };
-
   wfetch = {
     type = "github";
     owner = "iynaix";
     repo = "wfetch";
   };
 
-        # focal = {
-        #  type = "github";
-        #  owner = "iynaix";
-        # repo = "focal";
-        #  };
+     # focal = {
+     #  type = "github";
+     #  owner = "iynaix";
+     # repo = "focal";
+     #  };
 
   ags = {
     type = "github";
@@ -52,22 +45,12 @@
   };
 
    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-        #hyperpanel = {
-        #type = "github";
-        #owner = "Jas-SinghFSU";
-        #repo = "HyprPanel";
-        # };
 
-    quickshell = {
+   quickshell = {
         url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        #lix-module = {
-        #type = "tarball";
-        # url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
-        #inputs.nixpkgs.follows = "nixpkgs";
-        #  };
 };
 
 
