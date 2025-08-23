@@ -37,7 +37,7 @@
     };
 
     services.xserver = {
-        enable = false;
+        enable = true;
         displayManager.startx.enable = false; 
     };
 
@@ -199,7 +199,10 @@
     yazi
     yt-dlp
     
-
+    # AI 
+    warp-terminal
+    gemini-cli 
+    opencode
 
  ## My packages 
 

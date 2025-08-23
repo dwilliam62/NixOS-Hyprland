@@ -102,15 +102,12 @@ in {
             timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
             extraHosts = ''
                 192.168.40.11         nas
-                192.168.40.10         docker
                 192.168.40.60         pbs2
                 192.168.40.11         ds1817
                 192.168.40.11         ds1817-server
                 192.168.40.221        pve2
                 192.168.40.9          pve3
                 192.168.40.4          pbs
-                192.168.40.60         pbs
-                192.168.40.5          dellprinter
                 192.168.40.1          router
                 192.168.40.1          gateway
                 1.1.1.1               dns1
@@ -139,7 +136,7 @@ in {
   programs = {
     hyprland = {
       enable = true;
-        withUWSM = true;
+        withUWSM = false;
             #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
             #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
     };
@@ -231,12 +228,11 @@ in {
 
     greetd = {
       enable = true;
-      vt = 3;
       settings = {
         default_session = {
           user = username;
           # start Hyprland with a TUI login manager
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland";
+          command = "${pkgs.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland";
         };
       };
     };
